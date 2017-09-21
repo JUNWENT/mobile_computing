@@ -159,10 +159,10 @@ class ToDoTableViewController: UITableViewController, NSFetchedResultsController
         
         // Set the label on the cell and make sure the label color is black (in case this cell
         // has been reused and was previously greyed out
-        if let text = item.value(forKey: "text") as? String {
+        if let text = item.value(forKey: "username") as? String {
             cell.textLabel!.text = text
         } else {
-            cell.textLabel!.text = "?"
+            cell.textLabel!.text = "unknown username"
         }
         
         cell.textLabel!.textColor = UIColor.black
@@ -198,7 +198,7 @@ class ToDoTableViewController: UITableViewController, NSFetchedResultsController
         }
         
         // We set created at to now, so it will sort as we expect it to post the push/pull
-        let itemToInsert = ["text": text, "complete": false, "__createdAt": Date()] as [String : Any]
+        let itemToInsert = ["text": text, "username": text, "complete": false, "__createdAt": Date()] as [String : Any]
         
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
         self.table!.insert(itemToInsert) {
