@@ -23,6 +23,7 @@
 		A86F27E81F734C2700681BAD /* icons8-Contacts-35.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A86F27E51F734C2700681BAD /* icons8-Contacts-35.imageset */; };
 		A86F27E91F734C2700681BAD /* icons8-Home-35.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A86F27E61F734C2700681BAD /* icons8-Home-35.imageset */; };
 		A86F27EA1F734C2700681BAD /* icons8-Notification-35.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A86F27E71F734C2700681BAD /* icons8-Notification-35.imageset */; };
+		A88B5B341F74982C00509B35 /* 9780375867743.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A88B5B331F74982C00509B35 /* 9780375867743.jpeg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		A86F27E51F734C2700681BAD /* icons8-Contacts-35.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "icons8-Contacts-35.imageset"; path = "Images.xcassets/AppIcon.appiconset/icons8-Contacts-35.imageset"; sourceTree = "<group>"; };
 		A86F27E61F734C2700681BAD /* icons8-Home-35.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "icons8-Home-35.imageset"; path = "Images.xcassets/AppIcon.appiconset/icons8-Home-35.imageset"; sourceTree = "<group>"; };
 		A86F27E71F734C2700681BAD /* icons8-Notification-35.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "icons8-Notification-35.imageset"; path = "Images.xcassets/AppIcon.appiconset/icons8-Notification-35.imageset"; sourceTree = "<group>"; };
+		A88B5B331F74982C00509B35 /* 9780375867743.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 9780375867743.jpeg; path = ../../../9780375867743.jpeg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 		A86F27EB1F734C5700681BAD /* icon */ = {
 			isa = PBXGroup;
 			children = (
+				A88B5B331F74982C00509B35 /* 9780375867743.jpeg */,
 				A86F27E61F734C2700681BAD /* icons8-Home-35.imageset */,
 				A86F27E51F734C2700681BAD /* icons8-Contacts-35.imageset */,
 				A86F27E71F734C2700681BAD /* icons8-Notification-35.imageset */,
@@ -204,6 +207,7 @@
 				A2D9CBCE1943C2540017F096 /* Images.xcassets in Resources */,
 				A31A89F71BF3FDFA00C7B656 /* Launch Screen.storyboard in Resources */,
 				A86F27EA1F734C2700681BAD /* icons8-Notification-35.imageset in Resources */,
+				A88B5B341F74982C00509B35 /* 9780375867743.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
