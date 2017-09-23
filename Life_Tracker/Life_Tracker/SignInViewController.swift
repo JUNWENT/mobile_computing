@@ -17,12 +17,18 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var UserComfirmPasswordTextField: UITextField!
     @IBOutlet weak var CertifySwitch: UISwitch!
     @IBOutlet weak var UserTypeController: UISegmentedControl!
-    
+    var table : MSSyncTable?
+    var store : MSCoreDataStore?
    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        // connect to the server
+        let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
+        let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
+        self.store = MSCoreDataStore(managedObjectContext: managedObjectContext)
+        client.syncContext = MSSyncContext(delegate: nil, dataSource: self.store, callback: nil)
+        self.table = client.syncTable(withName: "TodoItem")
         // Do any additional setup after loading the view.
     }
 
@@ -60,38 +66,52 @@ class SignInViewController: UIViewController {
             displayAlertMessage(useMessage: "Not all the required field is entered! Please check");
             return;
         }
+        
         // check if password match 
         if (userPassword != userComfirmPassword){
             displayAlertMessage(useMessage: "The password length must be greater than or equal to 8! The password must at least contain one uppercase character,lowercase character,number and special character");
             return;
         }
+        
         // check password is vaild
         if !(passwordIsValid(userPassword!)){
             displayAlertMessage(useMessage: "The password is not valid");//
             return;
         }
+        
         // check phone number is valid
         if !(phoneNumberisValid(userPhoneNumber!)){
             displayAlertMessage(useMessage: "The phone number is not valid");
             return;
         }
+        
         // check email is valid
         if !(emailIsValid(userEmail!)){
             displayAlertMessage(useMessage: "The email address is not valid");
             return;
         }
+        
         // check if the user certify the terms
         if !(CertifySwitch.isOn){
             displayAlertMessage(useMessage: "You must agree to the Terms & Conditions.");
             return;
         }
 
-        
         // store data to server
+        let itemToInsert = ["type": UserType, "username": userName,"phoneNumber":userPhoneNumber,"email":userEmail ?? "email","password":userPassword, "complete": false, "__createdAt": Date()] as [String : Any]
+        
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        self.table!.insert(itemToInsert) {
+            (item, error) in
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            if error != nil {
+                self.displayAlertMessage(useMessage: "Failure to register. Please check you network and register again.")
+                print("Error: " + (error! as NSError).description)
+            }
+        }
         
         // display sucessful reigster message
-        
-        let alert = UIAlertController(title:"COMFIRMATION",message:"You have sucessfully register!",preferredStyle:UIAlertControllerStyle.alert);
+        let alert = UIAlertController(title:"COMFIRMATION",message:"You have sucessfully register. Please Sign in.",preferredStyle:UIAlertControllerStyle.alert);
         
         let okAction = UIAlertAction(title:"OK",style:UIAlertActionStyle.default){
             action in

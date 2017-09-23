@@ -40,11 +40,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Life_Tracker/SignInViewController.swift"
-            timestampString = "527865047.388682"
+            timestampString = "527866857.923033"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
             landmarkName = "pressedOnRegisterBotton(_:)"
             landmarkType = "7">
             <Locations>
@@ -88,11 +88,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Life_Tracker/SignInViewController.swift"
-            timestampString = "527865047.388682"
+            timestampString = "527866857.923033"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
             landmarkName = "displayAlertMessage(useMessage:)"
             landmarkType = "7">
          </BreakpointContent>
