@@ -185,10 +185,10 @@
             </objects>
             <point key="canvasLocation" x="342" y="728"/>
         </scene>
-        <!--View Controller-->
+        <!--Dependent Login View Controller-->
         <scene sceneID="hYR-YB-A2d">
             <objects>
-                <viewController id="Bf7-eH-62c" sceneMemberID="viewController">
+                <viewController id="Bf7-eH-62c" customClass="DependentLoginViewController" customModule="Life_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eZG-uP-4zi"/>
                         <viewControllerLayoutGuide type="bottom" id="S88-6i-OtJ"/>
@@ -229,6 +229,7 @@
                                     <color key="titleColor" red="0.92159152030000002" green="0.92155694960000001" blue="0.92158031460000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
+                                    <action selector="UserPressedOnSignIn:" destination="Bf7-eH-62c" eventType="touchUpInside" id="z6t-a5-sKz"/>
                                     <segue destination="ORO-3V-sil" kind="show" id="1ZG-E7-2kY"/>
                                 </connections>
                             </button>
@@ -272,6 +273,10 @@
                             <constraint firstItem="S88-6i-OtJ" firstAttribute="top" secondItem="Q6I-n6-P3N" secondAttribute="bottom" constant="347" id="xIS-ph-fO5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="UserIdentificationTextField" destination="Kiv-Gj-9Ws" id="3lR-a2-hgd"/>
+                        <outlet property="UserPasswordTextField" destination="hht-Sz-FGR" id="KZt-3C-h11"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVQ-pv-eFf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -20,6 +20,7 @@
 		A2E767C6194594DC00869113 /* ToDoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E767C5194594DC00869113 /* ToDoItemViewController.swift */; };
 		A31A89F71BF3FDFA00C7B656 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31A89F61BF3FDFA00C7B656 /* Launch Screen.storyboard */; };
 		A3BBD77D1C05181600DD0DB0 /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BBD77C1C05181600DD0DB0 /* MicrosoftAzureMobile.framework */; };
+		A80880471F769FC80098F698 /* DependentLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80880461F769FC80098F698 /* DependentLoginViewController.swift */; };
 		A86F27E81F734C2700681BAD /* icons8-Contacts-35.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A86F27E51F734C2700681BAD /* icons8-Contacts-35.imageset */; };
 		A86F27E91F734C2700681BAD /* icons8-Home-35.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A86F27E61F734C2700681BAD /* icons8-Home-35.imageset */; };
 		A86F27EA1F734C2700681BAD /* icons8-Notification-35.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A86F27E71F734C2700681BAD /* icons8-Notification-35.imageset */; };
@@ -44,6 +45,7 @@
 		A2E767C5194594DC00869113 /* ToDoItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItemViewController.swift; sourceTree = "<group>"; };
 		A31A89F61BF3FDFA00C7B656 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		A3BBD77C1C05181600DD0DB0 /* MicrosoftAzureMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftAzureMobile.framework; sourceTree = "<group>"; };
+		A80880461F769FC80098F698 /* DependentLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DependentLoginViewController.swift; path = ../DependentLoginViewController.swift; sourceTree = "<group>"; };
 		A86F27E51F734C2700681BAD /* icons8-Contacts-35.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "icons8-Contacts-35.imageset"; path = "Images.xcassets/AppIcon.appiconset/icons8-Contacts-35.imageset"; sourceTree = "<group>"; };
 		A86F27E61F734C2700681BAD /* icons8-Home-35.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "icons8-Home-35.imageset"; path = "Images.xcassets/AppIcon.appiconset/icons8-Home-35.imageset"; sourceTree = "<group>"; };
 		A86F27E71F734C2700681BAD /* icons8-Notification-35.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "icons8-Notification-35.imageset"; path = "Images.xcassets/AppIcon.appiconset/icons8-Notification-35.imageset"; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				A2D9CBE51943CB520017F096 /* frameworks */,
 				A2D9CBE81943D1340017F096 /* Life_Tracker-Bridging-Header.h */,
 				A8BAE1E21F761BE800C714AD /* SignInViewController.swift */,
+				A80880461F769FC80098F698 /* DependentLoginViewController.swift */,
 				A31A89F61BF3FDFA00C7B656 /* Launch Screen.storyboard */,
 				4D5A70181F739B000085B7D5 /* DependentViewController.swift */,
 			);
@@ -222,6 +225,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2E767C6194594DC00869113 /* ToDoItemViewController.swift in Sources */,
+				A80880471F769FC80098F698 /* DependentLoginViewController.swift in Sources */,
 				4D5A70191F739B000085B7D5 /* DependentViewController.swift in Sources */,
 				A8BAE1E31F761BE800C714AD /* SignInViewController.swift in Sources */,
 				A2BD20971AC8A731007F7181 /* QSTodoDataModel.xcdatamodeld in Sources */,
