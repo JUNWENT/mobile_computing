@@ -33,5 +33,69 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Life_Tracker/SignInViewController.swift"
+            timestampString = "527865047.388682"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "pressedOnRegisterBotton(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Life_Tracker.SignInViewController.pressedOnRegisterBotton (Any) -&gt; ()"
+                  moduleName = "Life_Tracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junwenz/Desktop/mobile_computing/Life_Tracker/Life_Tracker/SignInViewController.swift"
+                  timestampString = "527843744.498799"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "2011">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Life_Tracker.SignInViewController.pressedOnRegisterBotton (Any) -&gt; ()"
+                  moduleName = "Life_Tracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junwenz/Desktop/mobile_computing/Life_Tracker/Life_Tracker/SignInViewController.swift"
+                  timestampString = "527843744.503208"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "4115">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Life_Tracker/SignInViewController.swift"
+            timestampString = "527865047.388682"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
+            landmarkName = "displayAlertMessage(useMessage:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

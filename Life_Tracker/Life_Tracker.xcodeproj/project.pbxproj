@@ -24,6 +24,7 @@
 		A86F27E91F734C2700681BAD /* icons8-Home-35.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A86F27E61F734C2700681BAD /* icons8-Home-35.imageset */; };
 		A86F27EA1F734C2700681BAD /* icons8-Notification-35.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A86F27E71F734C2700681BAD /* icons8-Notification-35.imageset */; };
 		A88B5B341F74982C00509B35 /* 9780375867743.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A88B5B331F74982C00509B35 /* 9780375867743.jpeg */; };
+		A8BAE1E31F761BE800C714AD /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BAE1E21F761BE800C714AD /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		A86F27E61F734C2700681BAD /* icons8-Home-35.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "icons8-Home-35.imageset"; path = "Images.xcassets/AppIcon.appiconset/icons8-Home-35.imageset"; sourceTree = "<group>"; };
 		A86F27E71F734C2700681BAD /* icons8-Notification-35.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "icons8-Notification-35.imageset"; path = "Images.xcassets/AppIcon.appiconset/icons8-Notification-35.imageset"; sourceTree = "<group>"; };
 		A88B5B331F74982C00509B35 /* 9780375867743.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 9780375867743.jpeg; path = ../../../9780375867743.jpeg; sourceTree = "<group>"; };
+		A8BAE1E21F761BE800C714AD /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 				A2E767C5194594DC00869113 /* ToDoItemViewController.swift */,
 				A2D9CBE51943CB520017F096 /* frameworks */,
 				A2D9CBE81943D1340017F096 /* Life_Tracker-Bridging-Header.h */,
+				A8BAE1E21F761BE800C714AD /* SignInViewController.swift */,
 				A31A89F61BF3FDFA00C7B656 /* Launch Screen.storyboard */,
 				4D5A70181F739B000085B7D5 /* DependentViewController.swift */,
 			);
@@ -220,6 +223,7 @@
 			files = (
 				A2E767C6194594DC00869113 /* ToDoItemViewController.swift in Sources */,
 				4D5A70191F739B000085B7D5 /* DependentViewController.swift in Sources */,
+				A8BAE1E31F761BE800C714AD /* SignInViewController.swift in Sources */,
 				A2BD20971AC8A731007F7181 /* QSTodoDataModel.xcdatamodeld in Sources */,
 				A2D9CBE41943C39D0017F096 /* ToDoTableViewController.swift in Sources */,
 				A2D9CBC41943C2540017F096 /* AppDelegate.swift in Sources */,
