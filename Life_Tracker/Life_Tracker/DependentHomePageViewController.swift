@@ -14,12 +14,20 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
     
     @IBOutlet weak var map: MKMapView!
     
-    @IBOutlet weak var healthTable: UITableView!
+    @IBOutlet weak var coordinate: UILabel!
+    
+    @IBOutlet weak var speed: UILabel!
+    
+    @IBOutlet weak var altitude: UILabel!
     
     @IBAction func askForHelp(_ sender: Any) {
     }
     
     let manager = CLLocationManager()
+    
+//    var altitude : CLLocationDistance = 0
+//    var coordinates : CLLocationCoordinate2D = CLLocationCoordinate2D()
+//    var speed : CLLocationSpeed = 0.0
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0]
@@ -28,6 +36,10 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
         let region = MKCoordinateRegionMake(myLocation, span)
         map.setRegion(region, animated: true)
         self.map.showsUserLocation = true
+        
+//        altitude = location.altitude
+//        coordinate = location.coordinate
+//        speed = location.speed
     }
     
     override func viewDidLoad() {
