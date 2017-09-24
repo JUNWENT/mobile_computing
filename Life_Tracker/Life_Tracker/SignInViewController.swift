@@ -43,11 +43,14 @@ class SignInViewController: UIViewController {
         let userName = UserUsernameTextField.text;
         let userEmail = UserEmailTextField.text;
         let userPhoneNumber = UserPhoneNumberTextField.text;
+        print (userPhoneNumber!);
         let userPassword = UserPasswordTextField.text;
         let userComfirmPassword = UserComfirmPasswordTextField.text;
         let UserTypechoice = UserTypeController;
         var UserType:String!;
-        
+        var flagMatch = false;
+        let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
+        let table = client.table(withName: "TodoItem")
         // get user type
         switch UserTypechoice!.selectedSegmentIndex
         {
@@ -60,6 +63,27 @@ class SignInViewController: UIViewController {
         default:
             break; 
         }
+        // check if the unique phone number has been registerred
+        table.read { (result, error) in
+            if let err = error {
+                self.displayAlertMessage(useMessage: "Failure to register. Please check you network and register again.")
+                return;
+                print("ERROR ", err)
+            } else if let items = result?.items {
+                for item in items {
+                    if (item["phoneNumber"] as? String == userPhoneNumber && item["complete"] as! Bool == false){
+                        print ("match");
+                        flagMatch = true;
+                        print(flagMatch);
+                    }
+                }
+            }
+        }
+        if (flagMatch == true) {
+            print ("have run here");
+            displayAlertMessage(useMessage: "The phone number has been registerred.");
+            return;
+        }
         
         // check needed fields empty
         if ((userName?.isEmpty)! || (userPassword?.isEmpty)! || (userPhoneNumber?.isEmpty)! || (userComfirmPassword?.isEmpty)!){
@@ -67,27 +91,33 @@ class SignInViewController: UIViewController {
             return;
         }
         
+        // check if username valid
+        if !(usernameIsValid(userName!)){
+            displayAlertMessage(useMessage: "The username is not valid");//
+            return;
+        }
+        
         // check if password match 
         if (userPassword != userComfirmPassword){
-            displayAlertMessage(useMessage: "The password length must be greater than or equal to 8! The password must at least contain one uppercase character,lowercase character,number and special character");
+            displayAlertMessage(useMessage: "The passwords do not match");
             return;
         }
         
         // check password is vaild
         if !(passwordIsValid(userPassword!)){
-            displayAlertMessage(useMessage: "The password is not valid");//
+            displayAlertMessage(useMessage: "The password length must be greater than or equal to 8! The password must at least contain one uppercase character,lowercase character,number and special character.");//
             return;
         }
         
         // check phone number is valid
         if !(phoneNumberisValid(userPhoneNumber!)){
-            displayAlertMessage(useMessage: "The phone number is not valid");
+            displayAlertMessage(useMessage: "The phone number is not valid.");
             return;
         }
         
         // check email is valid
         if !(emailIsValid(userEmail!)){
-            displayAlertMessage(useMessage: "The email address is not valid");
+            displayAlertMessage(useMessage: "The email address is not valid.");
             return;
         }
         
@@ -96,6 +126,9 @@ class SignInViewController: UIViewController {
             displayAlertMessage(useMessage: "You must agree to the Terms & Conditions.");
             return;
         }
+        
+        
+            
 
         // store data to server
         let itemToInsert = ["type": UserType, "username": userName,"phoneNumber":userPhoneNumber,"email":userEmail ?? "email","password":userPassword, "complete": false, "__createdAt": Date()] as [String : Any]
@@ -122,11 +155,11 @@ class SignInViewController: UIViewController {
         
         
         
+        
     }
 
     //display alert message
     func displayAlertMessage(useMessage:String){
-        
         let alert = UIAlertController(title:"ALERT",message:useMessage,preferredStyle:UIAlertControllerStyle.alert);
         let okAction = UIAlertAction(title:"OK",style:UIAlertActionStyle.default,handler:nil);
         alert.addAction(okAction);
@@ -143,7 +176,7 @@ class SignInViewController: UIViewController {
     func phoneNumberisValid(_ phoneNumber: String) -> Bool{
         let PHONE_REGEX = "^\\d{3}\\d{3}\\d{4}$"
         let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
-        return phoneTest.evaluate(with: phoneNumber);
+        return phoneTest.evaluate(with: phoneNumber)
     }
     
     // check if email is valid
@@ -151,6 +184,12 @@ class SignInViewController: UIViewController {
         let emailRegEx = "^(?:(?:(?:(?: )*(?:(?:(?:\\t| )*\\r\\n)?(?:\\t| )+))+(?: )*)|(?: )+)?(?:(?:(?:[-A-Za-z0-9!#$%&’*+/=?^_'{|}~]+(?:\\.[-A-Za-z0-9!#$%&’*+/=?^_'{|}~]+)*)|(?:\"(?:(?:(?:(?: )*(?:(?:[!#-Z^-~]|\\[|\\])|(?:\\\\(?:\\t|[ -~]))))+(?: )*)|(?: )+)\"))(?:@)(?:(?:(?:[A-Za-z0-9](?:[-A-Za-z0-9]{0,61}[A-Za-z0-9])?)(?:\\.[A-Za-z0-9](?:[-A-Za-z0-9]{0,61}[A-Za-z0-9])?)*)|(?:\\[(?:(?:(?:(?:(?:[0-9]|(?:[1-9][0-9])|(?:1[0-9][0-9])|(?:2[0-4][0-9])|(?:25[0-5]))\\.){3}(?:[0-9]|(?:[1-9][0-9])|(?:1[0-9][0-9])|(?:2[0-4][0-9])|(?:25[0-5]))))|(?:(?:(?: )*[!-Z^-~])*(?: )*)|(?:[Vv][0-9A-Fa-f]+\\.[-A-Za-z0-9._~!$&'()*+,;=:]+))\\])))(?:(?:(?:(?: )*(?:(?:(?:\\t| )*\\r\\n)?(?:\\t| )+))+(?: )*)|(?: )+)?$"
         let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailTest.evaluate(with: email)
+    }
+    
+    func usernameIsValid(_ username: String) -> Bool {
+        let usernameRegEx = "^[0-9a-zA-Z\\_]{3,18}$";
+        let usernameTest = NSPredicate(format: "SELF MATCHES %@", usernameRegEx)
+        return usernameTest.evaluate(with: username)
     }
     
     /*

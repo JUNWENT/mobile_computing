@@ -106,10 +106,10 @@
             </objects>
             <point key="canvasLocation" x="2665" y="878"/>
         </scene>
-        <!--View Controller-->
+        <!--Guardian Sign In View Controller-->
         <scene sceneID="xRb-vW-D5k">
             <objects>
-                <viewController id="b7h-d2-0Dg" sceneMemberID="viewController">
+                <viewController id="b7h-d2-0Dg" customClass="GuardianSignInViewController" customModule="Life_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="v6m-0J-azr"/>
                         <viewControllerLayoutGuide type="bottom" id="p61-Lr-svX"/>
@@ -155,7 +155,8 @@
                                     <color key="titleColor" red="0.92159152030000002" green="0.92155694960000001" blue="0.92158031460000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <segue destination="rPa-3r-NZL" kind="show" id="Fay-iC-Sr3"/>
+                                    <action selector="userPressedOnSignIn:" destination="b7h-d2-0Dg" eventType="touchUpInside" id="2wI-cM-RhN"/>
+                                    <segue destination="Mvj-4o-TKf" kind="show" id="1bU-Yi-KwH"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8l-xg-EsQ">
@@ -180,10 +181,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="UserIdentificationTextField" destination="UEt-vW-NgE" id="7LX-zb-Kh8"/>
+                        <outlet property="UserPasswordTextField" destination="yDm-rd-W5M" id="jBt-Fw-9m3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JZZ-x7-vQo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="342" y="728"/>
+            <point key="canvasLocation" x="342" y="675"/>
         </scene>
         <!--Dependent Login View Controller-->
         <scene sceneID="hYR-YB-A2d">
@@ -197,8 +202,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LyY-8w-lWs">
-                                <rect key="frame" x="47" y="161" width="69" height="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LyY-8w-lWs">
+                                <rect key="frame" x="46.999999999999993" y="161" width="45.333333333333321" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -209,28 +214,28 @@
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Kiv-Gj-9Ws">
-                                <rect key="frame" x="135" y="154" width="232" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your phone number" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Kiv-Gj-9Ws">
+                                <rect key="frame" x="111.33333333333334" y="154" width="255.66666666666666" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hht-Sz-FGR">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your password" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="hht-Sz-FGR">
                                 <rect key="frame" x="135" y="209" width="232" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pty-vS-PQK">
                                 <rect key="frame" x="47" y="297" width="320" height="42"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="SIGN IN">
+                                <state key="normal" title="Sign in">
                                     <color key="titleColor" red="0.92159152030000002" green="0.92155694960000001" blue="0.92158031460000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="UserPressedOnSignIn:" destination="Bf7-eH-62c" eventType="touchUpInside" id="z6t-a5-sKz"/>
-                                    <segue destination="ORO-3V-sil" kind="show" id="1ZG-E7-2kY"/>
+                                    <segue destination="GLX-TS-eZ3" kind="show" id="Z20-P3-4yg"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SIGN IN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXl-ef-T46">
@@ -264,6 +269,7 @@
                             <constraint firstItem="Q6I-n6-P3N" firstAttribute="top" secondItem="pty-vS-PQK" secondAttribute="bottom" constant="16" id="Yow-Oh-8uP"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Kiv-Gj-9Ws" secondAttribute="trailing" constant="27" id="cCo-mB-7Mh"/>
                             <constraint firstItem="xXl-ef-T46" firstAttribute="top" secondItem="eZG-uP-4zi" secondAttribute="bottom" constant="8" id="eFq-Xy-dzb"/>
+                            <constraint firstItem="Kiv-Gj-9Ws" firstAttribute="top" secondItem="xXl-ef-T46" secondAttribute="bottom" constant="86.329999999999998" id="fQ0-XC-1DC"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pty-vS-PQK" secondAttribute="trailing" constant="27" id="flL-JQ-MtA"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Q6I-n6-P3N" secondAttribute="trailing" constant="27" id="gfn-yo-qAk"/>
                             <constraint firstItem="Q6I-n6-P3N" firstAttribute="centerX" secondItem="a2K-Hq-CkX" secondAttribute="centerX" id="iB0-NO-V3n"/>
@@ -271,6 +277,7 @@
                             <constraint firstItem="Q6I-n6-P3N" firstAttribute="top" secondItem="pty-vS-PQK" secondAttribute="bottom" constant="8" symbolic="YES" id="nWg-LM-J10"/>
                             <constraint firstItem="LyY-8w-lWs" firstAttribute="leading" secondItem="a2K-Hq-CkX" secondAttribute="leadingMargin" constant="27" id="sYl-lD-pcL"/>
                             <constraint firstItem="S88-6i-OtJ" firstAttribute="top" secondItem="Q6I-n6-P3N" secondAttribute="bottom" constant="347" id="xIS-ph-fO5"/>
+                            <constraint firstItem="LyY-8w-lWs" firstAttribute="top" secondItem="eZG-uP-4zi" secondAttribute="bottom" constant="141" id="zYu-q4-Ut5"/>
                         </constraints>
                     </view>
                     <connections>
@@ -313,7 +320,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="Guardian sign-in"/>
                                                 <connections>
-                                                    <segue destination="Bf7-eH-62c" kind="show" id="7df-ow-tRI"/>
+                                                    <segue destination="b7h-d2-0Dg" kind="show" id="XNu-GV-W5O"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -335,7 +342,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Dependent sign-in"/>
                                 <connections>
-                                    <segue destination="b7h-d2-0Dg" kind="show" id="0A5-z0-hiq"/>
+                                    <segue destination="Bf7-eH-62c" kind="show" id="LAz-tE-vt7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MsV-5b-AKo">
@@ -401,10 +408,10 @@
             </objects>
             <point key="canvasLocation" x="-2498" y="2349"/>
         </scene>
-        <!--View Controller-->
+        <!--Guardian Home Page View Controller-->
         <scene sceneID="taQ-pF-KxB">
             <objects>
-                <viewController id="Mvj-4o-TKf" sceneMemberID="viewController">
+                <viewController id="Mvj-4o-TKf" customClass="GuardianHomePageViewController" customModule="Life_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Bgj-NM-Hwv"/>
                         <viewControllerLayoutGuide type="bottom" id="Cnr-5R-Lrg"/>
@@ -769,10 +776,10 @@
             </objects>
             <point key="canvasLocation" x="1799" y="150"/>
         </scene>
-        <!--Dependent View Controller-->
+        <!--Dependent Home Page View Controller-->
         <scene sceneID="aeD-Ir-Cww">
             <objects>
-                <viewController id="GLX-TS-eZ3" customClass="DependentViewController" customModule="Life_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="GLX-TS-eZ3" customClass="DependentHomePageViewController" customModule="Life_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Dod-yG-WiO"/>
                         <viewControllerLayoutGuide type="bottom" id="UzU-cH-U3d"/>
@@ -920,6 +927,8 @@
         <image name="icons8-Notification-35.png" width="35" height="35"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xIG-DM-NcY"/>
+        <segue reference="3vM-Bl-ozG"/>
+        <segue reference="1bU-Yi-KwH"/>
+        <segue reference="Z20-P3-4yg"/>
     </inferredMetricsTieBreakers>
 </document>

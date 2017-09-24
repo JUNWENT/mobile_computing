@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4D5A70191F739B000085B7D5 /* DependentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D5A70181F739B000085B7D5 /* DependentViewController.swift */; };
 		4D5A701B1F739D9E0085B7D5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D5A701A1F739D9E0085B7D5 /* CoreLocation.framework */; };
 		9C35A4B41DE4EF8000650581 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C35A4B31DE4EF8000650581 /* SafariServices.framework */; };
 		9C35A4B61DE4EF8500650581 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C35A4B51DE4EF8500650581 /* Security.framework */; };
@@ -20,16 +19,17 @@
 		A2E767C6194594DC00869113 /* ToDoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E767C5194594DC00869113 /* ToDoItemViewController.swift */; };
 		A31A89F71BF3FDFA00C7B656 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31A89F61BF3FDFA00C7B656 /* Launch Screen.storyboard */; };
 		A3BBD77D1C05181600DD0DB0 /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BBD77C1C05181600DD0DB0 /* MicrosoftAzureMobile.framework */; };
-		A80880471F769FC80098F698 /* DependentLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A80880461F769FC80098F698 /* DependentLoginViewController.swift */; };
+		A832232E1F77DED800C283D0 /* GuardianSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A832232D1F77DED800C283D0 /* GuardianSignInViewController.swift */; };
+		A83223301F77EBEA00C283D0 /* DependentHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A832232F1F77EBEA00C283D0 /* DependentHomePageViewController.swift */; };
+		A83223341F77ED1F00C283D0 /* GuardianHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83223331F77ED1F00C283D0 /* GuardianHomePageViewController.swift */; };
 		A86F27E81F734C2700681BAD /* icons8-Contacts-35.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A86F27E51F734C2700681BAD /* icons8-Contacts-35.imageset */; };
 		A86F27E91F734C2700681BAD /* icons8-Home-35.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A86F27E61F734C2700681BAD /* icons8-Home-35.imageset */; };
 		A86F27EA1F734C2700681BAD /* icons8-Notification-35.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A86F27E71F734C2700681BAD /* icons8-Notification-35.imageset */; };
-		A88B5B341F74982C00509B35 /* 9780375867743.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = A88B5B331F74982C00509B35 /* 9780375867743.jpeg */; };
+		A89F571F1F779C8800C58D87 /* DependentLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89F571E1F779C8800C58D87 /* DependentLoginViewController.swift */; };
 		A8BAE1E31F761BE800C714AD /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BAE1E21F761BE800C714AD /* SignInViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4D5A70181F739B000085B7D5 /* DependentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependentViewController.swift; sourceTree = "<group>"; };
 		4D5A701A1F739D9E0085B7D5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		9C35A4B31DE4EF8000650581 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
 		9C35A4B51DE4EF8500650581 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -45,11 +45,13 @@
 		A2E767C5194594DC00869113 /* ToDoItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItemViewController.swift; sourceTree = "<group>"; };
 		A31A89F61BF3FDFA00C7B656 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		A3BBD77C1C05181600DD0DB0 /* MicrosoftAzureMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftAzureMobile.framework; sourceTree = "<group>"; };
-		A80880461F769FC80098F698 /* DependentLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DependentLoginViewController.swift; path = ../DependentLoginViewController.swift; sourceTree = "<group>"; };
+		A832232D1F77DED800C283D0 /* GuardianSignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuardianSignInViewController.swift; sourceTree = "<group>"; };
+		A832232F1F77EBEA00C283D0 /* DependentHomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependentHomePageViewController.swift; sourceTree = "<group>"; };
+		A83223331F77ED1F00C283D0 /* GuardianHomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuardianHomePageViewController.swift; sourceTree = "<group>"; };
 		A86F27E51F734C2700681BAD /* icons8-Contacts-35.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "icons8-Contacts-35.imageset"; path = "Images.xcassets/AppIcon.appiconset/icons8-Contacts-35.imageset"; sourceTree = "<group>"; };
 		A86F27E61F734C2700681BAD /* icons8-Home-35.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "icons8-Home-35.imageset"; path = "Images.xcassets/AppIcon.appiconset/icons8-Home-35.imageset"; sourceTree = "<group>"; };
 		A86F27E71F734C2700681BAD /* icons8-Notification-35.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "icons8-Notification-35.imageset"; path = "Images.xcassets/AppIcon.appiconset/icons8-Notification-35.imageset"; sourceTree = "<group>"; };
-		A88B5B331F74982C00509B35 /* 9780375867743.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = 9780375867743.jpeg; path = ../../../9780375867743.jpeg; sourceTree = "<group>"; };
+		A89F571E1F779C8800C58D87 /* DependentLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependentLoginViewController.swift; sourceTree = "<group>"; };
 		A8BAE1E21F761BE800C714AD /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -110,9 +112,11 @@
 				A2D9CBE51943CB520017F096 /* frameworks */,
 				A2D9CBE81943D1340017F096 /* Life_Tracker-Bridging-Header.h */,
 				A8BAE1E21F761BE800C714AD /* SignInViewController.swift */,
-				A80880461F769FC80098F698 /* DependentLoginViewController.swift */,
+				A83223331F77ED1F00C283D0 /* GuardianHomePageViewController.swift */,
+				A832232F1F77EBEA00C283D0 /* DependentHomePageViewController.swift */,
+				A832232D1F77DED800C283D0 /* GuardianSignInViewController.swift */,
+				A89F571E1F779C8800C58D87 /* DependentLoginViewController.swift */,
 				A31A89F61BF3FDFA00C7B656 /* Launch Screen.storyboard */,
-				4D5A70181F739B000085B7D5 /* DependentViewController.swift */,
 			);
 			path = Life_Tracker;
 			sourceTree = "<group>";
@@ -138,7 +142,6 @@
 		A86F27EB1F734C5700681BAD /* icon */ = {
 			isa = PBXGroup;
 			children = (
-				A88B5B331F74982C00509B35 /* 9780375867743.jpeg */,
 				A86F27E61F734C2700681BAD /* icons8-Home-35.imageset */,
 				A86F27E51F734C2700681BAD /* icons8-Contacts-35.imageset */,
 				A86F27E71F734C2700681BAD /* icons8-Notification-35.imageset */,
@@ -213,7 +216,6 @@
 				A2D9CBCE1943C2540017F096 /* Images.xcassets in Resources */,
 				A31A89F71BF3FDFA00C7B656 /* Launch Screen.storyboard in Resources */,
 				A86F27EA1F734C2700681BAD /* icons8-Notification-35.imageset in Resources */,
-				A88B5B341F74982C00509B35 /* 9780375867743.jpeg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,9 +227,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2E767C6194594DC00869113 /* ToDoItemViewController.swift in Sources */,
-				A80880471F769FC80098F698 /* DependentLoginViewController.swift in Sources */,
-				4D5A70191F739B000085B7D5 /* DependentViewController.swift in Sources */,
+				A83223341F77ED1F00C283D0 /* GuardianHomePageViewController.swift in Sources */,
 				A8BAE1E31F761BE800C714AD /* SignInViewController.swift in Sources */,
+				A83223301F77EBEA00C283D0 /* DependentHomePageViewController.swift in Sources */,
+				A832232E1F77DED800C283D0 /* GuardianSignInViewController.swift in Sources */,
+				A89F571F1F779C8800C58D87 /* DependentLoginViewController.swift in Sources */,
 				A2BD20971AC8A731007F7181 /* QSTodoDataModel.xcdatamodeld in Sources */,
 				A2D9CBE41943C39D0017F096 /* ToDoTableViewController.swift in Sources */,
 				A2D9CBC41943C2540017F096 /* AppDelegate.swift in Sources */,
