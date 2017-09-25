@@ -14,7 +14,9 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
     
     @IBOutlet weak var map: MKMapView!
     
-    @IBOutlet weak var coordinate: UILabel!
+    @IBOutlet weak var latitude: UILabel!
+    
+    @IBOutlet weak var longtitude: UILabel!
     
     @IBOutlet weak var speed: UILabel!
     
@@ -25,10 +27,6 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
     
     let manager = CLLocationManager()
     
-//    var altitude : CLLocationDistance = 0
-//    var coordinates : CLLocationCoordinate2D = CLLocationCoordinate2D()
-//    var speed : CLLocationSpeed = 0.0
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0]
         let span = MKCoordinateSpanMake(0.01, 0.01)
@@ -37,9 +35,10 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
         map.setRegion(region, animated: true)
         self.map.showsUserLocation = true
         
-//        altitude = location.altitude
-//        coordinate = location.coordinate
-//        speed = location.speed
+        latitude.text = String(location.coordinate.latitude)
+        longtitude.text = String(location.coordinate.longitude)
+        speed.text = String(location.speed)
+        altitude.text = String(location.altitude)
     }
     
     override func viewDidLoad() {
