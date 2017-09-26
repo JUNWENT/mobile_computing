@@ -28,6 +28,10 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
     
     @IBOutlet weak var distance:UILabel!
     
+    @IBOutlet weak var upstairs: UILabel!
+    
+    @IBOutlet weak var downstairs: UILabel!
+    
     @IBOutlet weak var textView: UITextView!
     
     var username:String?
@@ -81,7 +85,6 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestAlwaysAuthorization()
         manager.startUpdatingLocation()
-        // Do any additional setup after loading the view.
         
         //begin to update counting steps
         startPedometerUpdates()
@@ -126,35 +129,34 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
                     return
                 }
                 //var text = "---Workout---\n"
-                if let numberOfSteps = pedometerData?.numberOfSteps {
-                    self.steps.text = String("steps: \(numberOfSteps)\n")
+                if let numberOfSteps = pedometerData?.numberOfSteps as? Int {
+                    self.steps.text = String(numberOfSteps)
                 }
-                if let distance = pedometerData?.distance {
-                    self.distance.text = String("distance: \(distance)\n")
+                if let distance = pedometerData?.distance as? Double {
+                    self.distance.text = String(format: "%.2f", distance)
                 }
-                if let floorsAscended = pedometerData?.floorsAscended {
-                    text += "upstairs: \(floorsAscended)\n"
+                if let floorsAscended = pedometerData?.floorsAscended as? Int {
+                    self.upstairs.text = String(floorsAscended)
                 }
-                if let floorsDescended = pedometerData?.floorsDescended {
-                    text += "downstairs: \(floorsDescended)\n"
+                if let floorsDescended = pedometerData?.floorsDescended as? Int {
+                    self.downstairs.text = String(floorsDescended)
                 }
-                if #available(iOS 9.0, *) {
-                    if let currentPace = pedometerData?.currentPace {
-                        text += "speed: \(currentPace)m/s\n"
-                    }
-                } else {
-                    // Fallback on earlier versions
-                }
-                if #available(iOS 9.0, *) {
-                    if let currentCadence = pedometerData?.currentCadence {
-                        text += "speed: \(currentCadence)steps/s\n"
-                    }
-                } else {
-                    // Fallback on earlier versions
-                }
+//                if #available(iOS 9.0, *) {
+//                    if let currentPace = pedometerData?.currentPace {
+//                       text += "speed: \(currentPace)m/s\n"
+//                    }
+//                } else {
+//                    // Fallback on earlier versions
+//                }
+//                if #available(iOS 9.0, *) {
+//                    if let currentCadence = pedometerData?.currentCadence {
+//                       text += "speed: \(currentCadence)steps/s\n"
+//                    }
+//                } else {
+//                    // Fallback on earlier versions
+//                }
                 DispatchQueue.main.async {
-                    
-                    self.textView.text = text
+//                    self.textView.text = text
                 }
                 
             })
