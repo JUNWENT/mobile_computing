@@ -33,6 +33,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
     
     let manager = CLLocationManager()
     let pedometer = CMPedometer()
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0]
         let span = MKCoordinateSpanMake(0.01, 0.01)
@@ -81,7 +82,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
         guard CMPedometer.isStepCountingAvailable() else {
             self.textView.text = "\n Unavailable!\n"
             return
-            
+        }
             //get time
             let cal = Calendar.current
             var comps = cal.dateComponents([.year,.month,.day], from: Date())
@@ -129,6 +130,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
                     self.textView.text = text
                 }
                 
-            })}
+            })
     }
-}
+    }
+

@@ -191,8 +191,14 @@
 						DevelopmentTeam = KYU3E3F3UX;
 						LastSwiftMigration = 0820;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
 							com.apple.HealthKit = {
 								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 0;
 							};
 						};
 					};
