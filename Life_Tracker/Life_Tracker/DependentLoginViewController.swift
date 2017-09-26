@@ -10,15 +10,16 @@ import UIKit
 import CoreData
 
 class DependentLoginViewController: UIViewController,NSFetchedResultsControllerDelegate {
-
+    
     @IBOutlet weak var UserIdentificationTextField: UITextField!
     @IBOutlet weak var UserPasswordTextField: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -32,6 +33,7 @@ class DependentLoginViewController: UIViewController,NSFetchedResultsControllerD
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
         let table = client.table(withName: "TodoItem");
         var nextController = DependentHomePageViewController();
+        
         //check userIdentify is empty
         if ((userIdentify?.isEmpty)! || (userPassword?.isEmpty)!){
             self.displayAlertMessage(useMessage: "Your login failed. Please check your username and password, and try again.");
@@ -45,6 +47,7 @@ class DependentLoginViewController: UIViewController,NSFetchedResultsControllerD
                     if(item["type"] as? String == userType){
                         if (item["phoneNumber"] as? String == userIdentify && item["complete"] as! Bool == false){
                             if (item["password"] as? String == userPassword){
+                                nextController.username = userIdentify!
                                 self.present(nextController,animated: true, completion: nil);
                                 print("complete checking the user identify and password");
                             }
@@ -70,13 +73,13 @@ class DependentLoginViewController: UIViewController,NSFetchedResultsControllerD
         self.present(alert, animated: true, completion: nil);
     }
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
