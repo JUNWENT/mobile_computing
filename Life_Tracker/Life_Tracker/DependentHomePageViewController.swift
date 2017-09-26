@@ -59,16 +59,19 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
         client.syncContext = MSSyncContext(delegate: nil, dataSource: self.store, callback: nil)
         self.table = client.syncTable(withName: "TodoItem")
         
-        let itemToInsert = ["latitude": latitude.text!, "phoneNumber": username!, "longtitude":longtitude.text!,"speed":speed.text!,"altitude":altitude.text!, "complete": false, "__createdAt": Date()] as [String : Any]
         
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        self.table!.insert(itemToInsert) {
-            (item, error) in
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            if error != nil {
-                print("Error: " + (error! as NSError).description)
+        if let itemToInsert = ["latitude": latitude.text?, "phoneNumber": username?, "longtitude":longtitude.text?,"speed":speed.text?,"altitude":altitude.text?, "complete": false, "__createdAt": Date()] as [String : Any]{
+            UIApplication.shared.isNetworkActivityIndicatorVisible = true
+            self.table!.insert(itemToInsert) {
+                (item, error) in
+                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                if error != nil {
+                    print("Error: " + (error! as NSError).description)
+                }
             }
         }
+        
+       
     }
     
     override func viewDidLoad() {
