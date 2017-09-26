@@ -9,6 +9,8 @@
 import UIKit
 import MapKit
 import CoreLocation
+import CoreMotion
+import HealthKit
 
 class DependentHomePageViewController: UIViewController, CLLocationManagerDelegate {
     
@@ -22,11 +24,15 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
     
     @IBOutlet weak var altitude: UILabel!
     
+    @IBOutlet weak var steps: UILabel!
+    
+    @IBOutlet weak var textView: UITextView!
+    
     @IBAction func askForHelp(_ sender: Any) {
     }
     
     let manager = CLLocationManager()
-    
+    let pedometer = CMPedometer()
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0]
         let span = MKCoordinateSpanMake(0.01, 0.01)
@@ -48,6 +54,9 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
         manager.requestAlwaysAuthorization()
         manager.startUpdatingLocation()
         // Do any additional setup after loading the view.
+        
+        //begin to update counting steps
+        startPedometerUpdates()
     }
     
     override func didReceiveMemoryWarning() {
@@ -66,4 +75,60 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
      }
      */
     
+    //begin to retrieve data
+    func startPedometerUpdates(){
+        //determine the situation of the app
+        guard CMPedometer.isStepCountingAvailable() else {
+            self.textView.text = "\n Unavailable!\n"
+            return
+            
+            //get time
+            let cal = Calendar.current
+            var comps = cal.dateComponents([.year,.month,.day], from: Date())
+            comps.hour = 0
+            comps.minute = 0
+            comps.second = 0
+            let midnightOfToday = cal.date(from: comps)!
+            
+            //initialize and retieve real_time data
+            self.pedometer.startUpdates (from: midnightOfToday, withHandler: { pedometerData, error in
+                //error handle
+                guard error == nil else {
+                    print(error!)
+                    return
+                }
+                var text = "---Workout---\n"
+                if let numberOfSteps = pedometerData?.numberOfSteps {
+                    text += "steps: \(numberOfSteps)\n"
+                }
+                if let distance = pedometerData?.distance {
+                    text += "distance: \(distance)\n"
+                }
+                if let floorsAscended = pedometerData?.floorsAscended {
+                    text += "upstairs: \(floorsAscended)\n"
+                }
+                if let floorsDescended = pedometerData?.floorsDescended {
+                    text += "downstairs: \(floorsDescended)\n"
+                }
+                if #available(iOS 9.0, *) {
+                    if let currentPace = pedometerData?.currentPace {
+                        text += "speed: \(currentPace)m/s\n"
+                    }
+                } else {
+                    // Fallback on earlier versions
+                }
+                if #available(iOS 9.0, *) {
+                    if let currentCadence = pedometerData?.currentCadence {
+                        text += "speed: \(currentCadence)steps/s\n"
+                    }
+                } else {
+                    // Fallback on earlier versions
+                }
+                DispatchQueue.main.async {
+                    
+                    self.textView.text = text
+                }
+                
+            })}
+    }
 }

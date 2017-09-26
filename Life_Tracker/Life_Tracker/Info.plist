@@ -20,8 +20,18 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Please allow </string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Please allow access to your health data</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Please allow access to your current location</string>
+	<key>NSMotionUsageDescription</key>
+	<string>Please allow access to your workout information</string>
 	<key>UILaunchStoryboardName</key>
 	<string>Launch Screen</string>
 	<key>UIMainStoryboardFile</key>
@@ -29,9 +39,8 @@
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
+		<string>healthkit</string>
 	</array>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Please allow access to your current location</string>
 	<key>UIRequiresFullScreen</key>
 	<true/>
 	<key>UISupportedInterfaceOrientations</key>
