@@ -26,6 +26,8 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
     
     @IBOutlet weak var steps: UILabel!
     
+    @IBOutlet weak var distance:UILabel!
+    
     @IBOutlet weak var textView: UITextView!
     
     var username:String?
@@ -124,12 +126,12 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
                     print(error!)
                     return
                 }
-                var text = "---Workout---\n"
+                //var text = "---Workout---\n"
                 if let numberOfSteps = pedometerData?.numberOfSteps {
-                    text += "steps: \(numberOfSteps)\n"
+                    self.steps.text = String("steps: \(numberOfSteps)\n")
                 }
                 if let distance = pedometerData?.distance {
-                    text += "distance: \(distance)\n"
+                    self.distance.text = String("distance: \(distance)\n")
                 }
                 if let floorsAscended = pedometerData?.floorsAscended {
                     text += "upstairs: \(floorsAscended)\n"

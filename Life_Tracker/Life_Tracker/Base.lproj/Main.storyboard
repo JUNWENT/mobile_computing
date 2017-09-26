@@ -971,6 +971,7 @@
                     </tabBarItem>
                     <connections>
                         <outlet property="altitude" destination="8vB-xS-Rx3" id="VK0-bL-BoP"/>
+                        <outlet property="distance" destination="lpt-r7-gC7" id="qpV-9a-irw"/>
                         <outlet property="latitude" destination="ymF-FO-dBi" id="xB9-kU-28G"/>
                         <outlet property="longtitude" destination="jg9-DA-JK7" id="TbR-PL-JI2"/>
                         <outlet property="map" destination="Gc1-N7-InF" id="mjR-Gb-25q"/>
