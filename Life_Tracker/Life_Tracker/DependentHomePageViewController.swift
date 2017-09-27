@@ -2,7 +2,7 @@
 //  DependentViewController.swift
 //  Life_Tracker
 //
-//  Created by Mingyan Wei on 21/9/17.
+//  Created by Mingyan Wei and Ziyi Zhang on 21/9/17.
 //  Copyright © 2017 Microsoft. All rights reserved.
 //
 
