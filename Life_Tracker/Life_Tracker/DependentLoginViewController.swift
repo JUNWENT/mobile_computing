@@ -64,6 +64,7 @@ class DependentLoginViewController: UIViewController,NSFetchedResultsControllerD
         
     }
     
+    
     //display alert message has depulicate
     func displayAlertMessage(useMessage:String){
         

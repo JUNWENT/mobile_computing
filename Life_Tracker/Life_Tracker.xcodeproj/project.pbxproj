@@ -15,8 +15,6 @@
 		A2D9CBC41943C2540017F096 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D9CBC31943C2540017F096 /* AppDelegate.swift */; };
 		A2D9CBCC1943C2540017F096 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2D9CBCA1943C2540017F096 /* Main.storyboard */; };
 		A2D9CBCE1943C2540017F096 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2D9CBCD1943C2540017F096 /* Images.xcassets */; };
-		A2D9CBE41943C39D0017F096 /* ToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D9CBE31943C39D0017F096 /* ToDoTableViewController.swift */; };
-		A2E767C6194594DC00869113 /* ToDoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E767C5194594DC00869113 /* ToDoItemViewController.swift */; };
 		A31A89F71BF3FDFA00C7B656 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31A89F61BF3FDFA00C7B656 /* Launch Screen.storyboard */; };
 		A3BBD77D1C05181600DD0DB0 /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BBD77C1C05181600DD0DB0 /* MicrosoftAzureMobile.framework */; };
 		A832232E1F77DED800C283D0 /* GuardianSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A832232D1F77DED800C283D0 /* GuardianSignInViewController.swift */; };
@@ -41,9 +39,7 @@
 		A2D9CBC31943C2540017F096 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2D9CBCB1943C2540017F096 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A2D9CBCD1943C2540017F096 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		A2D9CBE31943C39D0017F096 /* ToDoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoTableViewController.swift; sourceTree = "<group>"; };
 		A2D9CBE81943D1340017F096 /* Life_Tracker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Life_Tracker-Bridging-Header.h"; sourceTree = "<group>"; };
-		A2E767C5194594DC00869113 /* ToDoItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoItemViewController.swift; sourceTree = "<group>"; };
 		A31A89F61BF3FDFA00C7B656 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		A3BBD77C1C05181600DD0DB0 /* MicrosoftAzureMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftAzureMobile.framework; sourceTree = "<group>"; };
 		A832232D1F77DED800C283D0 /* GuardianSignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuardianSignInViewController.swift; sourceTree = "<group>"; };
@@ -113,8 +109,6 @@
 				A2D9CBCD1943C2540017F096 /* Images.xcassets */,
 				A86F27EB1F734C5700681BAD /* icon */,
 				A2D9CBC11943C2540017F096 /* Supporting Files */,
-				A2D9CBE31943C39D0017F096 /* ToDoTableViewController.swift */,
-				A2E767C5194594DC00869113 /* ToDoItemViewController.swift */,
 				A2D9CBE51943CB520017F096 /* frameworks */,
 				A2D9CBE81943D1340017F096 /* Life_Tracker-Bridging-Header.h */,
 				A8BAE1E21F761BE800C714AD /* SignInViewController.swift */,
@@ -243,14 +237,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2E767C6194594DC00869113 /* ToDoItemViewController.swift in Sources */,
 				A83223341F77ED1F00C283D0 /* GuardianHomePageViewController.swift in Sources */,
 				A8BAE1E31F761BE800C714AD /* SignInViewController.swift in Sources */,
 				A83223301F77EBEA00C283D0 /* DependentHomePageViewController.swift in Sources */,
 				A832232E1F77DED800C283D0 /* GuardianSignInViewController.swift in Sources */,
 				A89F571F1F779C8800C58D87 /* DependentLoginViewController.swift in Sources */,
 				A2BD20971AC8A731007F7181 /* QSTodoDataModel.xcdatamodeld in Sources */,
-				A2D9CBE41943C39D0017F096 /* ToDoTableViewController.swift in Sources */,
 				A2D9CBC41943C2540017F096 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -47,20 +47,20 @@ class SignInViewController: UIViewController {
         let userComfirmPassword = UserComfirmPasswordTextField.text
         let UserTypechoice = UserTypeController
         var UserType:String!
-        var flagMatch = false;
+        var flagMatch = false
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
         let table = client.table(withName: "TodoItem")
         // get user type
         switch UserTypechoice!.selectedSegmentIndex
         {
         case 0:
-            UserType = "Dependent";
-            print ("USER IS DEPENDENT");
+            UserType = "Dependent"
+            print ("USER IS DEPENDENT")
         case 1:
-            UserType = "Guardian";
-            print("USER IS GUARDIAN");
+            UserType = "Guardian"
+            print("USER IS GUARDIAN")
         default:
-            break;
+            break
         }
         
         
@@ -95,9 +95,11 @@ class SignInViewController: UIViewController {
         }
         
         // check email is valid
-        if !(emailIsValid(userEmail!)){
-            displayAlertMessage(useMessage: "The email address is not valid.")
-            return
+        if !((userEmail?.isEmpty)!){
+            if !(emailIsValid(userEmail!)){
+                displayAlertMessage(useMessage: "The email address is not valid.")
+                return
+            }
         }
         
         
@@ -112,12 +114,13 @@ class SignInViewController: UIViewController {
                 self.displayAlertMessage(useMessage: "Failure to register. Please check you network and register again.")
                 print("Error: " + (error! as NSError).description)
             }
+            print ()
         }
         // check if the unique phone number has been registerred
         table.read { (result, error) in
             if let err = error {
                 self.displayAlertMessage(useMessage: "Failure to register. Please check you network and register again.")
-                return;
+                return
                 print("ERROR ", err)
             } else if let items = result?.items {
                 for item in items {
@@ -136,21 +139,48 @@ class SignInViewController: UIViewController {
                     action in
                     self.dismiss(animated: true, completion: nil)
                 }
-                alert.addAction(okAction);
+                alert.addAction(okAction)
                 self.present(alert, animated: true, completion: nil)
                 
             }
         }
+
         
+    }
+    
+    func onRefresh(sender: UIRefreshControl!) {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
-        
-        
-        
+        self.table!.pull(with: self.table?.query(), queryId: "AllRecords") {
+            (error) -> Void in
+            
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            
+            if error != nil {
+                // A real application would handle various errors like network conditions,
+                // server conflicts, etc via the MSSyncContextDelegate
+                print("Error: \(error! as NSError).description)")
+                
+                // We will discard our changes and keep the server's copy for simplicity
+                if let opErrors = (error! as NSError).userInfo[MSErrorPushResultKey] as? Array<MSTableOperationError> {
+                    for opError in opErrors {
+                        print("Attempted operation to item \(opError.itemId)")
+                        if (opError.operation == MSTableOperationTypes() || opError.operation == .delete) {
+                            print("Insert/Delete, failed discarding changes")
+                            opError.cancelOperationAndDiscardItem(completion: nil)
+                        } else {
+                            print("Update failed, reverting to server's copy")
+                            opError.cancelOperationAndUpdateItem(opError.serverItem!, completion: nil)
+                        }
+                    }
+                }
+            }
+        }
     }
     
     //display alert message
     func displayAlertMessage(useMessage:String){
-        let alert = UIAlertController(title:"ALERT",message:useMessage,preferredStyle:UIAlertControllerStyle.alert);
+        let alert = UIAlertController(title:"ALERT",message:useMessage,preferredStyle:UIAlertControllerStyle.alert)
         let okAction = UIAlertAction(title:"OK",style:UIAlertActionStyle.default,handler:nil)
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
@@ -177,10 +207,11 @@ class SignInViewController: UIViewController {
     }
     
     func usernameIsValid(_ username: String) -> Bool {
-        let usernameRegEx = "^[0-9a-zA-Z\\_]{3,18}$";
+        let usernameRegEx = "^[0-9a-zA-Z\\_]{3,18}$"
         let usernameTest = NSPredicate(format: "SELF MATCHES %@", usernameRegEx)
         return usernameTest.evaluate(with: username)
     }
+    
     
     /*
      // MARK: - Navigation

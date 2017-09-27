@@ -37,6 +37,14 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
     var username:String?
     var table : MSSyncTable?
     var store : MSCoreDataStore?
+    var latitudeText: String?
+    var longtitudeText: String?
+    var speedText: String?
+    var altitudeText: String?
+    var stepsText: String?
+    var distanceText: String?
+    var upstairsText: String?
+    var downstairsText: String?
     
     
     @IBAction func askForHelp(_ sender: Any) {
@@ -57,7 +65,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
         longtitude.text = String(location.coordinate.longitude)
         speed.text = String(location.speed)
         altitude.text = String(location.altitude)
-        
+        /*
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
         let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
         self.store = MSCoreDataStore(managedObjectContext: managedObjectContext)
@@ -74,6 +82,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
                 print("Error: " + (error! as NSError).description)
             }
         }
+ */
         
         
        
@@ -85,9 +94,10 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestAlwaysAuthorization()
         manager.startUpdatingLocation()
-        
         //begin to update counting steps
         startPedometerUpdates()
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
