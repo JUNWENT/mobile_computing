@@ -110,7 +110,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
     func startPedometerUpdates(){
         //determine the situation of the app
         guard CMPedometer.isStepCountingAvailable() else {
-            self.textView.text = "\n Unavailable!\n"
+            self.steps.text = "\n Unavailable!\n"
             return
         }
             //get time
@@ -128,16 +128,17 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
                     print(error!)
                     return
                 }
-                //var text = "---Workout---\n"
+                //let text = "---Workout---\n"
                 if let numberOfSteps = pedometerData?.numberOfSteps as? Int {
                     self.steps.text = String(numberOfSteps)
                 }
                 if let distance = pedometerData?.distance as? Double {
                     self.distance.text = String(format: "%.2f", distance)
                 }
-                if let floorsAscended = pedometerData?.floorsAscended as? Int {
+                if  let floorsAscended = pedometerData?.floorsAscended as? Int {
                     self.upstairs.text = String(floorsAscended)
-                }
+                    }
+                
                 if let floorsDescended = pedometerData?.floorsDescended as? Int {
                     self.downstairs.text = String(floorsDescended)
                 }
@@ -156,7 +157,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
 //                    // Fallback on earlier versions
 //                }
                 DispatchQueue.main.async {
-//                    self.textView.text = text
+ //                     self.steps.text = text
                 }
                 
             })
