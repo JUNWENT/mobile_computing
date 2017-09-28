@@ -160,7 +160,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
         let table = client.table(withName: "UserTable")
         
         if (username != nil){
-            table.update(["id": "username", "steps": steps.text, "distance":distance.text,"upstairs":upstairs.text,"downstairs":downstairs.text, "complete": false]) { (result, error) in
+            table.update(["id": username, "steps": steps.text, "distance":distance.text,"upstairs":upstairs.text,"downstairs":downstairs.text, "complete": false]) { (result, error) in
                 if let err = error {
                     print("ERROR ", err)
                 } else  {

@@ -10,10 +10,11 @@ import UIKit
 
 class AddGuardianViewController: UIViewController {
 
+    @IBOutlet weak var guardianPhoneNumberTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+                // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -22,6 +23,15 @@ class AddGuardianViewController: UIViewController {
     }
     
 
+    @IBAction func userPassedOnAdd(_ sender: Any) {
+        let guardianPhoneNumber = guardianPhoneNumberTextField.text
+        let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
+        let table = client.table(withName: "UserTable")
+        
+        
+        
+
+    }
     /*
     // MARK: - Navigation
 
