@@ -14,6 +14,7 @@ class DependentLoginViewController: UIViewController,NSFetchedResultsControllerD
     @IBOutlet weak var UserIdentificationTextField: UITextField!
     @IBOutlet weak var UserPasswordTextField: UITextField!
     
+    //let viewCon = (UIApplication.shared.keyWindow?.rootViewController)!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +33,8 @@ class DependentLoginViewController: UIViewController,NSFetchedResultsControllerD
         let userType = "Dependent"
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
         let table = client.table(withName: "UserData")
-        let homeController = DependentHomePageViewController()
+        //let homeController = AddGuardianViewController()
+        
         
         
         //check userIdentify is empty
@@ -40,6 +42,7 @@ class DependentLoginViewController: UIViewController,NSFetchedResultsControllerD
             self.displayAlertMessage(useMessage: "Your login failed. Please check your username and password, and try again.")
             return;
         }
+        
         table.read { (result, error) in
             if let err = error {
                 print("ERROR ", err)
@@ -49,8 +52,8 @@ class DependentLoginViewController: UIViewController,NSFetchedResultsControllerD
                         if (item["phoneNumber"] as? String == userIdentify && item["complete"] as! Bool == false){
                             if (item["password"] as? String == userPassword){
                                 UserDefaults.standard.set(userIdentify, forKey: "DependentUsername")
-                                self.present(homeController,animated: true, completion: nil)
                                 print("complete checking the user identify and password")
+                                self.performSegue(withIdentifier: "DependentLogin", sender: self)
                             }
                         }
                     }

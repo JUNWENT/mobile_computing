@@ -41,7 +41,7 @@ class AddGuardianViewController: UIViewController {
         
         tableUser.read{ (result, error) in
             if let err = error {
-                self.displayAlertMessage(useMessage: "Failure to register. Please check you network and register again.")
+                self.displayAlertMessage(useMessage: "Please check you network and try again.")
                 return
                     print("ERROR ", err)
             } else if let items = result?.items {
@@ -53,7 +53,7 @@ class AddGuardianViewController: UIViewController {
                             (item, error) in
                             UIApplication.shared.isNetworkActivityIndicatorVisible = false
                             if error != nil {
-                                self.displayAlertMessage(useMessage: "Failure to register. Please check you network and register again.")
+                                self.displayAlertMessage(useMessage: "Please check you network and try again.")
                                 print("Error: " + (error! as NSError).description)
                             }
                         }
