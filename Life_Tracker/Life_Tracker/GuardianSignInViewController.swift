@@ -44,6 +44,7 @@ class GuardianSignInViewController: UIViewController {
                     if(item["type"] as? String == userType){
                         if (item["phoneNumber"] as? String == userIdentify && item["complete"] as! Bool == false){
                             if (item["password"] as? String == userPassword){
+                                UserDefaults.standard.set(userIdentify, forKey: "GuardianUsername")
                                 let alert = UIAlertController(title:"COMFIRMATION",message:"You have sucessfully Login.",preferredStyle:UIAlertControllerStyle.alert)
                                 let okAction = UIAlertAction(title:"OK",style:UIAlertActionStyle.default){
                                     action in

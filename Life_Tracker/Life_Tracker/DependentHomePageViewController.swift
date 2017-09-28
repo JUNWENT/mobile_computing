@@ -58,16 +58,15 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
         
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
         let table = client.table(withName: "UserTable")
-        username = UserDefaults.standard.object(forKey: "username") as! String
-        if (username != nil){
-            table.insert(["id": username, "latitude": latitude.text, "longtitude":longtitude.text,"speed":speed.text,"altitude":altitude.text, "complete": false]) { (result, error) in
+        username = UserDefaults.standard.object(forKey: "DependentUsername") as! String
+        if !((latitude.text?.isEmpty)!||(longtitude.text?.isEmpty)!||(speed.text?.isEmpty)!||(altitude.text?.isEmpty)!){
+            table.insert(["id": username, "latitude": latitude.text, "longtitude":longtitude.text,"speed":speed.text,"altitude":altitude.text ?? "no altitude", "complete": false]) { (result, error) in
                 if let err = error {
                     print("ERROR ", err)
                 } else  {
                     print("updating the gps information")
                 }
             }
-            
         }
         
         
@@ -159,12 +158,12 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
         let table = client.table(withName: "UserTable")
         username = UserDefaults.standard.object(forKey: "username") as! String
-        if (username != nil){
+        if !((steps.text?.isEmpty)! || (distance.text?.isEmpty)! || (upstairs.text?.isEmpty)! || (downstairs.text?.isEmpty)!){
             table.insert(["id": username, "steps": steps.text, "distance":distance.text,"upstairs":upstairs.text,"downstairs":downstairs.text, "complete": false]) { (result, error) in
                 if let err = error {
                     print("ERROR ", err)
                 } else  {
-                    print("updating the gps information")
+                    print("updating the health information")
                 }
             }
             

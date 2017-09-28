@@ -48,7 +48,7 @@ class DependentLoginViewController: UIViewController,NSFetchedResultsControllerD
                     if(item["type"] as? String == userType){
                         if (item["phoneNumber"] as? String == userIdentify && item["complete"] as! Bool == false){
                             if (item["password"] as? String == userPassword){
-                                UserDefaults.standard.set(userIdentify, forKey: "username")
+                                UserDefaults.standard.set(userIdentify, forKey: "DependentUsername")
                                 self.present(homeController,animated: true, completion: nil)
                                 print("complete checking the user identify and password")
                             }

@@ -36,8 +36,8 @@ class AddGuardianViewController: UIViewController {
             return
         }
         // store data to server
-        username = UserDefaults.standard.object(forKey: "username") as! String
-        let itemToInsert = ["guardian": guardianPhoneNumber, "dependent": username, "complete": false, "__createdAt": Date()] as [String : Any]
+        username = UserDefaults.standard.object(forKey: "DependentUsername") as! String
+        let itemToInsert = ["guardian": guardianPhoneNumber, "dependent": username, "read":false,"accept":false,"complete": false, "__createdAt": Date()] as [String : Any]
         
         tableUser.read{ (result, error) in
             if let err = error {
