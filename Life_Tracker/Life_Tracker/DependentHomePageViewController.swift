@@ -35,16 +35,6 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
     @IBOutlet weak var textView: UITextView!
     
     var username:String?
-    var table : MSSyncTable?
-    var store : MSCoreDataStore?
-    var latitudeText: String?
-    var longtitudeText: String?
-    var speedText: String?
-    var altitudeText: String?
-    var stepsText: String?
-    var distanceText: String?
-    var upstairsText: String?
-    var downstairsText: String?
     
     
     @IBAction func askForHelp(_ sender: Any) {
@@ -65,25 +55,20 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
         longtitude.text = String(location.coordinate.longitude)
         speed.text = String(location.speed)
         altitude.text = String(location.altitude)
-        /*
+        
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
-        let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
-        self.store = MSCoreDataStore(managedObjectContext: managedObjectContext)
-        client.syncContext = MSSyncContext(delegate: nil, dataSource: self.store, callback: nil)
-        self.table = client.syncTable(withName: "TodoItem")
+        let table = client.table(withName: "UserTable")
         
-        print (username)
-        let itemToInsert = ["latitude": latitude.text, "phoneNumber": username, "longtitude":longtitude.text,"speed":speed.text,"altitude":altitude.text, "complete": false, "__createdAt": Date()] as [String : Any]
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        self.table!.insert(itemToInsert) {
-            (item, error) in
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            if error != nil {
-                print("Error: " + (error! as NSError).description)
+        if (username != nil){
+            table.update(["id": "username", "latitude": latitude.text, "longtitude":longtitude.text,"speed":speed.text,"altitude":altitude.text, "complete": false]) { (result, error) in
+                if let err = error {
+                    print("ERROR ", err)
+                } else  {
+                    print("updating the gps information")
+                }
             }
+            
         }
- */
-        
         
        
     }
@@ -123,54 +108,67 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
             self.steps.text = "\n Unavailable!\n"
             return
         }
-            //get time
-            let cal = Calendar.current
-            var comps = cal.dateComponents([.year,.month,.day], from: Date())
-            comps.hour = 0
-            comps.minute = 0
-            comps.second = 0
-            let midnightOfToday = cal.date(from: comps)!
+        //get time
+        let cal = Calendar.current
+        var comps = cal.dateComponents([.year,.month,.day], from: Date())
+        comps.hour = 0
+        comps.minute = 0
+        comps.second = 0
+        let midnightOfToday = cal.date(from: comps)!
+        
+        //initialize and retieve real_time data
+        self.pedometer.startUpdates (from: midnightOfToday, withHandler: { pedometerData, error in
+            //error handle
+            guard error == nil else {
+                print(error!)
+                return
+            }
+            //let text = "---Workout---\n"
+            if let numberOfSteps = pedometerData?.numberOfSteps as? Int {
+                self.steps.text = String(numberOfSteps)
+            }
+            if let distance = pedometerData?.distance as? Double {
+                self.distance.text = String(format: "%.2f", distance)
+            }
+            if  let floorsAscended = pedometerData?.floorsAscended as? Int {
+                self.upstairs.text = String(floorsAscended)
+            }
             
-            //initialize and retieve real_time data
-            self.pedometer.startUpdates (from: midnightOfToday, withHandler: { pedometerData, error in
-                //error handle
-                guard error == nil else {
-                    print(error!)
-                    return
+            if let floorsDescended = pedometerData?.floorsDescended as? Int {
+                self.downstairs.text = String(floorsDescended)
+            }
+            //                if #available(iOS 9.0, *) {
+            //                    if let currentPace = pedometerData?.currentPace {
+            //                       text += "speed: \(currentPace)m/s\n"
+            //                    }
+            //                } else {
+            //                    // Fallback on earlier versions
+            //                }
+            //                if #available(iOS 9.0, *) {
+            //                    if let currentCadence = pedometerData?.currentCadence {
+            //                       text += "speed: \(currentCadence)steps/s\n"
+            //                    }
+            //                } else {
+            //                    // Fallback on earlier versions
+            //                }
+            DispatchQueue.main.async {
+                //                     self.steps.text = text
+            }
+            
+        })
+        let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
+        let table = client.table(withName: "UserTable")
+        
+        if (username != nil){
+            table.update(["id": "username", "steps": steps.text, "distance":distance.text,"upstairs":upstairs.text,"downstairs":downstairs.text, "complete": false]) { (result, error) in
+                if let err = error {
+                    print("ERROR ", err)
+                } else  {
+                    print("updating the gps information")
                 }
-                //let text = "---Workout---\n"
-                if let numberOfSteps = pedometerData?.numberOfSteps as? Int {
-                    self.steps.text = String(numberOfSteps)
-                }
-                if let distance = pedometerData?.distance as? Double {
-                    self.distance.text = String(format: "%.2f", distance)
-                }
-                if  let floorsAscended = pedometerData?.floorsAscended as? Int {
-                    self.upstairs.text = String(floorsAscended)
-                    }
-                
-                if let floorsDescended = pedometerData?.floorsDescended as? Int {
-                    self.downstairs.text = String(floorsDescended)
-                }
-//                if #available(iOS 9.0, *) {
-//                    if let currentPace = pedometerData?.currentPace {
-//                       text += "speed: \(currentPace)m/s\n"
-//                    }
-//                } else {
-//                    // Fallback on earlier versions
-//                }
-//                if #available(iOS 9.0, *) {
-//                    if let currentCadence = pedometerData?.currentCadence {
-//                       text += "speed: \(currentCadence)steps/s\n"
-//                    }
-//                } else {
-//                    // Fallback on earlier versions
-//                }
-                DispatchQueue.main.async {
- //                     self.steps.text = text
-                }
-                
-            })
+            }
+            
+        }
     }
-    }
+}
 

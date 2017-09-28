@@ -17,18 +17,10 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var UserComfirmPasswordTextField: UITextField!
     
     @IBOutlet weak var UserTypeController: UISegmentedControl!
-    var table : MSSyncTable?
-    var store : MSCoreDataStore?
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // connect to the server
-        let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
-        let managedObjectContext = (UIApplication.shared.delegate as! AppDelegate).managedObjectContext!
-        self.store = MSCoreDataStore(managedObjectContext: managedObjectContext)
-        client.syncContext = MSSyncContext(delegate: nil, dataSource: self.store, callback: nil)
-        self.table = client.syncTable(withName: "TodoItem")
         // Do any additional setup after loading the view.
     }
     
@@ -49,7 +41,7 @@ class SignInViewController: UIViewController {
         var UserType:String!
         var flagMatch = false
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
-        let table = client.table(withName: "TodoItem")
+        let table = client.table(withName: "UserData")
         // get user type
         switch UserTypechoice!.selectedSegmentIndex
         {
@@ -103,25 +95,12 @@ class SignInViewController: UIViewController {
         }
         
         
-        // store data to server
-        let itemToInsert = ["type": UserType, "username": userName,"phoneNumber":userPhoneNumber,"email":userEmail ?? "email","password":userPassword, "complete": false, "__createdAt": Date()] as [String : Any]
-        
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        self.table!.insert(itemToInsert) {
-            (item, error) in
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            if error != nil {
-                self.displayAlertMessage(useMessage: "Failure to register. Please check you network and register again.")
-                print("Error: " + (error! as NSError).description)
-            }
-            print ()
-        }
         // check if the unique phone number has been registerred
         table.read { (result, error) in
             if let err = error {
                 self.displayAlertMessage(useMessage: "Failure to register. Please check you network and register again.")
                 return
-                print("ERROR ", err)
+                    print("ERROR ", err)
             } else if let items = result?.items {
                 for item in items {
                     if (item["phoneNumber"] as? String == userPhoneNumber && item["complete"] as! Bool == false){
@@ -130,6 +109,18 @@ class SignInViewController: UIViewController {
                         print(flagMatch)
                         self.displayAlertMessage(useMessage: "The phone number has been registerred.")
                         return
+                    }
+                }
+                // store data to server
+                let itemToInsert = ["type": UserType, "username": userName,"phoneNumber":userPhoneNumber,"email":userEmail ?? "email","password":userPassword, "complete": false, "__createdAt": Date()] as [String : Any]
+                
+                UIApplication.shared.isNetworkActivityIndicatorVisible = true
+                table.insert(itemToInsert) {
+                    (item, error) in
+                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                    if error != nil {
+                        self.displayAlertMessage(useMessage: "Failure to register. Please check you network and register again.")
+                        print("Error: " + (error! as NSError).description)
                     }
                 }
                 // display sucessful reigster message
@@ -144,38 +135,8 @@ class SignInViewController: UIViewController {
                 
             }
         }
-
         
-    }
-    
-    func onRefresh(sender: UIRefreshControl!) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
-        self.table!.pull(with: self.table?.query(), queryId: "AllRecords") {
-            (error) -> Void in
-            
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            
-            if error != nil {
-                // A real application would handle various errors like network conditions,
-                // server conflicts, etc via the MSSyncContextDelegate
-                print("Error: \(error! as NSError).description)")
-                
-                // We will discard our changes and keep the server's copy for simplicity
-                if let opErrors = (error! as NSError).userInfo[MSErrorPushResultKey] as? Array<MSTableOperationError> {
-                    for opError in opErrors {
-                        print("Attempted operation to item \(opError.itemId)")
-                        if (opError.operation == MSTableOperationTypes() || opError.operation == .delete) {
-                            print("Insert/Delete, failed discarding changes")
-                            opError.cancelOperationAndDiscardItem(completion: nil)
-                        } else {
-                            print("Update failed, reverting to server's copy")
-                            opError.cancelOperationAndUpdateItem(opError.serverItem!, completion: nil)
-                        }
-                    }
-                }
-            }
-        }
     }
     
     //display alert message

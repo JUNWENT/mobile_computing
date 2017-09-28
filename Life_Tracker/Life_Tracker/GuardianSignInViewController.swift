@@ -24,16 +24,17 @@ class GuardianSignInViewController: UIViewController {
     }
     
     @IBAction func userPressedOnSignIn(_ sender: Any) {
-        let userIdentify = UserIdentificationTextField.text;
-        let userPassword = UserPasswordTextField.text;
-        let userType = "Guardian";
+        let userIdentify = UserIdentificationTextField.text
+        let userPassword = UserPasswordTextField.text
+        let userType = "Guardian"
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
-        let table = client.table(withName: "TodoItem");
-        var nextController = GuardianHomePageViewController();
+        let table = client.table(withName: "UserData")
+        let tableUser = client.table(withName: "UserTable")
+        let nextController = GuardianHomePageViewController()
         //check userIdentify is empty
         if ((userIdentify?.isEmpty)! || (userPassword?.isEmpty)!){
-            self.displayAlertMessage(useMessage: "Your login failed. Please check your username and password, and try again.");
-            return;
+            self.displayAlertMessage(useMessage: "Your login failed. Please check your username and password, and try again.")
+            return
         }
         table.read { (result, error) in
             if let err = error {
@@ -43,21 +44,30 @@ class GuardianSignInViewController: UIViewController {
                     if(item["type"] as? String == userType){
                         if (item["phoneNumber"] as? String == userIdentify && item["complete"] as! Bool == false){
                             if (item["password"] as? String == userPassword){
-                                let alert = UIAlertController(title:"COMFIRMATION",message:"You have sucessfully Login.",preferredStyle:UIAlertControllerStyle.alert);
+                                // create a item in userTable to store the track information of user
+                                let itemToInsert = ["id":userIdentify ?? "unknown user", "complete": false, "__createdAt": Date()] as [String : Any]
+                                UIApplication.shared.isNetworkActivityIndicatorVisible = true
+                                tableUser.insert(itemToInsert) {
+                                    (item, error) in
+                                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                                    if error != nil {
+                                        self.displayAlertMessage(useMessage: "Failure to register. Please check you network and register again.")
+                                        print("Error: " + (error! as NSError).description)
+                                    }
+                                }
+                                let alert = UIAlertController(title:"COMFIRMATION",message:"You have sucessfully Login.",preferredStyle:UIAlertControllerStyle.alert)
                                 let okAction = UIAlertAction(title:"OK",style:UIAlertActionStyle.default){
                                     action in
-                                    self.present(nextController,animated: true, completion: nil);
+                                    self.present(nextController,animated: true, completion: nil)
                                 }
-                                alert.addAction(okAction);
-                                self.present(alert, animated: true, completion: nil);
-                                print("complete checking the user identify and password");
+                                alert.addAction(okAction)
+                                self.present(alert, animated: true, completion: nil)
                             }
                         }
                     }
                 }
-                self.displayAlertMessage(useMessage: "Your login failed. Please check your username and password, and try again.");
-                return;
-                
+                self.displayAlertMessage(useMessage: "Your login failed. Please check your username and password, and try again.")
+                return
             }
         }
         
@@ -68,10 +78,10 @@ class GuardianSignInViewController: UIViewController {
     //display alert message has depulicate
     func displayAlertMessage(useMessage:String){
         
-        let alert = UIAlertController(title:"ALERT",message:useMessage,preferredStyle:UIAlertControllerStyle.alert);
-        let okAction = UIAlertAction(title:"OK",style:UIAlertActionStyle.default,handler:nil);
-        alert.addAction(okAction);
-        self.present(alert, animated: true, completion: nil);
+        let alert = UIAlertController(title:"ALERT",message:useMessage,preferredStyle:UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title:"OK",style:UIAlertActionStyle.default,handler:nil)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
     }
 
 

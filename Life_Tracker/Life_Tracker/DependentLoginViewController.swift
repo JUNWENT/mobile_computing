@@ -27,16 +27,16 @@ class DependentLoginViewController: UIViewController,NSFetchedResultsControllerD
     
     
     @IBAction func UserPressedOnSignIn(_ sender: Any) {
-        let userIdentify = UserIdentificationTextField.text;
-        let userPassword = UserPasswordTextField.text;
-        let userType = "Dependent";
+        let userIdentify = UserIdentificationTextField.text
+        let userPassword = UserPasswordTextField.text
+        let userType = "Dependent"
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
-        let table = client.table(withName: "TodoItem");
-        var nextController = DependentHomePageViewController();
+        let table = client.table(withName: "UserData")
+        let nextController = DependentHomePageViewController();
         
         //check userIdentify is empty
         if ((userIdentify?.isEmpty)! || (userPassword?.isEmpty)!){
-            self.displayAlertMessage(useMessage: "Your login failed. Please check your username and password, and try again.");
+            self.displayAlertMessage(useMessage: "Your login failed. Please check your username and password, and try again.")
             return;
         }
         table.read { (result, error) in
@@ -48,8 +48,8 @@ class DependentLoginViewController: UIViewController,NSFetchedResultsControllerD
                         if (item["phoneNumber"] as? String == userIdentify && item["complete"] as! Bool == false){
                             if (item["password"] as? String == userPassword){
                                 nextController.username = userIdentify!
-                                self.present(nextController,animated: true, completion: nil);
-                                print("complete checking the user identify and password");
+                                self.present(nextController,animated: true, completion: nil)
+                                print("complete checking the user identify and password")
                             }
                         }
                     }
@@ -70,8 +70,8 @@ class DependentLoginViewController: UIViewController,NSFetchedResultsControllerD
         
         let alert = UIAlertController(title:"ALERT",message:useMessage,preferredStyle:UIAlertControllerStyle.alert);
         let okAction = UIAlertAction(title:"OK",style:UIAlertActionStyle.default,handler:nil);
-        alert.addAction(okAction);
-        self.present(alert, animated: true, completion: nil);
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
     }
     /*
      // MARK: - Navigation
