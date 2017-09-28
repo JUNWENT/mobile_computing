@@ -32,7 +32,8 @@ class DependentLoginViewController: UIViewController,NSFetchedResultsControllerD
         let userType = "Dependent"
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
         let table = client.table(withName: "UserData")
-        let nextController = DependentHomePageViewController();
+        let homeController = DependentHomePageViewController()
+        
         
         //check userIdentify is empty
         if ((userIdentify?.isEmpty)! || (userPassword?.isEmpty)!){
@@ -47,8 +48,8 @@ class DependentLoginViewController: UIViewController,NSFetchedResultsControllerD
                     if(item["type"] as? String == userType){
                         if (item["phoneNumber"] as? String == userIdentify && item["complete"] as! Bool == false){
                             if (item["password"] as? String == userPassword){
-                                nextController.username = userIdentify!
-                                self.present(nextController,animated: true, completion: nil)
+                                UserDefaults.standard.set(userIdentify, forKey: "username")
+                                self.present(homeController,animated: true, completion: nil)
                                 print("complete checking the user identify and password")
                             }
                         }

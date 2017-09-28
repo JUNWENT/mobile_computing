@@ -58,7 +58,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
         
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
         let table = client.table(withName: "UserTable")
-
+        username = UserDefaults.standard.object(forKey: "username") as! String
         if (username != nil){
             table.insert(["id": username, "latitude": latitude.text, "longtitude":longtitude.text,"speed":speed.text,"altitude":altitude.text, "complete": false]) { (result, error) in
                 if let err = error {
@@ -70,7 +70,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
             
         }
         
-       
+        
     }
     
     override func viewDidLoad() {
@@ -158,9 +158,9 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
         })
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
         let table = client.table(withName: "UserTable")
-        
+        username = UserDefaults.standard.object(forKey: "username") as! String
         if (username != nil){
-            table.update(["id": username, "steps": steps.text, "distance":distance.text,"upstairs":upstairs.text,"downstairs":downstairs.text, "complete": false]) { (result, error) in
+            table.insert(["id": username, "steps": steps.text, "distance":distance.text,"upstairs":upstairs.text,"downstairs":downstairs.text, "complete": false]) { (result, error) in
                 if let err = error {
                     print("ERROR ", err)
                 } else  {
