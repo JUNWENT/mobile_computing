@@ -25,6 +25,7 @@
 		A86F27EA1F734C2700681BAD /* icons8-Notification-35.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A86F27E71F734C2700681BAD /* icons8-Notification-35.imageset */; };
 		A89F571F1F779C8800C58D87 /* DependentLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89F571E1F779C8800C58D87 /* DependentLoginViewController.swift */; };
 		A8BAE1E31F761BE800C714AD /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BAE1E21F761BE800C714AD /* SignInViewController.swift */; };
+		A8C3866E1F7CE3B90072D603 /* AddGuardianViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C3866D1F7CE3B90072D603 /* AddGuardianViewController.swift */; };
 		E72B88C61F793B5100A79838 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E72B88C51F793B5100A79838 /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		A86F27E71F734C2700681BAD /* icons8-Notification-35.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "icons8-Notification-35.imageset"; path = "Images.xcassets/AppIcon.appiconset/icons8-Notification-35.imageset"; sourceTree = "<group>"; };
 		A89F571E1F779C8800C58D87 /* DependentLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependentLoginViewController.swift; sourceTree = "<group>"; };
 		A8BAE1E21F761BE800C714AD /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		A8C3866D1F7CE3B90072D603 /* AddGuardianViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGuardianViewController.swift; sourceTree = "<group>"; };
 		E72B88C41F793B5100A79838 /* Life_Tracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Life_Tracker.entitlements; sourceTree = "<group>"; };
 		E72B88C51F793B5100A79838 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -112,6 +114,7 @@
 				A2D9CBE51943CB520017F096 /* frameworks */,
 				A2D9CBE81943D1340017F096 /* Life_Tracker-Bridging-Header.h */,
 				A8BAE1E21F761BE800C714AD /* SignInViewController.swift */,
+				A8C3866D1F7CE3B90072D603 /* AddGuardianViewController.swift */,
 				A83223331F77ED1F00C283D0 /* GuardianHomePageViewController.swift */,
 				A832232F1F77EBEA00C283D0 /* DependentHomePageViewController.swift */,
 				A832232D1F77DED800C283D0 /* GuardianSignInViewController.swift */,
@@ -242,6 +245,7 @@
 				A83223301F77EBEA00C283D0 /* DependentHomePageViewController.swift in Sources */,
 				A832232E1F77DED800C283D0 /* GuardianSignInViewController.swift in Sources */,
 				A89F571F1F779C8800C58D87 /* DependentLoginViewController.swift in Sources */,
+				A8C3866E1F7CE3B90072D603 /* AddGuardianViewController.swift in Sources */,
 				A2BD20971AC8A731007F7181 /* QSTodoDataModel.xcdatamodeld in Sources */,
 				A2D9CBC41943C2540017F096 /* AppDelegate.swift in Sources */,
 			);
