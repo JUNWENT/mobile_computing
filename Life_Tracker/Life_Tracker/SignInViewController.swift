@@ -39,7 +39,6 @@ class SignInViewController: UIViewController {
         let userComfirmPassword = UserComfirmPasswordTextField.text
         let UserTypechoice = UserTypeController
         var UserType:String!
-        var flagMatch = false
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
         let table = client.table(withName: "UserData")
         // get user type
@@ -104,9 +103,6 @@ class SignInViewController: UIViewController {
             } else if let items = result?.items {
                 for item in items {
                     if (item["phoneNumber"] as? String == userPhoneNumber && item["complete"] as! Bool == false){
-                        print ("match")
-                        flagMatch = true
-                        print(flagMatch)
                         self.displayAlertMessage(useMessage: "The phone number has been registerred.")
                         return
                     }

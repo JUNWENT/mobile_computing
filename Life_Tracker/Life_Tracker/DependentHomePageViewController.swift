@@ -58,9 +58,9 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
         
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
         let table = client.table(withName: "UserTable")
-        
+
         if (username != nil){
-            table.update(["id": "username", "latitude": latitude.text, "longtitude":longtitude.text,"speed":speed.text,"altitude":altitude.text, "complete": false]) { (result, error) in
+            table.insert(["id": username, "latitude": latitude.text, "longtitude":longtitude.text,"speed":speed.text,"altitude":altitude.text, "complete": false]) { (result, error) in
                 if let err = error {
                     print("ERROR ", err)
                 } else  {
