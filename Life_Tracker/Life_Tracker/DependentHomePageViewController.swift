@@ -43,37 +43,18 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
     let manager = CLLocationManager()
     let pedometer = CMPedometer()
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations[0]
-        let span = MKCoordinateSpanMake(0.01, 0.01)
-        let myLocation = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-        let region = MKCoordinateRegionMake(myLocation, span)
-        map.setRegion(region, animated: true)
-        self.map.showsUserLocation = true
-        
-        latitude.text = String(location.coordinate.latitude)
-        longtitude.text = String(location.coordinate.longitude)
-        speed.text = String(location.speed)
-        altitude.text = String(location.altitude)
-        
-        let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
-        let table = client.table(withName: "UserTable")
-        username = UserDefaults.standard.object(forKey: "DependentUsername") as! String
-        if !((latitude.text?.isEmpty)!||(longtitude.text?.isEmpty)!||(speed.text?.isEmpty)!||(altitude.text?.isEmpty)!){
-            table.update(["id": username, "latitude": latitude.text, "longtitude":longtitude.text,"speed":speed.text,"altitude":altitude.text ?? "no altitude", "complete": false]) { (result, error) in
-                if let err = error {
-                    print("ERROR ", err)
-                } else  {
-                    print("updating the gps information")
-                }
-            }
+    override func viewDidAppear(_ animated: Bool) {
+        if (username == nil){
+            self.performSegue(withIdentifier: "dependentLogin", sender:self)
         }
-        
-        
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        username = UserDefaults.standard.object(forKey: "DependentUsername") as? String
+        print (username)
+        print ("herehe")
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestAlwaysAuthorization()
@@ -83,6 +64,8 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
         
         
     }
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -99,6 +82,36 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
      // Pass the selected object to the new view controller.
      }
      */
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[0]
+        let span = MKCoordinateSpanMake(0.01, 0.01)
+        let myLocation = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+        let region = MKCoordinateRegionMake(myLocation, span)
+        map.setRegion(region, animated: true)
+        self.map.showsUserLocation = true
+        
+        latitude.text = String(location.coordinate.latitude)
+        longtitude.text = String(location.coordinate.longitude)
+        speed.text = String(location.speed)
+        altitude.text = String(location.altitude)
+        
+        let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
+        let table = client.table(withName: "UserTable")
+        username = UserDefaults.standard.object(forKey: "DependentUsername") as? String
+        if !((latitude.text?.isEmpty)!||(longtitude.text?.isEmpty)!||(speed.text?.isEmpty)!||(altitude.text?.isEmpty)!){
+            table.update(["id": username, "latitude": latitude.text, "longtitude":longtitude.text,"speed":speed.text,"altitude":altitude.text ?? "no altitude", "complete": false]) { (result, error) in
+                if let err = error {
+                    print("ERROR ", err)
+                } else  {
+                    print("updating the gps information")
+                }
+            }
+        }
+        
+        
+    }
+
     
     //begin to retrieve data
     func startPedometerUpdates(){

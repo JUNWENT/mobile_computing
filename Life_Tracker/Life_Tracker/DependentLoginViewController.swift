@@ -33,11 +33,13 @@ class DependentLoginViewController: UIViewController,NSFetchedResultsControllerD
         let userType = "Dependent"
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
         let table = client.table(withName: "UserData")
+        let tableUser = client.table(withName: "UserTable")
         //let homeController = AddGuardianViewController()
         
         
         
         //check userIdentify is empty
+        
         if ((userIdentify?.isEmpty)! || (userPassword?.isEmpty)!){
             self.displayAlertMessage(useMessage: "Your login failed. Please check your username and password, and try again.")
             return;
@@ -51,9 +53,26 @@ class DependentLoginViewController: UIViewController,NSFetchedResultsControllerD
                     if(item["type"] as? String == userType){
                         if (item["phoneNumber"] as? String == userIdentify && item["complete"] as! Bool == false){
                             if (item["password"] as? String == userPassword){
-                                UserDefaults.standard.set(userIdentify, forKey: "DependentUsername")
+                                UserDefaults.standard.set(userIdentify,forKey:"DependentUsername")
+                                UserDefaults.standard.synchronize()
+                                let itemToInsert = ["id":userIdentify,"complete": false, "__createdAt": Date()] as [String : Any]
+                                UIApplication.shared.isNetworkActivityIndicatorVisible = true
+                                tableUser.insert(itemToInsert) {
+                                    (item, error) in
+                                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                                    if error != nil {
+                                        self.displayAlertMessage(useMessage: "Please check you network and try again.")
+                                        print("Error: " + (error! as NSError).description)
+                                    }
+                                }
                                 print("complete checking the user identify and password")
-                                self.performSegue(withIdentifier: "DependentLogin", sender: self)
+                                let alert = UIAlertController(title:"COMFIRMATION",message:"You have sucessfully sign in.",preferredStyle:UIAlertControllerStyle.alert)
+                                let okAction = UIAlertAction(title:"OK",style:UIAlertActionStyle.default){
+                                    action in
+                                    self.dismiss(animated: true, completion: nil)
+                                }
+                                alert.addAction(okAction)
+                                self.present(alert, animated: true, completion: nil)
                             }
                         }
                     }
@@ -67,6 +86,7 @@ class DependentLoginViewController: UIViewController,NSFetchedResultsControllerD
         
         
     }
+    
     
     
     //display alert message has depulicate
