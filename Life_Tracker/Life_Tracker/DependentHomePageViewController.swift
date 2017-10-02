@@ -2,7 +2,7 @@
 //  DependentViewController.swift
 //  Life_Tracker
 //
-//  Created by Mingyan Wei and Ziyi Zhang on 21/9/17.
+//  Created by Mingyan Wei on 21/9/17.
 //  Copyright © 2017 Microsoft. All rights reserved.
 //
 
@@ -32,9 +32,15 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
     
     @IBOutlet weak var downstairs: UILabel!
     
-    @IBOutlet weak var textView: UITextView!
-    
     var username:String?
+    
+    override func viewDidAppear(_ animated: Bool) {
+        username = UserDefaults.standard.object(forKey: "DependentUsername") as? String
+        if (username == nil) {
+            self.performSegue(withIdentifier: "dependentLogin", sender: self)
+        }
+    }
+    
     
     
     @IBAction func askForHelp(_ sender: Any) {
@@ -43,29 +49,48 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
     let manager = CLLocationManager()
     let pedometer = CMPedometer()
     
-    override func viewDidAppear(_ animated: Bool) {
-        if (username == nil){
-            self.performSegue(withIdentifier: "dependentLogin", sender:self)
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let location = locations[0]
+        let span = MKCoordinateSpanMake(0.01, 0.01)
+        let myLocation = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+        let region = MKCoordinateRegionMake(myLocation, span)
+        map.setRegion(region, animated: true)
+        self.map.showsUserLocation = true
+        
+        latitude.text = String(location.coordinate.latitude)
+        longtitude.text = String(location.coordinate.longitude)
+        speed.text = String(location.speed)
+        altitude.text = String(location.altitude)
+        //username = "1234567890"
+        
+        let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
+        let table = client.table(withName: "UserTable")
+        //username = UserDefaults.standard.object(forKey: "DependentUsername") as? String
+        if !((latitude.text?.isEmpty)!||(longtitude.text?.isEmpty)!||(speed.text?.isEmpty)!||(altitude.text?.isEmpty)!){
+            table.update(["id": username, "latitude": latitude.text, "steps": steps.text, "distance":distance.text,"upstairs":upstairs.text,"downstairs":downstairs.text,"longtitude":longtitude.text,"speed":speed.text,"altitude":altitude.text ?? "no altitude", "complete": false]) { (result, error) in
+                if let err = error {
+                    print("ERROR ", err)
+                } else  {
+                    print("updating the gps and health information")
+                }
+            }
         }
+        
+        
+        
+        
     }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        username = UserDefaults.standard.object(forKey: "DependentUsername") as? String
-        print (username)
-        print ("herehe")
         manager.delegate = self
         manager.desiredAccuracy = kCLLocationAccuracyBest
         manager.requestAlwaysAuthorization()
         manager.startUpdatingLocation()
+        
         //begin to update counting steps
         startPedometerUpdates()
-        
-        
     }
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -83,41 +108,11 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
      }
      */
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations[0]
-        let span = MKCoordinateSpanMake(0.01, 0.01)
-        let myLocation = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-        let region = MKCoordinateRegionMake(myLocation, span)
-        map.setRegion(region, animated: true)
-        self.map.showsUserLocation = true
-        
-        latitude.text = String(location.coordinate.latitude)
-        longtitude.text = String(location.coordinate.longitude)
-        speed.text = String(location.speed)
-        altitude.text = String(location.altitude)
-        
-        let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
-        let table = client.table(withName: "UserTable")
-        username = UserDefaults.standard.object(forKey: "DependentUsername") as? String
-        if !((latitude.text?.isEmpty)!||(longtitude.text?.isEmpty)!||(speed.text?.isEmpty)!||(altitude.text?.isEmpty)!){
-            table.update(["id": username, "latitude": latitude.text, "longtitude":longtitude.text,"speed":speed.text,"altitude":altitude.text ?? "no altitude", "complete": false]) { (result, error) in
-                if let err = error {
-                    print("ERROR ", err)
-                } else  {
-                    print("updating the gps information")
-                }
-            }
-        }
-        
-        
-    }
-
-    
     //begin to retrieve data
     func startPedometerUpdates(){
         //determine the situation of the app
         guard CMPedometer.isStepCountingAvailable() else {
-            self.steps.text = "\n Unavailable!\n"
+            //self.textView.text = "\n Unavailable!\n"
             return
         }
         //get time
@@ -135,53 +130,24 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
                 print(error!)
                 return
             }
-            //let text = "---Workout---\n"
             if let numberOfSteps = pedometerData?.numberOfSteps as? Int {
                 self.steps.text = String(numberOfSteps)
             }
             if let distance = pedometerData?.distance as? Double {
                 self.distance.text = String(format: "%.2f", distance)
             }
-            if  let floorsAscended = pedometerData?.floorsAscended as? Int {
+            if let floorsAscended = pedometerData?.floorsAscended as? Int {
                 self.upstairs.text = String(floorsAscended)
             }
-            
             if let floorsDescended = pedometerData?.floorsDescended as? Int {
                 self.downstairs.text = String(floorsDescended)
             }
-            //                if #available(iOS 9.0, *) {
-            //                    if let currentPace = pedometerData?.currentPace {
-            //                       text += "speed: \(currentPace)m/s\n"
-            //                    }
-            //                } else {
-            //                    // Fallback on earlier versions
-            //                }
-            //                if #available(iOS 9.0, *) {
-            //                    if let currentCadence = pedometerData?.currentCadence {
-            //                       text += "speed: \(currentCadence)steps/s\n"
-            //                    }
-            //                } else {
-            //                    // Fallback on earlier versions
-            //                }
             DispatchQueue.main.async {
-                //                     self.steps.text = text
+                //                    self.textView.text = text
             }
+            
             
         })
-        
-        let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
-        let table = client.table(withName: "UserTable")
-        username = UserDefaults.standard.object(forKey: "username") as! String
-        if !((steps.text?.isEmpty)! || (distance.text?.isEmpty)! || (upstairs.text?.isEmpty)! || (downstairs.text?.isEmpty)!){
-            table.update(["id": username, "steps": steps.text, "distance":distance.text,"upstairs":upstairs.text,"downstairs":downstairs.text, "complete": false]) { (result, error) in
-                if let err = error {
-                    print("ERROR ", err)
-                } else  {
-                    print("updating the health information")
-                }
-            }
-            
-        }
     }
 }
 
