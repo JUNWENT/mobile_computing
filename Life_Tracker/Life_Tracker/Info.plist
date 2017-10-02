@@ -41,6 +41,10 @@
 		<string>armv7</string>
 		<string>healthkit</string>
 	</array>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Allow access to photo library to change profile picture</string>
+	<key>CFBundleDisplayName</key>
+	<string></string>
 	<key>UIRequiresFullScreen</key>
 	<true/>
 	<key>UISupportedInterfaceOrientations</key>
