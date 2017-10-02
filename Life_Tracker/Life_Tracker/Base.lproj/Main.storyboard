@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bva-dY-il8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bva-dY-il8">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -212,7 +212,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                                 <state key="normal" title="Guardian sign-in"/>
                                                 <connections>
-                                                    <segue destination="Mvj-4o-TKf" kind="modal" id="teD-Vj-St9"/>
+                                                    <segue destination="ORO-3V-sil" kind="show" id="S9W-za-1Rw"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -234,7 +234,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Dependent sign-in"/>
                                 <connections>
-                                    <segue destination="GLX-TS-eZ3" kind="show" id="Vne-kj-XlF"/>
+                                    <segue destination="rPa-3r-NZL" kind="show" id="MKe-P2-PAW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MsV-5b-AKo">
@@ -1180,7 +1180,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Connect to a guardian"/>
                                         <connections>
-                                            <segue destination="yuX-ps-ykq" kind="presentation" id="Ajv-hJ-9QU"/>
+                                            <segue destination="eXs-Ak-GNl" kind="presentation" id="Ajv-hJ-9QU"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qob-8O-AaL">
@@ -1196,7 +1196,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Change password"/>
                                         <connections>
-                                            <segue destination="7qw-83-qDC" kind="show" id="IMU-aX-arH"/>
+                                            <segue destination="QTW-yp-EHO" kind="show" id="IMU-aX-arH"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1227,10 +1227,11 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="icons8-Contacts-35.png" selectedImage="icons8-Contacts-35.png" id="4lK-lQ-7AL">
+                    <tabBarItem key="tabBarItem" title="" image="icons8-Contacts-35.png" selectedImage="icons8-Contacts-35.png" id="DBA-8K-A8E">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="myPhoto" destination="f2S-Nf-w7w" id="t3m-1D-9Dh"/>
                     </connections>
@@ -1252,7 +1253,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Guardian" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NNo-tq-bxd">
-                                <rect key="frame" x="20" y="28" width="285" height="60"/>
+                                <rect key="frame" x="20" y="72" width="285" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="vCa-QR-onm"/>
                                 </constraints>
@@ -1266,20 +1267,6 @@
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="maI-Iy-h5u">
-                                <rect key="frame" x="47" y="347" width="320" height="42"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="jLE-rd-IUv"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <state key="normal" title="Add">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="userPassedOnAdd:" destination="yuX-ps-ykq" eventType="touchUpInside" id="e8w-gW-XaU"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOx-FI-Kmx">
                                 <rect key="frame" x="47" y="415" width="320" height="42"/>
                                 <color key="backgroundColor" red="0.26064028480000001" green="0.50234633080000002" blue="0.53207951779999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -1292,7 +1279,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter guardian phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fnm-oL-0qF">
-                                <rect key="frame" x="20" y="207" width="374" height="30"/>
+                                <rect key="frame" x="20" y="260" width="374" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="cbL-58-xem"/>
                                 </constraints>
@@ -1300,6 +1287,34 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Secret Password :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="96E-Vy-Ie8">
+                                <rect key="frame" x="20" y="262" width="222" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Shared password with guardians" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fzo-MP-Mxd">
+                                <rect key="frame" x="20" y="309" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="maI-Iy-h5u">
+                                <rect key="frame" x="47" y="365" width="320" height="42"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="jLE-rd-IUv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
+                                <state key="normal" title="Add">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="userPassedOnAdd:" destination="yuX-ps-ykq" eventType="touchUpInside" id="e8w-gW-XaU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1321,13 +1336,14 @@
                             <constraint firstItem="maI-Iy-h5u" firstAttribute="trailing" secondItem="uOx-FI-Kmx" secondAttribute="trailing" id="zsG-S3-tzL"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="mgU-P6-jLx"/>
                     <connections>
                         <outlet property="guardianPhoneNumberTextField" destination="fnm-oL-0qF" id="ddV-GV-0CP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m4q-76-r8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2996" y="2349"/>
+            <point key="canvasLocation" x="3902.898550724638" y="2348.6413043478265"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="zMK-Qo-sgN">
@@ -1426,10 +1442,11 @@
                             <constraint firstItem="6NI-ld-KKh" firstAttribute="centerX" secondItem="EB1-DY-thg" secondAttribute="centerX" id="JcW-9D-L32"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="dg9-8o-8H2"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8O5-yM-Hss" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2237.68115942029" y="3058.6956521739135"/>
+            <point key="canvasLocation" x="3144.9275362318845" y="3058.6956521739135"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="mYV-2f-u41">
@@ -1450,6 +1467,42 @@
             </objects>
             <point key="canvasLocation" x="343" y="1493"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4Cy-Ql-uYc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eXs-Ak-GNl" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vbw-7S-qF7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="yuX-ps-ykq" kind="relationship" relationship="rootViewController" id="WoZ-CL-WZU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ubr-dH-lzI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2995.6521739130435" y="2348.6413043478265"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3op-Fc-1Vn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QTW-yp-EHO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="kDm-hS-BkQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7qw-83-qDC" kind="relationship" relationship="rootViewController" id="ovv-tF-CpE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bXh-FJ-cey" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2237.68115942029" y="3058.6956521739135"/>
+        </scene>
     </scenes>
     <resources>
         <image name="icons8-Contacts-35.png" width="35" height="35"/>
@@ -1458,9 +1511,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="xIG-DM-NcY"/>
-        <segue reference="Vne-kj-XlF"/>
-        <segue reference="teD-Vj-St9"/>
-        <segue reference="cQa-7J-PC3"/>
         <segue reference="pPk-nM-utF"/>
+        <segue reference="cQa-7J-PC3"/>
     </inferredMetricsTieBreakers>
 </document>
