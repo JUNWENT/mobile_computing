@@ -9,6 +9,15 @@
 import UIKit
 
 class GuardianHomePageViewController: UIViewController {
+    
+    var username:String?
+    
+    override func viewDidAppear(_ animated: Bool) {
+        username = UserDefaults.standard.object(forKey: "GuardianUsername") as? String
+        if (username == nil) {
+            self.performSegue(withIdentifier: "guardianLogin", sender: self)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
