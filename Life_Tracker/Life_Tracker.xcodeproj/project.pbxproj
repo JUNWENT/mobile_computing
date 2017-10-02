@@ -35,6 +35,8 @@
 		A8BAE1E31F761BE800C714AD /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BAE1E21F761BE800C714AD /* SignInViewController.swift */; };
 		A8C3866E1F7CE3B90072D603 /* AddGuardianViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C3866D1F7CE3B90072D603 /* AddGuardianViewController.swift */; };
 		A8C386701F7D19100072D603 /* DependentContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C3866F1F7D19100072D603 /* DependentContactViewController.swift */; };
+		A8DEB9231F82705B00BB725F /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = A8DEB9221F82705B00BB725F /* launch.png */; };
+		A8DEB9251F82706B00BB725F /* register.png in Resources */ = {isa = PBXBuildFile; fileRef = A8DEB9241F82706B00BB725F /* register.png */; };
 		E72B88C61F793B5100A79838 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E72B88C51F793B5100A79838 /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +72,8 @@
 		A8BAE1E21F761BE800C714AD /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		A8C3866D1F7CE3B90072D603 /* AddGuardianViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGuardianViewController.swift; sourceTree = "<group>"; };
 		A8C3866F1F7D19100072D603 /* DependentContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependentContactViewController.swift; sourceTree = "<group>"; };
+		A8DEB9221F82705B00BB725F /* launch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launch.png; sourceTree = "<group>"; };
+		A8DEB9241F82706B00BB725F /* register.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = register.png; sourceTree = "<group>"; };
 		E72B88C41F793B5100A79838 /* Life_Tracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Life_Tracker.entitlements; sourceTree = "<group>"; };
 		E72B88C51F793B5100A79838 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -165,6 +169,8 @@
 		A86F27EB1F734C5700681BAD /* icon */ = {
 			isa = PBXGroup;
 			children = (
+				A8DEB9221F82705B00BB725F /* launch.png */,
+				A8DEB9241F82706B00BB725F /* register.png */,
 				A88696C01F820F08002C424A /* LaunchImage.launchimage */,
 				A88696C11F820F08002C424A /* owl-login-arm-left.imageset */,
 				A88696C21F820F08002C424A /* owl-login-arm-right.imageset */,
@@ -251,12 +257,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8DEB9231F82705B00BB725F /* launch.png in Resources */,
 				A86F27E91F734C2700681BAD /* icons8-Home-35.imageset in Resources */,
 				A88696C51F820F08002C424A /* owl-login-arm-left.imageset in Resources */,
 				A88696C61F820F08002C424A /* owl-login-arm-right.imageset in Resources */,
 				A2D9CBCC1943C2540017F096 /* Main.storyboard in Resources */,
 				A88696BD1F820EEE002C424A /* icon_hand.imageset in Resources */,
 				A88696C71F820F08002C424A /* owl-login.imageset in Resources */,
+				A8DEB9251F82706B00BB725F /* register.png in Resources */,
 				A86F27E81F734C2700681BAD /* icons8-Contacts-35.imageset in Resources */,
 				A2D9CBCE1943C2540017F096 /* Images.xcassets in Resources */,
 				A88696C41F820F08002C424A /* LaunchImage.launchimage in Resources */,
