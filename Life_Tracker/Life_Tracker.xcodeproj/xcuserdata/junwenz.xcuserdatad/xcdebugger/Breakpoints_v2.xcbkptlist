@@ -86,11 +86,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Life_Tracker/DependentLoginViewController.swift"
-            timestampString = "528374684.519823"
+            timestampString = "528616371.587269"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "76"
-            endingLineNumber = "76"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
             landmarkName = "UserPressedOnSignIn(_:)"
             landmarkType = "7">
          </BreakpointContent>

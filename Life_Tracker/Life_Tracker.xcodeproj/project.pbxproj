@@ -29,12 +29,6 @@
 		A8C3866E1F7CE3B90072D603 /* AddGuardianViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C3866D1F7CE3B90072D603 /* AddGuardianViewController.swift */; };
 		A8C386701F7D19100072D603 /* DependentContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C3866F1F7D19100072D603 /* DependentContactViewController.swift */; };
 		A8F460BB1F820584006EF3AE /* AppIcon.appiconset in Resources */ = {isa = PBXBuildFile; fileRef = A8F460B41F820584006EF3AE /* AppIcon.appiconset */; };
-		A8F460BC1F820584006EF3AE /* icon_hand.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A8F460B51F820584006EF3AE /* icon_hand.imageset */; };
-		A8F460BD1F820584006EF3AE /* iconfont-password.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A8F460B61F820584006EF3AE /* iconfont-password.imageset */; };
-		A8F460BE1F820584006EF3AE /* iconfont-user.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A8F460B71F820584006EF3AE /* iconfont-user.imageset */; };
-		A8F460BF1F820584006EF3AE /* owl-login-arm-left.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A8F460B81F820584006EF3AE /* owl-login-arm-left.imageset */; };
-		A8F460C01F820584006EF3AE /* owl-login-arm-right.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A8F460B91F820584006EF3AE /* owl-login-arm-right.imageset */; };
-		A8F460C11F820584006EF3AE /* owl-login.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A8F460BA1F820584006EF3AE /* owl-login.imageset */; };
 		E72B88C61F793B5100A79838 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E72B88C51F793B5100A79838 /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,12 +58,6 @@
 		A8C3866D1F7CE3B90072D603 /* AddGuardianViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGuardianViewController.swift; sourceTree = "<group>"; };
 		A8C3866F1F7D19100072D603 /* DependentContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependentContactViewController.swift; sourceTree = "<group>"; };
 		A8F460B41F820584006EF3AE /* AppIcon.appiconset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = AppIcon.appiconset; path = ../../../../Downloads/hangge_926/hangge_926/Assets.xcassets/AppIcon.appiconset; sourceTree = "<group>"; };
-		A8F460B51F820584006EF3AE /* icon_hand.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icon_hand.imageset; path = ../../../../Downloads/hangge_926/hangge_926/Assets.xcassets/icon_hand.imageset; sourceTree = "<group>"; };
-		A8F460B61F820584006EF3AE /* iconfont-password.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "iconfont-password.imageset"; path = "../../../../Downloads/hangge_926/hangge_926/Assets.xcassets/iconfont-password.imageset"; sourceTree = "<group>"; };
-		A8F460B71F820584006EF3AE /* iconfont-user.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "iconfont-user.imageset"; path = "../../../../Downloads/hangge_926/hangge_926/Assets.xcassets/iconfont-user.imageset"; sourceTree = "<group>"; };
-		A8F460B81F820584006EF3AE /* owl-login-arm-left.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "owl-login-arm-left.imageset"; path = "../../../../Downloads/hangge_926/hangge_926/Assets.xcassets/owl-login-arm-left.imageset"; sourceTree = "<group>"; };
-		A8F460B91F820584006EF3AE /* owl-login-arm-right.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "owl-login-arm-right.imageset"; path = "../../../../Downloads/hangge_926/hangge_926/Assets.xcassets/owl-login-arm-right.imageset"; sourceTree = "<group>"; };
-		A8F460BA1F820584006EF3AE /* owl-login.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "owl-login.imageset"; path = "../../../../Downloads/hangge_926/hangge_926/Assets.xcassets/owl-login.imageset"; sourceTree = "<group>"; };
 		E72B88C41F793B5100A79838 /* Life_Tracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Life_Tracker.entitlements; sourceTree = "<group>"; };
 		E72B88C51F793B5100A79838 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -128,12 +116,6 @@
 				A2D9CBCA1943C2540017F096 /* Main.storyboard */,
 				A2D9CBCD1943C2540017F096 /* Images.xcassets */,
 				A8F460B41F820584006EF3AE /* AppIcon.appiconset */,
-				A8F460B51F820584006EF3AE /* icon_hand.imageset */,
-				A8F460B61F820584006EF3AE /* iconfont-password.imageset */,
-				A8F460B71F820584006EF3AE /* iconfont-user.imageset */,
-				A8F460B81F820584006EF3AE /* owl-login-arm-left.imageset */,
-				A8F460B91F820584006EF3AE /* owl-login-arm-right.imageset */,
-				A8F460BA1F820584006EF3AE /* owl-login.imageset */,
 				A86F27EB1F734C5700681BAD /* icon */,
 				A2D9CBC11943C2540017F096 /* Supporting Files */,
 				A2D9CBE51943CB520017F096 /* frameworks */,
@@ -251,18 +233,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A8F460C11F820584006EF3AE /* owl-login.imageset in Resources */,
 				A86F27E91F734C2700681BAD /* icons8-Home-35.imageset in Resources */,
-				A8F460C01F820584006EF3AE /* owl-login-arm-right.imageset in Resources */,
 				A2D9CBCC1943C2540017F096 /* Main.storyboard in Resources */,
-				A8F460BC1F820584006EF3AE /* icon_hand.imageset in Resources */,
 				A86F27E81F734C2700681BAD /* icons8-Contacts-35.imageset in Resources */,
 				A2D9CBCE1943C2540017F096 /* Images.xcassets in Resources */,
 				A8F460BB1F820584006EF3AE /* AppIcon.appiconset in Resources */,
 				A31A89F71BF3FDFA00C7B656 /* Launch Screen.storyboard in Resources */,
-				A8F460BE1F820584006EF3AE /* iconfont-user.imageset in Resources */,
-				A8F460BD1F820584006EF3AE /* iconfont-password.imageset in Resources */,
-				A8F460BF1F820584006EF3AE /* owl-login-arm-left.imageset in Resources */,
 				A86F27EA1F734C2700681BAD /* icons8-Notification-35.imageset in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
