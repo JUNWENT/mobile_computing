@@ -44,9 +44,13 @@
 		A8FFB7231F83AA7B00ABC148 /* 750.png in Resources */ = {isa = PBXBuildFile; fileRef = A8FFB71C1F83AA7B00ABC148 /* 750.png */; };
 		A8FFB7241F83AA7B00ABC148 /* 1242.png in Resources */ = {isa = PBXBuildFile; fileRef = A8FFB71D1F83AA7B00ABC148 /* 1242.png */; };
 		A8FFB7251F83AA7B00ABC148 /* WechatIMG5065.png in Resources */ = {isa = PBXBuildFile; fileRef = A8FFB71E1F83AA7B00ABC148 /* WechatIMG5065.png */; };
-		A8FFB7291F83AEEB00ABC148 /* load.png in Resources */ = {isa = PBXBuildFile; fileRef = A8FFB7281F83AEEB00ABC148 /* load.png */; };
-		A8FFB72B1F83AF3500ABC148 /* load2.png in Resources */ = {isa = PBXBuildFile; fileRef = A8FFB72A1F83AF3500ABC148 /* load2.png */; };
 		A8FFB72D1F83B17100ABC148 /* load3.png in Resources */ = {isa = PBXBuildFile; fileRef = A8FFB72C1F83B17100ABC148 /* load3.png */; };
+		A8FFB7341F83B2A100ABC148 /* 29.png in Resources */ = {isa = PBXBuildFile; fileRef = A8FFB72E1F83B2A100ABC148 /* 29.png */; };
+		A8FFB7351F83B2A100ABC148 /* 40.png in Resources */ = {isa = PBXBuildFile; fileRef = A8FFB72F1F83B2A100ABC148 /* 40.png */; };
+		A8FFB7361F83B2A100ABC148 /* 60.png in Resources */ = {isa = PBXBuildFile; fileRef = A8FFB7301F83B2A100ABC148 /* 60.png */; };
+		A8FFB7371F83B2A100ABC148 /* 76.png in Resources */ = {isa = PBXBuildFile; fileRef = A8FFB7311F83B2A100ABC148 /* 76.png */; };
+		A8FFB7381F83B2A100ABC148 /* 152.png in Resources */ = {isa = PBXBuildFile; fileRef = A8FFB7321F83B2A100ABC148 /* 152.png */; };
+		A8FFB7391F83B2A100ABC148 /* 167.png in Resources */ = {isa = PBXBuildFile; fileRef = A8FFB7331F83B2A100ABC148 /* 167.png */; };
 		E72B88C61F793B5100A79838 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E72B88C51F793B5100A79838 /* HealthKit.framework */; };
 		E7C5F61C1F82F896004CE129 /* DependentResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C5F61B1F82F896004CE129 /* DependentResetPasswordViewController.swift */; };
 		E7C5F61E1F834E1D004CE129 /* GuardianResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C5F61D1F834E1D004CE129 /* GuardianResetPasswordViewController.swift */; };
@@ -93,9 +97,13 @@
 		A8FFB71C1F83AA7B00ABC148 /* 750.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 750.png; sourceTree = "<group>"; };
 		A8FFB71D1F83AA7B00ABC148 /* 1242.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1242.png; sourceTree = "<group>"; };
 		A8FFB71E1F83AA7B00ABC148 /* WechatIMG5065.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WechatIMG5065.png; sourceTree = "<group>"; };
-		A8FFB7281F83AEEB00ABC148 /* load.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = load.png; path = Life_Tracker/load.png; sourceTree = "<group>"; };
-		A8FFB72A1F83AF3500ABC148 /* load2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = load2.png; sourceTree = "<group>"; };
 		A8FFB72C1F83B17100ABC148 /* load3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = load3.png; sourceTree = "<group>"; };
+		A8FFB72E1F83B2A100ABC148 /* 29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 29.png; sourceTree = "<group>"; };
+		A8FFB72F1F83B2A100ABC148 /* 40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 40.png; sourceTree = "<group>"; };
+		A8FFB7301F83B2A100ABC148 /* 60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 60.png; sourceTree = "<group>"; };
+		A8FFB7311F83B2A100ABC148 /* 76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 76.png; sourceTree = "<group>"; };
+		A8FFB7321F83B2A100ABC148 /* 152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 152.png; sourceTree = "<group>"; };
+		A8FFB7331F83B2A100ABC148 /* 167.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 167.png; sourceTree = "<group>"; };
 		E72B88C41F793B5100A79838 /* Life_Tracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Life_Tracker.entitlements; sourceTree = "<group>"; };
 		E72B88C51F793B5100A79838 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		E7C5F61B1F82F896004CE129 /* DependentResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependentResetPasswordViewController.swift; sourceTree = "<group>"; };
@@ -134,7 +142,6 @@
 		A2D9CBB51943C2540017F096 = {
 			isa = PBXGroup;
 			children = (
-				A8FFB7281F83AEEB00ABC148 /* load.png */,
 				A2D9CBC01943C2540017F096 /* Life_Tracker */,
 				A2D9CBBF1943C2540017F096 /* Products */,
 				9CA121741DAC7FFD000C2FCA /* Frameworks */,
@@ -199,8 +206,13 @@
 		A86F27EB1F734C5700681BAD /* icon */ = {
 			isa = PBXGroup;
 			children = (
+				A8FFB72E1F83B2A100ABC148 /* 29.png */,
+				A8FFB72F1F83B2A100ABC148 /* 40.png */,
+				A8FFB7301F83B2A100ABC148 /* 60.png */,
+				A8FFB7311F83B2A100ABC148 /* 76.png */,
+				A8FFB7321F83B2A100ABC148 /* 152.png */,
+				A8FFB7331F83B2A100ABC148 /* 167.png */,
 				A8FFB72C1F83B17100ABC148 /* load3.png */,
-				A8FFB72A1F83AF3500ABC148 /* load2.png */,
 				A8FFB7181F83AA7B00ABC148 /* 58*58.png */,
 				A8FFB7191F83AA7B00ABC148 /* 80.png */,
 				A8FFB71A1F83AA7B00ABC148 /* 87.png */,
@@ -293,19 +305,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8FFB7381F83B2A100ABC148 /* 152.png in Resources */,
+				A8FFB7371F83B2A100ABC148 /* 76.png in Resources */,
+				A8FFB7361F83B2A100ABC148 /* 60.png in Resources */,
 				A8FFB7241F83AA7B00ABC148 /* 1242.png in Resources */,
 				A86F27E91F734C2700681BAD /* icons8-Home-35.imageset in Resources */,
+				A8FFB7341F83B2A100ABC148 /* 29.png in Resources */,
 				A8FFB7201F83AA7B00ABC148 /* 80.png in Resources */,
 				A8FFB7231F83AA7B00ABC148 /* 750.png in Resources */,
-				A8FFB72B1F83AF3500ABC148 /* load2.png in Resources */,
+				A8FFB7351F83B2A100ABC148 /* 40.png in Resources */,
 				A8FFB7251F83AA7B00ABC148 /* WechatIMG5065.png in Resources */,
 				A88696C51F820F08002C424A /* owl-login-arm-left.imageset in Resources */,
+				A8FFB7391F83B2A100ABC148 /* 167.png in Resources */,
 				A88696C61F820F08002C424A /* owl-login-arm-right.imageset in Resources */,
 				A2D9CBCC1943C2540017F096 /* Main.storyboard in Resources */,
 				A8FFB7211F83AA7B00ABC148 /* 87.png in Resources */,
 				A88696BD1F820EEE002C424A /* icon_hand.imageset in Resources */,
 				A88696C71F820F08002C424A /* owl-login.imageset in Resources */,
-				A8FFB7291F83AEEB00ABC148 /* load.png in Resources */,
 				A8FFB71F1F83AA7B00ABC148 /* 58*58.png in Resources */,
 				A86F27E81F734C2700681BAD /* icons8-Contacts-35.imageset in Resources */,
 				A2D9CBCE1943C2540017F096 /* Images.xcassets in Resources */,
