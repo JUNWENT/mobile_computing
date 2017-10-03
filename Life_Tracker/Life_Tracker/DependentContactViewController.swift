@@ -25,6 +25,9 @@ class DependentContactViewController: UIViewController, UINavigationControllerDe
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             myPhoto.image = image
+            let imageData : NSData = UIImagePNGRepresentation(myPhoto.image!)! as NSData
+            UserDefaults.standard.set(imageData, forKey: "profile")
+
         }
         self.dismiss(animated: true, completion: nil)
     }
@@ -32,8 +35,10 @@ class DependentContactViewController: UIViewController, UINavigationControllerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let data = UserDefaults.standard.object(forKey: "profile") {
+            myPhoto.image = UIImage(data: data as! Data)
+        }
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
