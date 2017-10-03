@@ -37,6 +37,9 @@ class DependentContactViewController: UIViewController, UINavigationControllerDe
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func userPressedOnLogOut(_ sender: UIButton) {
+        UserDefaults.standard.set(nil,forKey:"DependentUsername")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

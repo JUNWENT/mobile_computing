@@ -35,6 +35,13 @@ class SignInViewController: UIViewController {
     
     @IBAction func pressedOnRegisterBotton(_ sender: UIButton) {
         
+        // need to log out then register
+        let username = UserDefaults.standard.object(forKey: "DependentUsername") as? String
+        if username == nil {
+            self.displayAlertMessage(useMessage: "You must first log out!")
+            return
+        }
+        
         let userName = UserUsernameTextField.text
         let userEmail = UserEmailTextField.text
         let userPhoneNumber = UserPhoneNumberTextField.text

@@ -11,7 +11,7 @@ import UIKit
 class GuardianContactViewController: UIViewController {
 
     @IBAction func UserPressedOnLogout(_ sender: UIButton) {
-        
+        UserDefaults.standard.set(nil,forKey:"GuardianUsername")
     }
     
     override func viewDidLoad() {
