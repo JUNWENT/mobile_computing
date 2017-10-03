@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D1550EF1F83F0AA007CEA40 /* DependentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D1550EE1F83F0AA007CEA40 /* DependentTableViewCell.swift */; };
 		4D5A701B1F739D9E0085B7D5 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4D5A701A1F739D9E0085B7D5 /* CoreLocation.framework */; };
 		4DF37E2E1F83BAA000F6E3D3 /* ManageDependentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF37E2D1F83BAA000F6E3D3 /* ManageDependentsTableViewController.swift */; };
 		9C35A4B41DE4EF8000650581 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C35A4B31DE4EF8000650581 /* SafariServices.framework */; };
@@ -58,6 +59,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4D1550EE1F83F0AA007CEA40 /* DependentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependentTableViewCell.swift; sourceTree = "<group>"; };
 		4D5A701A1F739D9E0085B7D5 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4DF37E2D1F83BAA000F6E3D3 /* ManageDependentsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManageDependentsTableViewController.swift; sourceTree = "<group>"; };
 		9C35A4B31DE4EF8000650581 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
@@ -185,6 +187,7 @@
 				A31A89F61BF3FDFA00C7B656 /* Launch Screen.storyboard */,
 				A8C3866F1F7D19100072D603 /* DependentContactViewController.swift */,
 				A8140C491F7D2BC000140067 /* AddDependentViewController.swift */,
+				4D1550EE1F83F0AA007CEA40 /* DependentTableViewCell.swift */,
 			);
 			path = Life_Tracker;
 			sourceTree = "<group>";
@@ -348,6 +351,7 @@
 				A817487C1F83A2C20037BE0F /* loading2ViewController.swift in Sources */,
 				A83223341F77ED1F00C283D0 /* GuardianHomePageViewController.swift in Sources */,
 				A817486A1F838FD20037BE0F /* GuardianContactViewController.swift in Sources */,
+				4D1550EF1F83F0AA007CEA40 /* DependentTableViewCell.swift in Sources */,
 				A8C386701F7D19100072D603 /* DependentContactViewController.swift in Sources */,
 				A8BAE1E31F761BE800C714AD /* SignInViewController.swift in Sources */,
 				A83223301F77EBEA00C283D0 /* DependentHomePageViewController.swift in Sources */,

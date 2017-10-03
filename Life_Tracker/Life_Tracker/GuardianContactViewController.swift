@@ -58,6 +58,38 @@ class GuardianContactViewController: UIViewController, UINavigationControllerDel
         // Dispose of any resources that can be recreated.
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDependents" {
+            let dependentsView = segue.destination as! ManageDependentsTableViewController
+            var listOfDependes = [(String,String)]()
+            
+//            let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
+//            let table = client.table(withName: "UserRelationship")
+            
+//            table.read { (result, error) in
+//                if let err = error {
+////                    self.displayAlertMessage(useMessage: "Please check you network and try again.")
+//                    return
+//                        print("ERROR ", err)
+//                } else if let items = result?.items {
+//                    for item in items {
+//                        if item["id"] as? String == self.phone.text {
+////                            self.latitude.text = item["latitude"] as? String
+////                            self.longtitude.text = item["longtitude"] as? String
+//                            listOfDependes.append( ("aaa", "111"))
+//                        }
+//                    }
+//                    
+//                }
+//            }
+            var i = 0
+            while i < 5 {
+                listOfDependes.append( ("aaa", "111"))
+                i += 1
+            }
+            dependentsView.dependents = listOfDependes
+        }
+    }
 
     /*
     // MARK: - Navigation
