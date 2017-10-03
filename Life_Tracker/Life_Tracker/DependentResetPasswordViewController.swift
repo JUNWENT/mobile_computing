@@ -10,10 +10,15 @@ import UIKit
 
 class DependentResetPasswordViewController: UIViewController {
 
-    @IBOutlet weak var userExistingPassword:UITextView!
+    @IBOutlet weak var EnterExistingPassword: UITextField!
+   
+    @IBOutlet weak var EnterNewPassword: UITextField!
     
     
+    @IBOutlet weak var ConfirmNewPassword: UITextField!
     
+    @IBAction func UserPressOnReset(_ sender: Any) {
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

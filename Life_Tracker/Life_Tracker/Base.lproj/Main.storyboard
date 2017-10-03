@@ -1228,10 +1228,10 @@
             </objects>
             <point key="canvasLocation" x="3910.144927536232" y="2369.8369565217395"/>
         </scene>
-        <!--View Controller-->
+        <!--Dependent Reset Password View Controller-->
         <scene sceneID="zMK-Qo-sgN">
             <objects>
-                <viewController id="7qw-83-qDC" sceneMemberID="viewController">
+                <viewController id="7qw-83-qDC" customClass="DependentResetPasswordViewController" customModule="Life_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gX8-Ys-AV6"/>
                         <viewControllerLayoutGuide type="bottom" id="drM-58-Bpd"/>
@@ -1315,6 +1315,9 @@
                                                 <state key="normal" title="Reset">
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="UserPressOnReset:" destination="7qw-83-qDC" eventType="touchUpInside" id="sdL-Yt-Zhj"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -1328,6 +1331,11 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dg9-8o-8H2"/>
+                    <connections>
+                        <outlet property="ConfirmNewPassword" destination="mjH-gU-ZWb" id="90x-pY-Wda"/>
+                        <outlet property="EnterExistingPassword" destination="6pW-tX-aa7" id="IK7-xI-zwA"/>
+                        <outlet property="EnterNewPassword" destination="BTX-Q9-4L6" id="QJ0-Qa-cos"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8O5-yM-Hss" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
