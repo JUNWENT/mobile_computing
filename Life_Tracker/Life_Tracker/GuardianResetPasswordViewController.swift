@@ -63,7 +63,7 @@ class GuardianResetPasswordViewController: UIViewController {
             } else if let items = result?.items {
                 for item in items {
                     if(item["type"] as? String == userType){
-                        if (item["password"] as? String == userExistingPassword! && item["complete"] as! Bool == false){
+                        if (item["phoneNumber"] as? String == username! && item["password"] as? String == userExistingPassword! && item["complete"] as! Bool == false){
                             table.update(["id":username!,"password":userNewPassword!]) {
                                 (result, error) in
                                 if let err = error {
