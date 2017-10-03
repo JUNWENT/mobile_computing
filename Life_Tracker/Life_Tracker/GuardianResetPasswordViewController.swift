@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GuardianResetPasswordViewController: UIViewController {
+class GuardianResetPasswordViewController: UIViewController,UIGestureRecognizerDelegate {
     
     @IBOutlet weak var ExistingPasswordTextField: UITextField!
     @IBOutlet weak var NewPasswordTextField: UITextField!
@@ -16,8 +16,22 @@ class GuardianResetPasswordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        let target = self.navigationController?.interactivePopGestureRecognizer!.delegate
+        let pan = UIPanGestureRecognizer(target:target,
+                                         action:Selector(("handleNavigationTransition:")))
+        pan.delegate = self
+        self.view.addGestureRecognizer(pan)
+        self.navigationController?.interactivePopGestureRecognizer!.isEnabled = false
         // Do any additional setup after loading the view.
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
+                           shouldRecognizeSimultaneouslyWith otherGestureRecognizer:
+        UIGestureRecognizer) -> Bool {
+        if self.childViewControllers.count == 1 {
+            return false
+        }
+        return true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

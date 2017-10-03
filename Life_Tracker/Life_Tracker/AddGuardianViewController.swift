@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddGuardianViewController: UIViewController {
+class AddGuardianViewController: UIViewController,UIGestureRecognizerDelegate {
     
    
     @IBOutlet weak var DependentSecretPasswordTextfield: UITextField!
@@ -19,12 +19,27 @@ class AddGuardianViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let target = self.navigationController?.interactivePopGestureRecognizer!.delegate
+        let pan = UIPanGestureRecognizer(target:target,
+                                         action:Selector(("handleNavigationTransition:")))
+        pan.delegate = self
+        self.view.addGestureRecognizer(pan)
+        self.navigationController?.interactivePopGestureRecognizer!.isEnabled = false
         // Do any additional setup after loading the view.
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
+                           shouldRecognizeSimultaneouslyWith otherGestureRecognizer:
+        UIGestureRecognizer) -> Bool {
+        if self.childViewControllers.count == 1 {
+            return false
+        }
+        return true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bva-dY-il8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="bva-dY-il8">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -410,7 +410,7 @@
                                 <state key="normal" title="Log out"/>
                                 <connections>
                                     <action selector="UserPressedOnLogout:" destination="BOE-HS-llp" eventType="touchUpInside" id="hIl-Tf-0IG"/>
-                                    <segue destination="bva-dY-il8" kind="show" id="8ot-CT-BAK"/>
+                                    <segue destination="bva-dY-il8" kind="presentation" id="tp4-oh-OPX"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="ejh-kn-1RO">
@@ -753,7 +753,7 @@
                             <constraint firstItem="KQR-0C-bvQ" firstAttribute="top" secondItem="Bgj-NM-Hwv" secondAttribute="bottom" id="vcp-2U-GBf"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="icons8-Home-35.png" selectedImage="icons8-Home-35.png" id="nBW-oy-ajl">
+                    <tabBarItem key="tabBarItem" title="" image="icons8-Home-35.png" selectedImage="icons8-Home-35" id="nBW-oy-ajl">
                         <inset key="imageInsets" minX="2" minY="5" maxX="0.0" maxY="-5"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
@@ -1177,7 +1177,7 @@
                             <constraint firstItem="Gc1-N7-InF" firstAttribute="leading" secondItem="Qtc-At-Au2" secondAttribute="leading" id="vt6-3l-hpr"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="icons8-Home-35.png" selectedImage="icons8-Home-35.png" id="4Zl-zh-KJS">
+                    <tabBarItem key="tabBarItem" title="" image="icons8-Home-35.png" selectedImage="icons8-Home-35" id="4Zl-zh-KJS">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
@@ -1276,7 +1276,7 @@
                                 <state key="normal" title="Log out"/>
                                 <connections>
                                     <action selector="userPressedOnLogOut:" destination="4dt-xm-JSK" eventType="touchUpInside" id="eRg-FS-Fec"/>
-                                    <segue destination="bva-dY-il8" kind="show" id="fvr-jd-DVG"/>
+                                    <segue destination="bva-dY-il8" kind="presentation" id="UyJ-aa-bHj"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1522,7 +1522,7 @@
         <scene sceneID="Z9B-o9-MKI">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="d7H-1w-aRx" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="icons8-Contacts-35.png" selectedImage="icons8-Contacts-35.png" id="DBA-8K-A8E">
+                    <tabBarItem key="tabBarItem" title="" image="icons8-Contacts-35.png" selectedImage="icons8-Contacts-35" id="DBA-8K-A8E">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
@@ -1544,7 +1544,7 @@
         <scene sceneID="Gf3-G2-C5b">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZzR-Gx-Sfs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="icons8-Contacts-35.png" selectedImage="icons8-Contacts-35.png" id="iJJ-4X-8sd">
+                    <tabBarItem key="tabBarItem" title="" image="icons8-Contacts-35.png" selectedImage="icons8-Contacts-35" id="iJJ-4X-8sd">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -1565,13 +1565,15 @@
     <resources>
         <image name="dependent" width="394" height="392"/>
         <image name="guardian" width="398" height="388"/>
+        <image name="icons8-Contacts-35" width="35" height="35"/>
         <image name="icons8-Contacts-35.png" width="35" height="35"/>
+        <image name="icons8-Home-35" width="35" height="35"/>
         <image name="icons8-Home-35.png" width="35" height="35"/>
         <image name="launch" width="750" height="1334"/>
         <image name="load3" width="724" height="660"/>
         <image name="register" width="313" height="115"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8ot-CT-BAK"/>
+        <segue reference="UyJ-aa-bHj"/>
     </inferredMetricsTieBreakers>
 </document>

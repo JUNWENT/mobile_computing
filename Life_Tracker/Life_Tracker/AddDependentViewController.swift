@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddDependentViewController: UIViewController {
+class AddDependentViewController: UIViewController,UIGestureRecognizerDelegate {
 
     @IBOutlet weak var DependentPhoneNumberTextField: UITextField!
     @IBOutlet weak var DependentSecretPasswordTextField: UITextField!
@@ -16,6 +16,13 @@ class AddDependentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let target = self.navigationController?.interactivePopGestureRecognizer!.delegate
+        let pan = UIPanGestureRecognizer(target:target,
+                                         action:Selector(("handleNavigationTransition:")))
+        pan.delegate = self
+        self.view.addGestureRecognizer(pan)
+        
+        self.navigationController?.interactivePopGestureRecognizer!.isEnabled = false
 
         // Do any additional setup after loading the view.
     }
@@ -23,6 +30,15 @@ class AddDependentViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
+                           shouldRecognizeSimultaneouslyWith otherGestureRecognizer:
+        UIGestureRecognizer) -> Bool {
+        if self.childViewControllers.count == 1 {
+            return false
+        }
+        return true
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -53,7 +69,9 @@ class AddDependentViewController: UIViewController {
                             if (item["secretPassword"] as? String == secretPassword){
                                 UserDefaults.standard.set(dependentPhoneNumber,forKey:"DependentGuardian")
                                 UserDefaults.standard.synchronize()
-                                let itemToInsert = ["guardian":username!,"dependent":dependentPhoneNumber!,"complete": false, "__createdAt": Date()] as [String : Any]
+                                let dependentusername = item["username"] as? String
+                                UserDefaults.standard.synchronize()
+                                let itemToInsert = ["guardian":username!,"dependent":dependentPhoneNumber!,"dependentUsername":dependentusername!,"complete": false, "__createdAt": Date()] as [String : Any]
                                 UIApplication.shared.isNetworkActivityIndicatorVisible = true
                                 tableRelationship.insert(itemToInsert) {
                                     (item, error) in
