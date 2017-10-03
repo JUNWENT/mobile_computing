@@ -12,6 +12,9 @@ class DependentContactViewController: UIViewController, UINavigationControllerDe
 
     @IBOutlet weak var myPhoto: UIImageView!
     
+    @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var phoneNumber: UILabel!
+    
     @IBAction func changePhoto(_ sender: Any) {
         let image = UIImagePickerController()
         image.delegate = self
