@@ -34,14 +34,6 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
     
     var username:String?
     
-    override func viewDidAppear(_ animated: Bool) {
-        username = UserDefaults.standard.object(forKey: "DependentUsername") as? String
-        if (username == nil) {
-            self.performSegue(withIdentifier: "dependentLogin", sender: self)
-        }
-    }
-    
-       
     
     @IBAction func askForHelp(_ sender: Any) {
     }
