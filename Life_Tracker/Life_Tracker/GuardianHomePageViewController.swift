@@ -33,29 +33,15 @@ class GuardianHomePageViewController: UIViewController {
     
     
     @IBAction func reload(_ sender: UIButton) {
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        username = UserDefaults.standard.object(forKey: "GuardianUsername") as? String
-        
-        if (username == nil) {
-            self.performSegue(withIdentifier: "guardianLogin", sender: self)
-        }
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-//        let dependentName = UserDefaults.standard.object(forKey: "DependentUsername") as? String
-        let dependentName = "8877665533"
+        let dependentName = "0009998887"
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
         let table = client.table(withName: "UserTable")
-
+        
         table.read { (result, error) in
             if let err = error {
                 self.displayAlertMessage(useMessage: "Please check you network and try again.")
                 return
-                print("ERROR ", err)
+                    print("ERROR ", err)
             } else if let items = result?.items {
                 for item in items {
                     if item["id"] as? String == dependentName {
@@ -84,7 +70,25 @@ class GuardianHomePageViewController: UIViewController {
                 self.map.addAnnotation(annotation)
             }
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        username = UserDefaults.standard.object(forKey: "GuardianUsername") as? String
+        
+        if (username == nil) {
+            self.performSegue(withIdentifier: "guardianLogin", sender: self)
+        }
+    }
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+//        let dependentName = UserDefaults.standard.object(forKey: "DependentUsername") as? String
         // Do any additional setup after loading the view.
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
     }
 
     override func didReceiveMemoryWarning() {
