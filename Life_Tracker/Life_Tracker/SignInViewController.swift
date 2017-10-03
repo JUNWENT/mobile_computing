@@ -108,7 +108,7 @@ class SignInViewController: UIViewController {
                     }
                 }
                 // store data to server
-                let itemToInsert = ["type": UserType, "username": userName,"phoneNumber":userPhoneNumber,"email":userEmail ?? "email","password":userPassword, "complete": false, "__createdAt": Date()] as [String : Any]
+                let itemToInsert = ["type": UserType!, "username": userName!,"phoneNumber":userPhoneNumber!,"email":userEmail ?? "email","password":userPassword!,"id":userPhoneNumber!, "complete": false, "__createdAt": Date()] as [String : Any]
                 
                 UIApplication.shared.isNetworkActivityIndicatorVisible = true
                 table.insert(itemToInsert) {
