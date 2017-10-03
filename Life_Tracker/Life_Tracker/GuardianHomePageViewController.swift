@@ -32,6 +32,9 @@ class GuardianHomePageViewController: UIViewController {
     @IBOutlet weak var downstairs: UILabel!
     
     
+    @IBAction func reload(_ sender: UIButton) {
+        
+    }
     
     override func viewDidAppear(_ animated: Bool) {
         username = UserDefaults.standard.object(forKey: "GuardianUsername") as? String
