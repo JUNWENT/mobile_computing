@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GuardianContactViewController: UIViewController {
+class GuardianContactViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     @IBOutlet weak var photo: UIImageView!
     
@@ -21,11 +21,34 @@ class GuardianContactViewController: UIViewController {
     }
     
     @IBAction func changePhoto(_ sender: UIButton) {
-        
+        let image = UIImagePickerController()
+        image.delegate = self
+        image.sourceType = UIImagePickerControllerSourceType.photoLibrary
+        image.allowsEditing = false
+        self.present(image, animated: true){
+            
+        }
     }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            photo.image = image
+            let imageData : NSData = UIImagePNGRepresentation(photo.image!)! as NSData
+            UserDefaults.standard.set(imageData, forKey: "profile")
+            
+        }
+        self.dismiss(animated: true, completion: nil)
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let data = UserDefaults.standard.object(forKey: "profile") {
+            photo.image = UIImage(data: data as! Data)
+        }
+//        if let number = UserDefaults.standard.object(forKey: "GuardianUsername") as? String {
+//            phone.text = number
+//        }
 
         // Do any additional setup after loading the view.
     }
