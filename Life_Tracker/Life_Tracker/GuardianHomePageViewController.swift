@@ -72,14 +72,7 @@ class GuardianHomePageViewController: UIViewController {
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        username = UserDefaults.standard.object(forKey: "GuardianUsername") as? String
-        
-        if (username == nil) {
-            self.performSegue(withIdentifier: "guardianLogin", sender: self)
-        }
-    }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 //        let dependentName = UserDefaults.standard.object(forKey: "DependentUsername") as? String

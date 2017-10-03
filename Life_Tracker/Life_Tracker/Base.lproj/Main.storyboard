@@ -53,7 +53,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JZZ-x7-vQo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="342" y="675"/>
+            <point key="canvasLocation" x="-1977" y="214"/>
         </scene>
         <!--Dependent Login View Controller-->
         <scene sceneID="hYR-YB-A2d">
@@ -97,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVQ-pv-eFf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1426.0869565217392" y="726.35869565217399"/>
+            <point key="canvasLocation" x="1414" y="214"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="d5x-UU-nK9">
@@ -111,66 +111,126 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="iIO-k5-hVJ">
-                                <rect key="frame" x="97" y="231" width="220" height="274"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="WpQ-DI-CVo">
-                                        <rect key="frame" x="0.0" y="0.0" width="220" height="274"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iVh-cY-Mmc">
-                                                <rect key="frame" x="0.0" y="0.0" width="220" height="274"/>
-                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                                <state key="normal" title="Guardian sign-in"/>
-                                                <connections>
-                                                    <segue destination="ORO-3V-sil" kind="show" id="S9W-za-1Rw"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </stackView>
-                                </subviews>
-                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Life-Tracker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Sg-FX-bfh">
-                                <rect key="frame" x="0.0" y="60" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="118" width="414" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="33"/>
-                                <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="39"/>
+                                <color key="textColor" red="0.38352003690000003" green="0.27574151749999998" blue="0.20009408889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DOb-X2-6AC">
-                                <rect key="frame" x="76" y="142" width="248" height="122"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fMg-8o-Skp">
+                                <rect key="frame" x="57" y="256" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Dependent sign-in"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="egj-iO-TdQ">
+                                <rect key="frame" x="235" y="256" width="128" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xiw-OW-vEy">
+                                <rect key="frame" x="235" y="392" width="128" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                <state key="normal" title="DEPENDENT">
+                                    <color key="titleColor" red="0.38352003690000003" green="0.27574151749999998" blue="0.20009408889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
-                                    <segue destination="rPa-3r-NZL" kind="show" id="MKe-P2-PAW"/>
+                                    <segue destination="T7J-53-ydk" kind="show" id="BIg-qs-5lT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUD-TB-1el">
+                                <rect key="frame" x="57" y="392" width="128" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
+                                <state key="normal" title="GUARDIAN">
+                                    <color key="titleColor" red="0.38352003690000003" green="0.27574151749999998" blue="0.20009408889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="LJr-ad-cMU" kind="show" id="yiP-hI-oZc"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MsV-5b-AKo">
-                                <rect key="frame" x="83" y="459" width="248" height="64.333333333333314"/>
+                                <rect key="frame" x="0.0" y="511" width="414" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Register"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Do not has an account? Register!">
+                                    <color key="titleColor" red="0.38352003690000003" green="0.27574151749999998" blue="0.20009408889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <segue destination="L2l-Xg-ONJ" kind="presentation" id="H7e-k7-ENN"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="iIO-k5-hVJ" firstAttribute="top" secondItem="3Qb-KL-VMo" secondAttribute="bottom" constant="211" id="3lE-oR-Jty"/>
-                            <constraint firstItem="iIO-k5-hVJ" firstAttribute="centerY" secondItem="lq8-iq-BsU" secondAttribute="centerY" id="Cz8-NB-IhN"/>
-                            <constraint firstItem="iIO-k5-hVJ" firstAttribute="centerX" secondItem="lq8-iq-BsU" secondAttribute="centerX" id="nXP-Ti-EQL"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="b0N-2r-Ya0"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="j3s-Fx-ieH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-444.92753623188412" y="183.42391304347828"/>
+        </scene>
+        <!--Loading View Controller-->
+        <scene sceneID="gsz-Xa-kKe">
+            <objects>
+                <viewController id="LJr-ad-cMU" customClass="loadingViewController" customModule="Life_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0fw-19-XOD"/>
+                        <viewControllerLayoutGuide type="bottom" id="23G-gO-RSO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mhx-vr-Edw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loading" translatesAutoresizingMaskIntoConstraints="NO" id="j4A-1X-20l">
+                                <rect key="frame" x="0.0" y="28" width="414" height="708"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="b7h-d2-0Dg" kind="modal" identifier="guardianLogin" id="bhi-Le-zP8"/>
+                        <segue destination="ORO-3V-sil" kind="modal" identifier="guardianHome" id="fvq-0x-e7t"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BI9-Bg-AB6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-900.00000000000011" y="928.53260869565224"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="nsd-XR-udk">
+            <objects>
+                <viewController id="T7J-53-ydk" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="kvH-QY-PhP"/>
+                        <viewControllerLayoutGuide type="bottom" id="RlO-Zu-7dm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rdI-at-68V">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VAR-If-5rD">
+                                <rect key="frame" x="200" y="333" width="42" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="loading.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="b84-ae-cgq">
+                                <rect key="frame" x="0.0" y="28" width="414" height="708"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="Bf7-eH-62c" kind="modal" identifier="dependentLogin" id="qTc-4g-ojT"/>
+                        <segue destination="rPa-3r-NZL" kind="modal" identifier="dependentHome" id="5oH-Mr-5d7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XyL-iL-E9i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-10.144927536231885" y="921.19565217391312"/>
         </scene>
         <!--Add Dependent View Controller-->
         <scene sceneID="0TB-B1-CvL">
@@ -242,7 +302,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qnu-lo-qcL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3213.04347826087" y="2350.271739130435"/>
+            <point key="canvasLocation" x="-1307" y="3715"/>
         </scene>
         <!--Guardian Contact View Controller-->
         <scene sceneID="zxx-Na-Vk1">
@@ -314,7 +374,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJn-Ld-6jn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1591.304347826087" y="2348.6413043478265"/>
+            <point key="canvasLocation" x="-2278" y="3067"/>
         </scene>
         <!--Guardian Reset Password View Controller-->
         <scene sceneID="sjC-E0-08p">
@@ -399,7 +459,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hww-F7-qlE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2510.144927536232" y="3124.7282608695655"/>
+            <point key="canvasLocation" x="-3587" y="3715"/>
         </scene>
         <!--Guardian Home Page View Controller-->
         <scene sceneID="taQ-pF-KxB">
@@ -604,10 +664,11 @@
                             <constraint firstItem="KQR-0C-bvQ" firstAttribute="top" secondItem="Bgj-NM-Hwv" secondAttribute="bottom" id="vcp-2U-GBf"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="icons8-Home-35.png" selectedImage="icons8-Home-35.png" id="uWj-iW-Tgu">
+                    <tabBarItem key="tabBarItem" title="" image="icons8-Home-35.png" selectedImage="icons8-Home-35.png" id="nBW-oy-ajl">
                         <inset key="imageInsets" minX="2" minY="5" maxX="0.0" maxY="-5"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="altitude" destination="yRg-Qz-qJQ" id="CGO-AG-Y2I"/>
                         <outlet property="distance" destination="8yY-XK-TTh" id="94b-WJ-eus"/>
@@ -618,7 +679,6 @@
                         <outlet property="speed" destination="eSv-yL-mCJ" id="LoG-V2-FDI"/>
                         <outlet property="steps" destination="2O9-Md-Vje" id="pWf-pW-iNC"/>
                         <outlet property="upstairs" destination="ggV-43-dYe" id="89j-Ri-Zc5"/>
-                        <segue destination="b7h-d2-0Dg" kind="modal" identifier="guardianLogin" id="oum-MG-m8m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ze6-2w-Lsu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -641,7 +701,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7kZ-wi-i5w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1615" y="1493"/>
+            <point key="canvasLocation" x="-1622" y="1610"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="EqI-u1-C6B">
@@ -1076,7 +1136,6 @@
                         <outlet property="speed" destination="y2P-gg-HR9" id="chs-Pg-wJs"/>
                         <outlet property="steps" destination="FYP-fU-zXE" id="ysw-Cq-aDN"/>
                         <outlet property="upstairs" destination="AGH-vh-nA2" id="goq-uP-Rb2"/>
-                        <segue destination="Bf7-eH-62c" kind="presentation" identifier="dependentLogin" id="RYZ-Zy-AIF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yia-ft-dg6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1401,7 +1460,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lLo-qp-eqP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="343" y="1493"/>
+            <point key="canvasLocation" x="501" y="1651"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Z9B-o9-MKI">
@@ -1444,16 +1503,18 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pUj-k1-Ajq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2332" y="2195"/>
+            <point key="canvasLocation" x="-2333" y="2349"/>
         </scene>
     </scenes>
     <resources>
         <image name="icons8-Contacts-35.png" width="35" height="35"/>
         <image name="icons8-Home-35.png" width="35" height="35"/>
         <image name="launch.png" width="282" height="277"/>
+        <image name="loading" width="236" height="441"/>
+        <image name="loading.jpg" width="236" height="441"/>
         <image name="register.png" width="313" height="115"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8ot-CT-BAK"/>
+        <segue reference="3vM-Bl-ozG"/>
     </inferredMetricsTieBreakers>
 </document>
