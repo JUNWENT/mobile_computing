@@ -489,6 +489,15 @@
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="altitude" destination="yRg-Qz-qJQ" id="CGO-AG-Y2I"/>
+                        <outlet property="distance" destination="8yY-XK-TTh" id="94b-WJ-eus"/>
+                        <outlet property="downstairs" destination="Qlr-FZ-ZQW" id="Xyk-RZ-CQN"/>
+                        <outlet property="latitude" destination="ng6-QU-e4z" id="CpB-pH-nQW"/>
+                        <outlet property="longtitude" destination="EhF-gR-Rxh" id="Yqy-Y0-yVB"/>
+                        <outlet property="map" destination="KQR-0C-bvQ" id="9kR-1d-yOA"/>
+                        <outlet property="speed" destination="eSv-yL-mCJ" id="LoG-V2-FDI"/>
+                        <outlet property="steps" destination="2O9-Md-Vje" id="pWf-pW-iNC"/>
+                        <outlet property="upstairs" destination="ggV-43-dYe" id="89j-Ri-Zc5"/>
                         <segue destination="b7h-d2-0Dg" kind="modal" identifier="guardianLogin" id="oum-MG-m8m"/>
                     </connections>
                 </viewController>

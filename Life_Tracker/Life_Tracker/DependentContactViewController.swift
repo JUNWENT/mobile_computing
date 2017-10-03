@@ -15,6 +15,8 @@ class DependentContactViewController: UIViewController, UINavigationControllerDe
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var phoneNumber: UILabel!
     
+    
+    
     @IBAction func changePhoto(_ sender: Any) {
         let image = UIImagePickerController()
         image.delegate = self
@@ -41,7 +43,9 @@ class DependentContactViewController: UIViewController, UINavigationControllerDe
         if let data = UserDefaults.standard.object(forKey: "profile") {
             myPhoto.image = UIImage(data: data as! Data)
         }
-
+        if let phone = UserDefaults.standard.object(forKey: "DependentUsername") as? String {
+            phoneNumber.text = phone
+        }
     }
 
     override func didReceiveMemoryWarning() {

@@ -7,10 +7,30 @@
 //
 
 import UIKit
+import MapKit
 
 class GuardianHomePageViewController: UIViewController {
     
     var username:String?
+    
+    @IBOutlet weak var map: MKMapView!
+    
+    @IBOutlet weak var latitude: UILabel!
+    
+    @IBOutlet weak var longtitude: UILabel!
+    
+    @IBOutlet weak var speed: UILabel!
+    
+    @IBOutlet weak var altitude: UILabel!
+    
+    @IBOutlet weak var steps: UILabel!
+    
+    @IBOutlet weak var distance: UILabel!
+    
+    @IBOutlet weak var upstairs: UILabel!
+    
+    @IBOutlet weak var downstairs: UILabel!
+    
     
     override func viewDidAppear(_ animated: Bool) {
         username = UserDefaults.standard.object(forKey: "GuardianUsername") as? String
