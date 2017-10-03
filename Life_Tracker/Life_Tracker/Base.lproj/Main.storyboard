@@ -1316,7 +1316,7 @@
                                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="UserPressOnReset:" destination="7qw-83-qDC" eventType="touchUpInside" id="sdL-Yt-Zhj"/>
+                                                    <action selector="UserPressOnReset:" destination="7qw-83-qDC" eventType="touchUpInside" id="amf-ke-YYt"/>
                                                 </connections>
                                             </button>
                                         </subviews>

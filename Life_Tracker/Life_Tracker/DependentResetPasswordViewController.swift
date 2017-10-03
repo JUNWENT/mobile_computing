@@ -17,7 +17,8 @@ class DependentResetPasswordViewController: UIViewController {
     
     @IBOutlet weak var ConfirmNewPassword: UITextField!
     
-    @IBAction func UserPressOnReset(_ sender: Any) {
+
+    @IBAction func UserPressOnReset(_ sender: UIButton) {
     }
     
     override func viewDidLoad() {
