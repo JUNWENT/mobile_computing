@@ -171,7 +171,7 @@ class DependentLoginViewController: UIViewController , UITextFieldDelegate{
         }
     }
     
-    @IBAction func UserPressedOnSignIn(_ sender: Any) {
+    @IBAction func UserPressedOnSignIn(_ sender: UIButton) {
         let userIdentify = txtUser.text
         let userPassword = txtPwd.text
         let userType = "Dependent"

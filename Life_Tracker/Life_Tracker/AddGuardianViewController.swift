@@ -10,9 +10,10 @@ import UIKit
 
 class AddGuardianViewController: UIViewController {
     
-    @IBOutlet weak var guardianPhoneNumberTextField: UITextField!
+   
+    @IBOutlet weak var DependentSecretPasswordTextfield: UITextField!
     
-    @IBOutlet weak var guardianSecretPassword: UITextField!
+    @IBOutlet weak var DependentConfirmSecretPasswordTextField: UITextField!
     
     var username:String?
     
@@ -27,70 +28,16 @@ class AddGuardianViewController: UIViewController {
     }
     
     
-    @IBAction func userPassedOnAdd(_ sender: Any) {
-        let guardianPhoneNumber = guardianPhoneNumberTextField.text
-        let secretPassword = guardianSecretPassword.text
+    @IBAction func userPassedOnAdd(_ sender: UIButton) {
+        let guardianSecretPassword = DependentSecretPasswordTextfield.text
+        let ConfirmsecretPassword = DependentConfirmSecretPasswordTextField.text
         username = UserDefaults.standard.object(forKey: "DependentUsername") as? String
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
-        let table = client.table(withName: "UserRelationship")
-
+        let table = client.table(withName: "UserData")
         
-        if((guardianPhoneNumber?.isEmpty)! || (secretPassword?.isEmpty)!){
-            displayAlertMessage(useMessage: "You must enter an phone number.")
-            return
-        }
-        
-        table.read{ (result,error) in
-            if let err = error {
-                self.displayAlertMessage(useMessage: "Please check you network and try again.")
-                return
-                    print ("ERROR",err)
-            }else if let items = result?.items{
-                for item in items {
-                    if(item["id"]as? String == guardianPhoneNumber && item["dependent"]as? String == self.username && item["password"]as? String == secretPassword && item["match"]as? Bool == false){
-                        table.update(["id": guardianPhoneNumber, "match":true, "complete": false]) { (result, error) in
-                            if let err = error {
-                                print("ERROR ", err)
-                            } else  {
-                                print("update match")
-                            }
-                        }
-                        self.displayNotificationMessage(useMessage: "You have successfully connect with your guardian.")
-                        print ("match dependent and guardian")
-                    } else if ((item["id"]as? String == guardianPhoneNumber && item["dependent"]as? String == self.username && item["match"]as? Bool == true) || (item["id"]as? String == self.username && item["guardian"]as? String == guardianPhoneNumber && item["match"]as? Bool == true)){
-                        self.displayAlertMessage(useMessage: "You have already connect with this guardian")
-                        return
-                    } else if (item["id"]as? String == guardianPhoneNumber && item["dependent"]as? String == self.username && item["password"]as? String != secretPassword && item["match"]as? Bool == false){
-                        self.displayAlertMessage(useMessage: "The guardian phone number or password are not correct. Please check and try agian.")
-                        return
-                    } else if(item["id"]as? String == self.username && item["guardian"]as? String == guardianPhoneNumber && item["match"]as? Bool == false){
-                        table.update(["id": self.username, "password":secretPassword, "complete": false]) { (result, error) in
-                            if let err = error {
-                                print("ERROR ", err)
-                                print ("has error")
-                            } else  {
-                                print("changing password!")
-                            }
-                        }
-                        self.displayNotificationMessage(useMessage: "You have set your secret password. Please wait for your guardian to connect you.")
-                    } else {
-                        let itemToInsert = ["id": self.username, "dependent": self.username,"guardian":guardianPhoneNumber,"match":false,"password":secretPassword, "complete": false, "__createdAt": Date()] as [String : Any]
-                        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-                        table.insert(itemToInsert) {
-                            (item, error) in
-                            UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                            if error != nil {
-                                self.displayAlertMessage(useMessage: "Please check you network and try again.")
-                                print("Error: " + (error! as NSError).description)
-                            }
-                        }
-                        self.displayNotificationMessage(useMessage: "You have set your secret password. Please wait for your guardian to connect you.!!!!")
-    
-                    }
-                }
-            }
-        }
+        table.update(["id":username])
 
+       
     }
     
     //display alert message

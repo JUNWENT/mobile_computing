@@ -171,7 +171,7 @@ class GuardianSignInViewController: UIViewController, UITextFieldDelegate{
     }
     
     
-    @IBAction func userPressedOnSignIn(_ sender: Any) {
+    @IBAction func userPressedOnSignIn(_ sender: UIButton) {
         let userIdentify = txtUser.text
         let userPassword = txtPwd.text
         let userType = "Guardian"

@@ -30,7 +30,7 @@ class SignInViewController: UIViewController {
     }
     
     
-    @IBAction func pressedOnRegisterBotton(_ sender: Any) {
+    @IBAction func pressedOnRegisterBotton(_ sender: UIButton) {
         
         let userName = UserUsernameTextField.text
         let userEmail = UserEmailTextField.text
