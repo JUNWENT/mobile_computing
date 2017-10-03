@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -20,16 +20,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="yeb-Oz-mJn">
-                                <rect key="frame" x="0.0" y="169" width="375" height="323"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1242" translatesAutoresizingMaskIntoConstraints="NO" id="yeb-Oz-mJn">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="yeb-Oz-mJn" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="7V5-f1-WmO"/>
-                            <constraint firstAttribute="trailing" secondItem="yeb-Oz-mJn" secondAttribute="trailing" id="Eoj-eq-ekr"/>
-                            <constraint firstItem="yeb-Oz-mJn" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="IJI-7O-iFQ"/>
-                            <constraint firstItem="yeb-Oz-mJn" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="nZy-j4-iQw"/>
+                            <constraint firstItem="yeb-Oz-mJn" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="FgD-aq-O07"/>
+                            <constraint firstAttribute="trailing" secondItem="yeb-Oz-mJn" secondAttribute="trailing" id="H9C-Lc-Zum"/>
+                            <constraint firstAttribute="bottom" secondItem="yeb-Oz-mJn" secondAttribute="bottom" id="Lgv-Ye-2rq"/>
+                            <constraint firstItem="yeb-Oz-mJn" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" id="T8h-eb-wPM"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -39,6 +39,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="launch" width="750" height="1334"/>
+        <image name="1242" width="1242" height="2208"/>
     </resources>
 </document>
