@@ -10,8 +10,18 @@ import UIKit
 
 class GuardianContactViewController: UIViewController {
 
+    @IBOutlet weak var photo: UIImageView!
+    
+    @IBOutlet weak var name: UILabel!
+    
+    @IBOutlet weak var phone: UILabel!
+    
     @IBAction func UserPressedOnLogout(_ sender: UIButton) {
         UserDefaults.standard.set(nil,forKey:"GuardianUsername")
+    }
+    
+    @IBAction func changePhoto(_ sender: UIButton) {
+        
     }
     
     override func viewDidLoad() {
