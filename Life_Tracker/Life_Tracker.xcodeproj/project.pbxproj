@@ -18,6 +18,7 @@
 		A31A89F71BF3FDFA00C7B656 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31A89F61BF3FDFA00C7B656 /* Launch Screen.storyboard */; };
 		A3BBD77D1C05181600DD0DB0 /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BBD77C1C05181600DD0DB0 /* MicrosoftAzureMobile.framework */; };
 		A8140C4A1F7D2BC000140067 /* AddDependentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8140C491F7D2BC000140067 /* AddDependentViewController.swift */; };
+		A817486A1F838FD20037BE0F /* GuardianContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81748691F838FD20037BE0F /* GuardianContactViewController.swift */; };
 		A832232E1F77DED800C283D0 /* GuardianSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A832232D1F77DED800C283D0 /* GuardianSignInViewController.swift */; };
 		A83223301F77EBEA00C283D0 /* DependentHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A832232F1F77EBEA00C283D0 /* DependentHomePageViewController.swift */; };
 		A83223341F77ED1F00C283D0 /* GuardianHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83223331F77ED1F00C283D0 /* GuardianHomePageViewController.swift */; };
@@ -57,6 +58,7 @@
 		A31A89F61BF3FDFA00C7B656 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		A3BBD77C1C05181600DD0DB0 /* MicrosoftAzureMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftAzureMobile.framework; sourceTree = "<group>"; };
 		A8140C491F7D2BC000140067 /* AddDependentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDependentViewController.swift; sourceTree = "<group>"; };
+		A81748691F838FD20037BE0F /* GuardianContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuardianContactViewController.swift; sourceTree = "<group>"; };
 		A832232D1F77DED800C283D0 /* GuardianSignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuardianSignInViewController.swift; sourceTree = "<group>"; };
 		A832232F1F77EBEA00C283D0 /* DependentHomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependentHomePageViewController.swift; sourceTree = "<group>"; };
 		A83223331F77ED1F00C283D0 /* GuardianHomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuardianHomePageViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				A2D9CBE51943CB520017F096 /* frameworks */,
 				A2D9CBE81943D1340017F096 /* Life_Tracker-Bridging-Header.h */,
 				E7C5F61D1F834E1D004CE129 /* GuardianResetPasswordViewController.swift */,
+				A81748691F838FD20037BE0F /* GuardianContactViewController.swift */,
 				A8BAE1E21F761BE800C714AD /* SignInViewController.swift */,
 				E7C5F61B1F82F896004CE129 /* DependentResetPasswordViewController.swift */,
 				A8C3866D1F7CE3B90072D603 /* AddGuardianViewController.swift */,
@@ -290,6 +293,7 @@
 			files = (
 				E7C5F61C1F82F896004CE129 /* DependentResetPasswordViewController.swift in Sources */,
 				A83223341F77ED1F00C283D0 /* GuardianHomePageViewController.swift in Sources */,
+				A817486A1F838FD20037BE0F /* GuardianContactViewController.swift in Sources */,
 				A8C386701F7D19100072D603 /* DependentContactViewController.swift in Sources */,
 				A8BAE1E31F761BE800C714AD /* SignInViewController.swift in Sources */,
 				A83223301F77EBEA00C283D0 /* DependentHomePageViewController.swift in Sources */,
