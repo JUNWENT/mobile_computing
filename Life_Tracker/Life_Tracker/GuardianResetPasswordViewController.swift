@@ -71,19 +71,13 @@ class GuardianResetPasswordViewController: UIViewController {
                                 } else  {
                                     print("update user password")
                                 }
-                                let alert = UIAlertController(title:"COMFIRMATION",message:"You have sucessfully change your password.",preferredStyle:UIAlertControllerStyle.alert)
-                                let okAction = UIAlertAction(title:"OK",style:UIAlertActionStyle.default){
-                                    action in
-                                    self.dismiss(animated: true, completion: nil)
-                                }
-                                alert.addAction(okAction)
-                                self.present(alert, animated: true, completion: nil)
+                                self.displayAlertMessage(useMessage: "You have succesfully changed your password!")
                             }
+                        } else if (item["phoneNumber"] as? String == username! && item["password"] as? String != userExistingPassword! && item["complete"] as! Bool == false){
+                            self.displayAlertMessage(useMessage: "Please enter your correct existing password.")
                         }
                     }
                 }
-                self.displayAlertMessage(useMessage: "Please enter your correct existing password.")
-                return
             }
         }
         
