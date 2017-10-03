@@ -10,6 +10,10 @@ import UIKit
 
 class AddDependentViewController: UIViewController {
 
+    @IBOutlet weak var DependentPhoneNumberTextField: UITextField!
+    @IBOutlet weak var DependentSecretPasswordTextField: UITextField!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,6 +25,8 @@ class AddDependentViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func UserPressedOnAdd(_ sender: UIButton) {
+    }
 
     /*
     // MARK: - Navigation
