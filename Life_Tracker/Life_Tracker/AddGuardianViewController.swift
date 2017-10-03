@@ -35,9 +35,23 @@ class AddGuardianViewController: UIViewController {
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
         let table = client.table(withName: "UserData")
         
-        table.update(["id":username])
-
-       
+        if ((guardianSecretPassword?.isEmpty)! || (ConfirmsecretPassword?.isEmpty)!){
+            self.displayAlertMessage(useMessage: "Your must enter a password to reset.")
+        }
+        
+        if (guardianSecretPassword == ConfirmsecretPassword){
+            table.update(["id":username!,"secretPassword":DependentConfirmSecretPasswordTextField]) {
+                (result, error) in
+                if let err = error {
+                    print("ERROR ", err)
+                } else  {
+                    print("update user secret password")
+                }
+            }
+        } else {
+            self.displayAlertMessage(useMessage: "Your password are different.")
+        }
+    
     }
     
     //display alert message
