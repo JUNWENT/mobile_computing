@@ -29,7 +29,7 @@ class AddDependentViewController: UIViewController {
         let dependentPhoneNumber = DependentPhoneNumberTextField.text
         let secretPassword = DependentSecretPasswordTextField.text
         var username:String?
-        username = UserDefaults.standard.object(forKey: "DependentUsername") as? String
+        username = UserDefaults.standard.object(forKey: "GuardianUsername") as? String
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
         let table = client.table(withName: "UserData")
         let tableRelationship = client.table(withName: "UserRelationship")

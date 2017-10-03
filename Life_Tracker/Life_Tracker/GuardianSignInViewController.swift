@@ -109,6 +109,9 @@ class GuardianSignInViewController: UIViewController, UITextFieldDelegate{
         imgPwd.image = UIImage(named:"iconfont-password")
         txtPwd.leftView!.addSubview(imgPwd)
         vLogin.addSubview(txtPwd)
+        
+        txtUser.placeholder = "your phone number"
+        txtPwd.placeholder = "your password"
     }
     
     //输入框获取焦点开始编辑

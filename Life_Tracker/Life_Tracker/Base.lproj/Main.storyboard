@@ -198,18 +198,6 @@
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Gb-3c-IcM">
-                                <rect key="frame" x="47" y="608" width="320" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.26064028480000001" green="0.50234633080000002" blue="0.53207951779999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="BOE-HS-llp" kind="show" id="cQa-7J-PC3"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter guardian phone number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0PV-sC-R7U">
                                 <rect key="frame" x="20" y="233" width="374" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -307,14 +295,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="icons8-Contacts-35.png" selectedImage="icons8-Contacts-35.png" id="iJJ-4X-8sd">
-                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
-                    </tabBarItem>
+                    <navigationItem key="navigationItem" id="ura-2k-dIZ"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BJn-Ld-6jn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2498" y="2349"/>
+            <point key="canvasLocation" x="-1591.304347826087" y="2348.6413043478265"/>
         </scene>
         <!--Guardian Reset Password View Controller-->
         <scene sceneID="sjC-E0-08p">
@@ -610,7 +596,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ze6-2w-Lsu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1749.2753623188407" y="2348.6413043478265"/>
+            <point key="canvasLocation" x="-842.02898550724649" y="2348.6413043478265"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="08P-Zb-0WM">
@@ -643,7 +629,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zXE-4Z-AKp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-980" y="2349"/>
+            <point key="canvasLocation" x="-73.913043478260875" y="2348.6413043478265"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="zEJ-4E-4zD">
@@ -657,7 +643,7 @@
                     <connections>
                         <segue destination="Mvj-4o-TKf" kind="relationship" relationship="viewControllers" id="iyn-sK-xfe"/>
                         <segue destination="P0z-FY-fdx" kind="relationship" relationship="viewControllers" id="IPk-wC-noz"/>
-                        <segue destination="BOE-HS-llp" kind="relationship" relationship="viewControllers" id="Maf-j3-WIN"/>
+                        <segue destination="ZzR-Gx-Sfs" kind="relationship" relationship="viewControllers" id="Maf-j3-WIN"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7kZ-wi-i5w" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1102,7 +1088,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yia-ft-dg6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="321.73913043478262" y="2349.4565217391305"/>
+            <point key="canvasLocation" x="1228.985507246377" y="2349.4565217391305"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="dNe-f6-hl7">
@@ -1141,7 +1127,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ra6-4J-vOc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1010" y="2349"/>
+            <point key="canvasLocation" x="1915.9420289855075" y="2348.6413043478265"/>
         </scene>
         <!--Dependent Contact View Controller-->
         <scene sceneID="K8d-BU-QiQ">
@@ -1238,7 +1224,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="giG-ji-FrC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2538" y="2350"/>
+            <point key="canvasLocation" x="3444.9275362318845" y="2349.4565217391305"/>
         </scene>
         <!--Add Guardian View Controller-->
         <scene sceneID="mCj-Zv-pbb">
@@ -1321,7 +1307,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m4q-76-r8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3910.144927536232" y="2369.8369565217395"/>
+            <point key="canvasLocation" x="4817.391304347826" y="2369.8369565217395"/>
         </scene>
         <!--Dependent Reset Password View Controller-->
         <scene sceneID="zMK-Qo-sgN">
@@ -1475,7 +1461,28 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uh2-DU-2Bg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1734.7826086956522" y="2347.826086956522"/>
+            <point key="canvasLocation" x="2642.0289855072465" y="2347.826086956522"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Gf3-G2-C5b">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ZzR-Gx-Sfs" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="icons8-Contacts-35.png" selectedImage="icons8-Contacts-35.png" id="iJJ-4X-8sd">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="dCc-cd-O3c">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BOE-HS-llp" kind="relationship" relationship="rootViewController" id="caq-p7-dDf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pUj-k1-Ajq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2332" y="2195"/>
         </scene>
     </scenes>
     <resources>
@@ -1487,6 +1494,5 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="r1M-5B-nSR"/>
-        <segue reference="cQa-7J-PC3"/>
     </inferredMetricsTieBreakers>
 </document>
