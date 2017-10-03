@@ -38,6 +38,7 @@
 		A8DEB9231F82705B00BB725F /* launch.png in Resources */ = {isa = PBXBuildFile; fileRef = A8DEB9221F82705B00BB725F /* launch.png */; };
 		A8DEB9251F82706B00BB725F /* register.png in Resources */ = {isa = PBXBuildFile; fileRef = A8DEB9241F82706B00BB725F /* register.png */; };
 		E72B88C61F793B5100A79838 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E72B88C51F793B5100A79838 /* HealthKit.framework */; };
+		E7C5F61C1F82F896004CE129 /* DependentResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C5F61B1F82F896004CE129 /* DependentResetPasswordViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		A8DEB9241F82706B00BB725F /* register.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = register.png; sourceTree = "<group>"; };
 		E72B88C41F793B5100A79838 /* Life_Tracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Life_Tracker.entitlements; sourceTree = "<group>"; };
 		E72B88C51F793B5100A79838 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		E7C5F61B1F82F896004CE129 /* DependentResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependentResetPasswordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				A2D9CBE51943CB520017F096 /* frameworks */,
 				A2D9CBE81943D1340017F096 /* Life_Tracker-Bridging-Header.h */,
 				A8BAE1E21F761BE800C714AD /* SignInViewController.swift */,
+				E7C5F61B1F82F896004CE129 /* DependentResetPasswordViewController.swift */,
 				A8C3866D1F7CE3B90072D603 /* AddGuardianViewController.swift */,
 				A83223331F77ED1F00C283D0 /* GuardianHomePageViewController.swift */,
 				A832232F1F77EBEA00C283D0 /* DependentHomePageViewController.swift */,
@@ -282,6 +285,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7C5F61C1F82F896004CE129 /* DependentResetPasswordViewController.swift in Sources */,
 				A83223341F77ED1F00C283D0 /* GuardianHomePageViewController.swift in Sources */,
 				A8C386701F7D19100072D603 /* DependentContactViewController.swift in Sources */,
 				A8BAE1E31F761BE800C714AD /* SignInViewController.swift in Sources */,
