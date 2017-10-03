@@ -40,11 +40,12 @@ class AddGuardianViewController: UIViewController {
         }
         
         if (guardianSecretPassword == ConfirmsecretPassword){
-            table.update(["id":username!,"secretPassword":DependentConfirmSecretPasswordTextField]) {
+            table.update(["id":username!,"secretPassword":guardianSecretPassword!]) {
                 (result, error) in
                 if let err = error {
                     print("ERROR ", err)
                 } else  {
+                    self.displayAlertMessage(useMessage: "You have successfully set a secret password!")
                     print("update user secret password")
                 }
             }
