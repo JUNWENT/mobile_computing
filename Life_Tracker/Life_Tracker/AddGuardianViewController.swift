@@ -27,6 +27,9 @@ class AddGuardianViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(false)
+    }
     
     @IBAction func userPassedOnAdd(_ sender: UIButton) {
         let guardianSecretPassword = DependentSecretPasswordTextfield.text

@@ -10,6 +10,9 @@ import UIKit
 
 class GuardianSignInViewController: UIViewController, UITextFieldDelegate{
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(false)
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

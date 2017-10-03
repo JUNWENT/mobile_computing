@@ -41,7 +41,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
         }
     }
     
-    
+       
     
     @IBAction func askForHelp(_ sender: Any) {
     }
