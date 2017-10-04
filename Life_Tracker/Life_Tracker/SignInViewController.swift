@@ -55,6 +55,7 @@ class SignInViewController: UIViewController {
             UserType = "Dependent"
             if username != nil {
                 self.displayAlertMessage(useMessage: "You must first log out!")
+                self.loading.stopAnimating()
                 return
             }
             print ("USER IS DEPENDENT")
@@ -62,6 +63,7 @@ class SignInViewController: UIViewController {
             UserType = "Guardian"
             if username2 != nil {
                 self.displayAlertMessage(useMessage: "You must first log out!")
+                self.loading.stopAnimating()
                 return
             }
             print("USER IS GUARDIAN")
@@ -72,31 +74,36 @@ class SignInViewController: UIViewController {
         
         // check if username valid
         if !(usernameIsValid(userName!)){
-            displayAlertMessage(useMessage: "The username is not valid")//
+            displayAlertMessage(useMessage: "The username is not valid. Username can only contain character, number and _ .")
+            self.loading.stopAnimating()
             return
         }
         
         // check needed fields empty
         if ((userName?.isEmpty)! || (userPassword?.isEmpty)! || (userPhoneNumber?.isEmpty)! || (userComfirmPassword?.isEmpty)!){
             displayAlertMessage(useMessage: "Not all the required field is entered! Please check")
+            self.loading.stopAnimating()
             return
         }
         
         // check if password match
         if (userPassword != userComfirmPassword){
             displayAlertMessage(useMessage: "The passwords do not match")
+            self.loading.stopAnimating()
             return
         }
         
         // check password is vaild
         if !(passwordIsValid(userPassword!)){
             displayAlertMessage(useMessage: "The password length must be greater than or equal to 8! The password must at least contain one uppercase character,lowercase character,number and special character.")
+            self.loading.stopAnimating()
             return
         }
         
         // check phone number is valid
         if !(phoneNumberisValid(userPhoneNumber!)){
             displayAlertMessage(useMessage: "The phone number is not valid.")
+            self.loading.stopAnimating()
             return
         }
         
@@ -105,12 +112,14 @@ class SignInViewController: UIViewController {
         table.read { (result, error) in
             if let err = error {
                 self.displayAlertMessage(useMessage: "Failure to register. Please check you network and register again.")
+                self.loading.stopAnimating()
                 return
                     print("ERROR ", err)
             } else if let items = result?.items {
                 for item in items {
                     if (item["phoneNumber"] as? String == userPhoneNumber && item["complete"] as! Bool == false){
                         self.displayAlertMessage(useMessage: "The phone number has been registerred.")
+                        self.loading.stopAnimating()
                         return
                     }
                 }
@@ -123,6 +132,7 @@ class SignInViewController: UIViewController {
                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
                     if error != nil {
                         self.displayAlertMessage(useMessage: "Failure to register. Please check you network and register again.")
+                        self.loading.stopAnimating()
                         print("Error: " + (error! as NSError).description)
                     }
                 }
