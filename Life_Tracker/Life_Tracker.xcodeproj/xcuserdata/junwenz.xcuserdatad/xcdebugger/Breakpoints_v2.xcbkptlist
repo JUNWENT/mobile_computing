@@ -125,38 +125,6 @@
             endingLineNumber = "89"
             landmarkName = "UserPressOnReset(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Life_Tracker.DependentResetPasswordViewController.(UserPressOnReset (__ObjC.UIButton) -&gt; ()).(closure #1)"
-                  moduleName = "Life_Tracker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/junwenz/Desktop/mobile_computing/Life_Tracker/Life_Tracker/DependentResetPasswordViewController.swift"
-                  timestampString = "528704557.167675"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "4925">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Life_Tracker.DependentResetPasswordViewController.(UserPressOnReset (__ObjC.UIButton) -&gt; ()).(closure #1).(closure #1)"
-                  moduleName = "Life_Tracker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/junwenz/Desktop/mobile_computing/Life_Tracker/Life_Tracker/DependentResetPasswordViewController.swift"
-                  timestampString = "528704557.170144"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "577">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -173,38 +141,6 @@
             endingLineNumber = "89"
             landmarkName = "UserPressOnReset(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Life_Tracker.DependentResetPasswordViewController.(UserPressOnReset (__ObjC.UIButton) -&gt; ()).(closure #1)"
-                  moduleName = "Life_Tracker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/junwenz/Desktop/mobile_computing/Life_Tracker/Life_Tracker/DependentResetPasswordViewController.swift"
-                  timestampString = "528704557.175965"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "4925">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Life_Tracker.DependentResetPasswordViewController.(UserPressOnReset (__ObjC.UIButton) -&gt; ()).(closure #1).(closure #1)"
-                  moduleName = "Life_Tracker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/junwenz/Desktop/mobile_computing/Life_Tracker/Life_Tracker/DependentResetPasswordViewController.swift"
-                  timestampString = "528704557.178812"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "74"
-                  endingLineNumber = "74"
-                  offsetFromSymbolStart = "577">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -285,38 +221,6 @@
             endingLineNumber = "76"
             landmarkName = "UserPressOnReset(_:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Life_Tracker.DependentResetPasswordViewController.UserPressOnReset (__ObjC.UIButton) -&gt; ()"
-                  moduleName = "Life_Tracker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/junwenz/Desktop/mobile_computing/Life_Tracker/Life_Tracker/DependentResetPasswordViewController.swift"
-                  timestampString = "528704557.216786"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
-                  offsetFromSymbolStart = "5257">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Life_Tracker.DependentResetPasswordViewController.(UserPressOnReset (__ObjC.UIButton) -&gt; ()).(closure #1)"
-                  moduleName = "Life_Tracker"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/junwenz/Desktop/mobile_computing/Life_Tracker/Life_Tracker/DependentResetPasswordViewController.swift"
-                  timestampString = "528704557.218456"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "39"
-                  endingLineNumber = "39"
-                  offsetFromSymbolStart = "100">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
