@@ -10,6 +10,8 @@ import UIKit
 
 class ManageDependentsTableViewController: UITableViewController {
     var dependents = Array<(String?, String?)>()
+    var guardianPhone = ""
+    var dependentPhone = ""
     
     @IBOutlet var dependentsTable: UITableView!
     
@@ -65,30 +67,16 @@ class ManageDependentsTableViewController: UITableViewController {
             // Delete the row from the data source
             let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
             let table = client.table(withName: "UserRelationship")
+            dependentPhone = dependents[indexPath.row].1!
+            let id = dependentPhone + guardianPhone
             
-            table.read { (result, error) in
+            table.delete(withId: id) { (itemId, error) in
                 if let err = error {
-                    //                    self.displayAlertMessage(useMessage: "Please check you network and try again.")
-                    return
-                        print("ERROR ", err)
-                } else if let items = result?.items {
-                    for item in items {
-                        print("index ",indexPath.row)
-                        if item["dependent"] as? String == self.dependents[indexPath.row].1 {
-                            table.delete(item)
-                        }
-                    }
+                    print("ERROR ", err)
+                } else {
+                    print("Todo Item ID: ", itemId as Any)
                 }
             }
-
-//            table.delete(newItem as [NSObject: AnyObject]) {
-//                (itemID, error) in
-//                if let err = error {
-//                    print("ERROR ", err)
-//                } else {
-//                    print("Todo Item ID: ", itemID)
-//                }
-//            }
             
             dependentsTable.beginUpdates()
             tableView.deleteRows(at: [indexPath], with: .fade)
@@ -99,6 +87,13 @@ class ManageDependentsTableViewController: UITableViewController {
         }    
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "viewDependent" {
+            let dependentData = segue.destination as! GuardianHomePageViewController
+            dependentData.dependentPhone = self.dependentPhone
+        }
+    }
+    
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {

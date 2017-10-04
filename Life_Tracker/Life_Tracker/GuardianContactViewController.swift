@@ -86,7 +86,7 @@ class GuardianContactViewController: UIViewController, UINavigationControllerDel
         if segue.identifier == "showDependents" {
             let dependentsView = segue.destination as! ManageDependentsTableViewController
             dependentsView.dependents = self.listOfDependes
-            
+            dependentsView.guardianPhone = self.phone.text!
         }
     }
 
