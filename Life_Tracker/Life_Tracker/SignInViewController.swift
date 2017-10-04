@@ -38,10 +38,7 @@ class SignInViewController: UIViewController {
         self.loading.startAnimating()
         // need to log out then register
         let username = UserDefaults.standard.object(forKey: "DependentUsername") as? String
-        if username == nil {
-            self.displayAlertMessage(useMessage: "You must first log out!")
-            return
-        }
+        let username2 = UserDefaults.standard.object(forKey: "GuardianUsername") as? String
         
         let userName = UserUsernameTextField.text
         let userPhoneNumber = UserPhoneNumberTextField.text
@@ -56,9 +53,17 @@ class SignInViewController: UIViewController {
         {
         case 0:
             UserType = "Dependent"
+            if username != nil {
+                self.displayAlertMessage(useMessage: "You must first log out!")
+                return
+            }
             print ("USER IS DEPENDENT")
         case 1:
             UserType = "Guardian"
+            if username2 != nil {
+                self.displayAlertMessage(useMessage: "You must first log out!")
+                return
+            }
             print("USER IS GUARDIAN")
         default:
             break
