@@ -70,8 +70,11 @@ class AddDependentViewController: UIViewController,UIGestureRecognizerDelegate {
                     if(item["type"] as? String == userType){
                         if (item["phoneNumber"] as? String == dependentPhoneNumber && item["complete"] as! Bool == false){
                             if (item["secretPassword"] as? String == secretPassword){
-                                UserDefaults.standard.set(dependentPhoneNumber,forKey:"DependentGuardian")
-                                UserDefaults.standard.synchronize()
+                                let hasAdd = UserDefaults.standard.object(forKey: "DependentGuardian")
+                                if (hasAdd == nil){
+                                    UserDefaults.standard.set(dependentPhoneNumber,forKey:"DependentGuardian")
+                                    UserDefaults.standard.synchronize()
+                                }
                                 let dependentusername = item["username"] as? String
                                 let id = dependentPhoneNumber!+username!
                                 UserDefaults.standard.synchronize()
