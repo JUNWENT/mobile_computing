@@ -10,12 +10,14 @@ import UIKit
 
 class AddDependentViewController: UIViewController,UIGestureRecognizerDelegate {
 
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var DependentPhoneNumberTextField: UITextField!
     @IBOutlet weak var DependentSecretPasswordTextField: UITextField!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.loading.hidesWhenStopped = true
         let target = self.navigationController?.interactivePopGestureRecognizer!.delegate
         let pan = UIPanGestureRecognizer(target:target,
                                          action:Selector(("handleNavigationTransition:")))
@@ -46,6 +48,7 @@ class AddDependentViewController: UIViewController,UIGestureRecognizerDelegate {
     }
     
     @IBAction func UserPressedOnAdd(_ sender: UIButton) {
+        self.loading.startAnimating()
         let dependentPhoneNumber = DependentPhoneNumberTextField.text
         let secretPassword = DependentSecretPasswordTextField.text
         var username:String?

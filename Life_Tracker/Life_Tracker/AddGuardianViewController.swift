@@ -11,6 +11,8 @@ import UIKit
 class AddGuardianViewController: UIViewController,UIGestureRecognizerDelegate {
     
    
+    @IBOutlet weak var loading: UIActivityIndicatorView!
+  
     @IBOutlet weak var DependentSecretPasswordTextfield: UITextField!
     
     @IBOutlet weak var DependentConfirmSecretPasswordTextField: UITextField!
@@ -19,6 +21,7 @@ class AddGuardianViewController: UIViewController,UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.loading.hidesWhenStopped = true
         let target = self.navigationController?.interactivePopGestureRecognizer!.delegate
         let pan = UIPanGestureRecognizer(target:target,
                                          action:Selector(("handleNavigationTransition:")))
@@ -47,6 +50,7 @@ class AddGuardianViewController: UIViewController,UIGestureRecognizerDelegate {
     }
     
     @IBAction func userPassedOnAdd(_ sender: UIButton) {
+        self.loading.startAnimating()
         let guardianSecretPassword = DependentSecretPasswordTextfield.text
         let ConfirmsecretPassword = DependentConfirmSecretPasswordTextField.text
         username = UserDefaults.standard.object(forKey: "DependentUsername") as? String

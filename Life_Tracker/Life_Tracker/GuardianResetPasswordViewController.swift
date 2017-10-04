@@ -10,12 +10,14 @@ import UIKit
 
 class GuardianResetPasswordViewController: UIViewController,UIGestureRecognizerDelegate {
     
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var ExistingPasswordTextField: UITextField!
     @IBOutlet weak var NewPasswordTextField: UITextField!
     @IBOutlet weak var ConfirmNewPasswordTextField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.loading.hidesWhenStopped = true
         let target = self.navigationController?.interactivePopGestureRecognizer!.delegate
         let pan = UIPanGestureRecognizer(target:target,
                                          action:Selector(("handleNavigationTransition:")))
@@ -45,6 +47,7 @@ class GuardianResetPasswordViewController: UIViewController,UIGestureRecognizerD
     
     
     @IBAction func UserPressOnResetButton(_ sender: UIButton) {
+        self.loading.startAnimating()
         let userExistingPassword = ExistingPasswordTextField.text
         let userNewPassword = NewPasswordTextField.text
         let userConfirmNewPassword = ConfirmNewPasswordTextField.text

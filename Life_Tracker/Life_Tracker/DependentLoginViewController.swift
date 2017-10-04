@@ -11,6 +11,7 @@ import CoreData
 
 class DependentLoginViewController: UIViewController , UITextFieldDelegate{
     
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(false)
     }
@@ -27,11 +28,11 @@ class DependentLoginViewController: UIViewController , UITextFieldDelegate{
     //distance between left hand and head
     var offsetLeftHand:CGFloat = 60
     
-    //picturea of left hand and rignt hand to cover eyes
+    //pictures of left hand and rignt hand to cover eyes
     var imgLeftHand:UIImageView!
     var imgRightHand:UIImageView!
     
-    //circle shape pictures of left hand and right hand
+    //pictures of left hand and right hand(circle shape)
     var imgLeftHandGone:UIImageView!
     var imgRightHandGone:UIImageView!
     
@@ -40,7 +41,7 @@ class DependentLoginViewController: UIViewController , UITextFieldDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.loading.hidesWhenStopped = true
         //get the size of screen
         let mainSize = UIScreen.main.bounds.size
         
@@ -118,7 +119,7 @@ class DependentLoginViewController: UIViewController , UITextFieldDelegate{
         txtPwd.placeholder = "your password"
     }
     
-    //test field begin to edit
+    //text field begin to edit
     func textFieldDidBeginEditing(_ textField:UITextField)
     {
         //if it is username typing
@@ -178,6 +179,7 @@ class DependentLoginViewController: UIViewController , UITextFieldDelegate{
     }
     
     @IBAction func UserPressedOnSignIn(_ sender: UIButton) {
+        self.loading.startAnimating()
         let userIdentify = txtUser.text
         let userPassword = txtPwd.text
         let userType = "Dependent"

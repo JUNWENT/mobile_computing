@@ -15,11 +15,13 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var UserPasswordTextField: UITextField!
     @IBOutlet weak var UserComfirmPasswordTextField: UITextField!
     
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var UserTypeController: UISegmentedControl!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.loading.hidesWhenStopped = true
         // Do any additional setup after loading the view.
     }
     
@@ -33,7 +35,7 @@ class SignInViewController: UIViewController {
     }
     
     @IBAction func pressedOnRegisterBotton(_ sender: UIButton) {
-        
+        self.loading.startAnimating()
         // need to log out then register
         let username = UserDefaults.standard.object(forKey: "DependentUsername") as? String
         if username == nil {

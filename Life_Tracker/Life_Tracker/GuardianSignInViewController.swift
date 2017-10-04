@@ -10,6 +10,7 @@ import UIKit
 
 class GuardianSignInViewController: UIViewController, UITextFieldDelegate{
     
+    @IBOutlet weak var loading: UIActivityIndicatorView!
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(false)
     }
@@ -19,70 +20,70 @@ class GuardianSignInViewController: UIViewController, UITextFieldDelegate{
         // Dispose of any resources that can be recreated.
     }
     
-    //用户密码输入框
+    //User password text field
     var txtUser:UITextField!
     var txtPwd:UITextField!
     
-    //左手离脑袋的距离
+    //distance between left hand and head
     var offsetLeftHand:CGFloat = 60
     
-    //左手图片,右手图片(遮眼睛的)
+    //pictures of left hand and right hand to cover eyes
     var imgLeftHand:UIImageView!
     var imgRightHand:UIImageView!
     
-    //左手图片,右手图片(圆形的)
+    //pictures of left hand and right hand(circle shape)
     var imgLeftHandGone:UIImageView!
     var imgRightHandGone:UIImageView!
     
-    //登录框状态
+    //the statement of login field
     var showType:LoginShowType = LoginShowType.none
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //获取屏幕尺寸
+        self.loading.hidesWhenStopped = true
+        //get the size of screen
         let mainSize = UIScreen.main.bounds.size
         
-        //猫头鹰头部
+        //the head of owl
         let imgLogin =  UIImageView(frame:CGRect(x: mainSize.width/2-211/2, y: 100, width: 211, height: 109))
         imgLogin.image = UIImage(named:"owl-login")
         imgLogin.layer.masksToBounds = true
         self.view.addSubview(imgLogin)
         
-        //猫头鹰左手(遮眼睛的)
+        //owl's left hand to cover eye
         let rectLeftHand = CGRect(x: 61 - offsetLeftHand, y: 90, width: 40, height: 65)
         imgLeftHand = UIImageView(frame:rectLeftHand)
         imgLeftHand.image = UIImage(named:"owl-login-arm-left")
         imgLogin.addSubview(imgLeftHand)
         
-        //猫头鹰右手(遮眼睛的)
+        //owl's right hand to cover eye
         let rectRightHand = CGRect(x: imgLogin.frame.size.width / 2 + 60, y: 90, width: 40, height: 65)
         imgRightHand = UIImageView(frame:rectRightHand)
         imgRightHand.image = UIImage(named:"owl-login-arm-right")
         imgLogin.addSubview(imgRightHand)
         
-        //登录框背景
+        //background of login field
         let vLogin =  UIView(frame:CGRect(x: 15, y: 200, width: mainSize.width - 30, height: 160))
         vLogin.layer.borderWidth = 0.5
         vLogin.layer.borderColor = UIColor.lightGray.cgColor
         vLogin.backgroundColor = UIColor.white
         self.view.addSubview(vLogin)
         
-        //猫头鹰左手(圆形的)
+        //owl's left hand(circle)
         let rectLeftHandGone = CGRect(x: mainSize.width / 2 - 100,
                                       y: vLogin.frame.origin.y - 22, width: 40, height: 40)
         imgLeftHandGone = UIImageView(frame:rectLeftHandGone)
         imgLeftHandGone.image = UIImage(named:"icon_hand")
         self.view.addSubview(imgLeftHandGone)
         
-        //猫头鹰右手(圆形的)
+        //owl's right hand(circle)
         let rectRightHandGone = CGRect(x: mainSize.width / 2 + 62,
                                        y: vLogin.frame.origin.y - 22, width: 40, height: 40)
         imgRightHandGone = UIImageView(frame:rectRightHandGone)
         imgRightHandGone.image = UIImage(named:"icon_hand")
         self.view.addSubview(imgRightHandGone)
         
-        //用户名输入框
+        //username textfield
         txtUser = UITextField(frame:CGRect(x: 30, y: 30, width: vLogin.frame.size.width - 60, height: 44))
         txtUser.delegate = self
         txtUser.layer.cornerRadius = 5
@@ -91,13 +92,13 @@ class GuardianSignInViewController: UIViewController, UITextFieldDelegate{
         txtUser.leftView = UIView(frame:CGRect(x: 0, y: 0, width: 44, height: 44))
         txtUser.leftViewMode = UITextFieldViewMode.always
         
-        //用户名输入框左侧图标
+        //the icon of username textfield on the left
         let imgUser =  UIImageView(frame:CGRect(x: 11, y: 11, width: 22, height: 22))
         imgUser.image = UIImage(named:"iconfont-user")
         txtUser.leftView!.addSubview(imgUser)
         vLogin.addSubview(txtUser)
         
-        //密码输入框
+        //enter user password
         txtPwd = UITextField(frame:CGRect(x: 30, y: 90, width: vLogin.frame.size.width - 60, height: 44))
         txtPwd.delegate = self
         txtPwd.layer.cornerRadius = 5
@@ -107,7 +108,7 @@ class GuardianSignInViewController: UIViewController, UITextFieldDelegate{
         txtPwd.leftView = UIView(frame:CGRect(x: 0, y: 0, width: 44, height: 44))
         txtPwd.leftViewMode = UITextFieldViewMode.always
         
-        //密码输入框左侧图标
+        //the icon of password of textfield on the left
         let imgPwd =  UIImageView(frame:CGRect(x: 11, y: 11, width: 22, height: 22))
         imgPwd.image = UIImage(named:"iconfont-password")
         txtPwd.leftView!.addSubview(imgPwd)
@@ -117,10 +118,10 @@ class GuardianSignInViewController: UIViewController, UITextFieldDelegate{
         txtPwd.placeholder = "your password"
     }
     
-    //输入框获取焦点开始编辑
+    //text field brgin to edit
     func textFieldDidBeginEditing(_ textField:UITextField)
     {
-        //如果当前是用户名输入
+        //if if is username typing
         if textField.isEqual(txtUser){
             if (showType != LoginShowType.pass)
             {
@@ -129,7 +130,7 @@ class GuardianSignInViewController: UIViewController, UITextFieldDelegate{
             }
             showType = LoginShowType.user
             
-            //播放不遮眼动画
+            //play the flash of not covering eyes
             UIView.animate(withDuration: 0.5, animations: { () -> Void in
                 self.imgLeftHand.frame = CGRect(
                     x: self.imgLeftHand.frame.origin.x - self.offsetLeftHand,
@@ -147,7 +148,7 @@ class GuardianSignInViewController: UIViewController, UITextFieldDelegate{
                     y: self.imgRightHandGone.frame.origin.y, width: 40, height: 40)
             })
         }
-            //如果当前是密码名输入
+            //if it is password typing
         else if textField.isEqual(txtPwd){
             if (showType == LoginShowType.pass)
             {
@@ -156,7 +157,7 @@ class GuardianSignInViewController: UIViewController, UITextFieldDelegate{
             }
             showType = LoginShowType.pass
             
-            //播放遮眼动画
+            //play the flash of covering eyes
             UIView.animate(withDuration: 0.5, animations: { () -> Void in
                 self.imgLeftHand.frame = CGRect(
                     x: self.imgLeftHand.frame.origin.x + self.offsetLeftHand,
@@ -178,6 +179,7 @@ class GuardianSignInViewController: UIViewController, UITextFieldDelegate{
     
     
     @IBAction func userPressedOnSignIn(_ sender: UIButton) {
+        self.loading.startAnimating()
         let userIdentify = txtUser.text
         let userPassword = txtPwd.text
         let userType = "Guardian"

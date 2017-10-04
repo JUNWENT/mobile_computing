@@ -48,9 +48,16 @@
                                     <action selector="userPressedOnSignIn:" destination="b7h-d2-0Dg" eventType="touchUpInside" id="2wI-cM-RhN"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="HKK-5o-w1Z">
+                                <rect key="frame" x="262" y="391" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="loading" destination="HKK-5o-w1Z" id="EiD-eO-Kwh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JZZ-x7-vQo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -92,9 +99,16 @@
                                     <segue destination="bva-dY-il8" kind="show" id="xIG-DM-NcY"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="aKV-MZ-wj6">
+                                <rect key="frame" x="261" y="460" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="loading" destination="aKV-MZ-wj6" id="qLs-Hz-ACf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVQ-pv-eFf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -375,12 +389,17 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="wp7-aW-ggm">
+                                <rect key="frame" x="259" y="534" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
                         <outlet property="DependentPhoneNumberTextField" destination="0PV-sC-R7U" id="IT4-LZ-RPe"/>
                         <outlet property="DependentSecretPasswordTextField" destination="r80-YR-tTr" id="De5-uB-hMK"/>
+                        <outlet property="loading" destination="wp7-aW-ggm" id="7nM-wZ-Z7I"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qnu-lo-qcL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -579,6 +598,10 @@
                                     <action selector="UserPressOnResetButton:" destination="PmY-KA-7dL" eventType="touchUpInside" id="Tnn-g5-qly"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="8Iv-wg-KUt">
+                                <rect key="frame" x="254" y="584" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -591,6 +614,7 @@
                         <outlet property="ConfirmNewPasswordTextField" destination="Apz-Hw-yiV" id="70l-TR-18m"/>
                         <outlet property="ExistingPasswordTextField" destination="g5U-qV-LM7" id="img-SD-GAo"/>
                         <outlet property="NewPasswordTextField" destination="ggs-Sk-qMc" id="bYV-gH-8QC"/>
+                        <outlet property="loading" destination="8Iv-wg-KUt" id="Dpu-gL-rx7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hww-F7-qlE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -851,6 +875,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="prs-pm-yRK">
+                                <rect key="frame" x="190" y="134" width="166" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="sQ2-v8-ZaY"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Dependent"/>
+                                    <segment title="Guardian"/>
+                                </segments>
+                                <color key="tintColor" red="0.38352003690000003" green="0.27574151749999998" blue="0.20009408889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Register Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gnt-fd-hzm">
                                 <rect key="frame" x="38" y="134" width="111" height="21"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
@@ -976,17 +1011,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="prs-pm-yRK">
-                                <rect key="frame" x="190" y="134" width="166" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="sQ2-v8-ZaY"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Dependent"/>
-                                    <segment title="Guardian"/>
-                                </segments>
-                                <color key="tintColor" red="0.38352003690000003" green="0.27574151749999998" blue="0.20009408889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </segmentedControl>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="RL5-Hl-kmH">
+                                <rect key="frame" x="281" y="540" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1051,6 +1079,7 @@
                         <outlet property="UserPhoneNumberTextField" destination="WFc-Pf-UDe" id="h8A-Ij-qtQ"/>
                         <outlet property="UserTypeController" destination="prs-pm-yRK" id="lVU-k8-5TU"/>
                         <outlet property="UserUsernameTextField" destination="g2E-Ox-as9" id="E6l-fB-sJP"/>
+                        <outlet property="loading" destination="RL5-Hl-kmH" id="6dZ-dj-aaC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xg3-F5-BPe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1406,7 +1435,7 @@
                                     <constraint firstAttribute="height" constant="42" id="jLE-rd-IUv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <state key="normal" title="SAVE">
+                                <state key="normal" title="Set">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
@@ -1422,6 +1451,10 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="cYO-X2-cAa">
+                                <rect key="frame" x="282" y="515" width="20" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1441,6 +1474,7 @@
                     <connections>
                         <outlet property="DependentConfirmSecretPasswordTextField" destination="fzo-MP-Mxd" id="eVK-yV-apw"/>
                         <outlet property="DependentSecretPasswordTextfield" destination="fnm-oL-0qF" id="JNA-i1-nHI"/>
+                        <outlet property="loading" destination="cYO-X2-cAa" id="J9X-IK-5Ub"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m4q-76-r8f" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1649,6 +1683,6 @@
         <image name="register" width="313" height="115"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="r1M-5B-nSR"/>
+        <segue reference="3vM-Bl-ozG"/>
     </inferredMetricsTieBreakers>
 </document>
