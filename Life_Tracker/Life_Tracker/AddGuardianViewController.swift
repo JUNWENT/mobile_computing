@@ -59,6 +59,7 @@ class AddGuardianViewController: UIViewController,UIGestureRecognizerDelegate {
         
         if ((guardianSecretPassword?.isEmpty)! || (ConfirmsecretPassword?.isEmpty)!){
             self.displayAlertMessage(useMessage: "Your must enter a password to reset.")
+            self.loading.stopAnimating()
         }
         
         if (guardianSecretPassword == ConfirmsecretPassword){
@@ -68,11 +69,13 @@ class AddGuardianViewController: UIViewController,UIGestureRecognizerDelegate {
                     print("ERROR ", err)
                 } else  {
                     self.displayAlertMessage(useMessage: "You have successfully set a secret password!")
+                    self.loading.stopAnimating()
                     print("update user secret password")
                 }
             }
         } else {
             self.displayAlertMessage(useMessage: "Your password are different.")
+            self.loading.stopAnimating()
         }
     
     }

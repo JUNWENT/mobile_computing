@@ -60,6 +60,7 @@ class AddDependentViewController: UIViewController,UIGestureRecognizerDelegate {
         
         if ((dependentPhoneNumber?.isEmpty)! || (secretPassword?.isEmpty)!){
             self.displayAlertMessage(useMessage: "Your must enter a dependent phone number and his secret password.")
+            self.loading.stopAnimating()
         }
         
         table.read { (result, error) in
@@ -85,23 +86,19 @@ class AddDependentViewController: UIViewController,UIGestureRecognizerDelegate {
                                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
                                     if error != nil {
                                         self.displayAlertMessage(useMessage: "Please check you network and try again.")
+                                        self.loading.stopAnimating()
                                         print("Error: " + (error! as NSError).description)
                                     }
                                 }
                                 print("complete checking the user identify and password")
-                                let alert = UIAlertController(title:"COMFIRMATION",message:"You have sucessfully add your guardian.",preferredStyle:UIAlertControllerStyle.alert)
-                                let okAction = UIAlertAction(title:"OK",style:UIAlertActionStyle.default){
-                                    action in
-                                    self.dismiss(animated: true, completion: nil)
-                                }
-                                alert.addAction(okAction)
-                                self.present(alert, animated: true, completion: nil)
+                               self.displayNotificationMessage(useMessage: "You have successfully add a dependent.")
                             }
                         }
                     }
                 }
-                self.displayAlertMessage(useMessage: "You fail to add your dependent. Please check secret password and network and then try again.");
-                return;
+                self.displayAlertMessage(useMessage: "You fail to add your dependent. Please check secret password and network and then try again.")
+                self.loading.stopAnimating()
+                return
                 
             }
         }

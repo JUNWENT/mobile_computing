@@ -192,7 +192,8 @@ class DependentLoginViewController: UIViewController , UITextFieldDelegate{
         //check userIdentify is empty
         if ((userIdentify?.isEmpty)! || (userPassword?.isEmpty)!){
             self.displayAlertMessage(useMessage: "Your login failed. Please check your username and password, and try again.")
-            return;
+            self.loading.stopAnimating()
+            return
         }
         
         table.read { (result, error) in
@@ -212,6 +213,7 @@ class DependentLoginViewController: UIViewController , UITextFieldDelegate{
                                     UIApplication.shared.isNetworkActivityIndicatorVisible = false
                                     if error != nil {
                                         self.displayAlertMessage(useMessage: "Please check you network and try again.")
+                                        self.loading.stopAnimating()
                                         print("Error: " + (error! as NSError).description)
                                     }
                                 }
@@ -227,8 +229,9 @@ class DependentLoginViewController: UIViewController , UITextFieldDelegate{
                         }
                     }
                 }
-                self.displayAlertMessage(useMessage: "Your login failed. Please check your username and password, and try again.");
-                return;
+                self.displayAlertMessage(useMessage: "Your login failed. Please check your username and password, and try again.")
+                self.loading.stopAnimating()
+                return
                 
             }
         }

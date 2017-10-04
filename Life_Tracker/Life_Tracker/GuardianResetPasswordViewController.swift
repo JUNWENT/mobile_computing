@@ -63,18 +63,21 @@ class GuardianResetPasswordViewController: UIViewController,UIGestureRecognizerD
         // check needed fields empty
         if ( (userExistingPassword?.isEmpty)! || (userNewPassword?.isEmpty)! || (userConfirmNewPassword?.isEmpty)!){
             displayAlertMessage(useMessage: "Not all the required field is entered! Please check")
+            self.loading.stopAnimating()
             return
         }
         
         // check if password match
         if (userNewPassword != userConfirmNewPassword){
             displayAlertMessage(useMessage: "The passwords do not match")
+            self.loading.stopAnimating()
             return
         }
         
         // check password is vaild
         if !(passwordIsValid(userNewPassword!)){
             displayAlertMessage(useMessage: "The password length must be greater than or equal to 8! The password must at least contain one uppercase character,lowercase character,number and special character.")
+            self.loading.stopAnimating()
             return
         }
         
@@ -96,6 +99,7 @@ class GuardianResetPasswordViewController: UIViewController,UIGestureRecognizerD
                             }
                         } else if (item["phoneNumber"] as? String == username! && item["password"] as? String != userExistingPassword! && item["complete"] as! Bool == false){
                             self.displayAlertMessage(useMessage: "Please enter your correct existing password.")
+                            self.loading.stopAnimating()
                         }
                     }
                 }
