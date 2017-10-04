@@ -16,6 +16,8 @@ class GuardianContactViewController: UIViewController, UINavigationControllerDel
     
     @IBOutlet weak var phone: UILabel!
     
+    var listOfDependes = [(String?,String?)]()
+    
     @IBAction func UserPressedOnLogout(_ sender: UIButton) {
         UserDefaults.standard.set(nil,forKey:"GuardianUsername")
     }
@@ -46,10 +48,11 @@ class GuardianContactViewController: UIViewController, UINavigationControllerDel
         if let data = UserDefaults.standard.object(forKey: "profile") {
             photo.image = UIImage(data: data as! Data)
         }
-//        if let number = UserDefaults.standard.object(forKey: "GuardianUsername") as? String {
-//            phone.text = number
-//        }
+        if let number = UserDefaults.standard.object(forKey: "GuardianUsername") as? String {
+            phone.text = number
+        }
 
+        self.getDenpendents()
         // Do any additional setup after loading the view.
     }
 
@@ -58,36 +61,32 @@ class GuardianContactViewController: UIViewController, UINavigationControllerDel
         // Dispose of any resources that can be recreated.
     }
     
+    func getDenpendents() {
+        let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
+        let table = client.table(withName: "UserRelationship")
+        
+        table.read { (result, error) in
+            if let err = error {
+                //                    self.displayAlertMessage(useMessage: "Please check you network and try again.")
+                return
+                    print("ERROR ", err)
+            } else if let items = result?.items {
+                for item in items {
+                    if item["guardian"] as? String == self.phone.text {
+                        let name = item["dependentUsername"] as? String
+                        let number = item["dependent"] as? String
+                        self.listOfDependes.append( (name, number))
+                    }
+                }
+            }
+        }
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDependents" {
             let dependentsView = segue.destination as! ManageDependentsTableViewController
-            var listOfDependes = [(String,String)]()
+            dependentsView.dependents = self.listOfDependes
             
-//            let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
-//            let table = client.table(withName: "UserRelationship")
-            
-//            table.read { (result, error) in
-//                if let err = error {
-////                    self.displayAlertMessage(useMessage: "Please check you network and try again.")
-//                    return
-//                        print("ERROR ", err)
-//                } else if let items = result?.items {
-//                    for item in items {
-//                        if item["id"] as? String == self.phone.text {
-////                            self.latitude.text = item["latitude"] as? String
-////                            self.longtitude.text = item["longtitude"] as? String
-//                            listOfDependes.append( ("aaa", "111"))
-//                        }
-//                    }
-//                    
-//                }
-//            }
-            var i = 0
-            while i < 5 {
-                listOfDependes.append( ("aaa", "111"))
-                i += 1
-            }
-            dependentsView.dependents = listOfDependes
         }
     }
 

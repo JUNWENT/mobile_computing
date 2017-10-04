@@ -9,7 +9,7 @@
 import UIKit
 
 class ManageDependentsTableViewController: UITableViewController {
-    var dependents = Array<(String, String)>()
+    var dependents = Array<(String?, String?)>()
     
     @IBOutlet var dependentsTable: UITableView!
     
@@ -38,6 +38,7 @@ class ManageDependentsTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        print(dependents.count)
         return dependents.count
     }
 
@@ -62,6 +63,33 @@ class ManageDependentsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
+            let table = client.table(withName: "UserRelationship")
+            
+            table.read { (result, error) in
+                if let err = error {
+                    //                    self.displayAlertMessage(useMessage: "Please check you network and try again.")
+                    return
+                        print("ERROR ", err)
+                } else if let items = result?.items {
+                    for item in items {
+                        print("index ",indexPath.row)
+                        if item["dependent"] as? String == self.dependents[indexPath.row].1 {
+                            table.delete(item)
+                        }
+                    }
+                }
+            }
+
+//            table.delete(newItem as [NSObject: AnyObject]) {
+//                (itemID, error) in
+//                if let err = error {
+//                    print("ERROR ", err)
+//                } else {
+//                    print("Todo Item ID: ", itemID)
+//                }
+//            }
+            
             dependentsTable.beginUpdates()
             tableView.deleteRows(at: [indexPath], with: .fade)
             dependents.remove(at: indexPath.row)
