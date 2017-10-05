@@ -26,6 +26,9 @@
 		A832232E1F77DED800C283D0 /* GuardianSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A832232D1F77DED800C283D0 /* GuardianSignInViewController.swift */; };
 		A83223301F77EBEA00C283D0 /* DependentHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A832232F1F77EBEA00C283D0 /* DependentHomePageViewController.swift */; };
 		A83223341F77ED1F00C283D0 /* GuardianHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83223331F77ED1F00C283D0 /* GuardianHomePageViewController.swift */; };
+		A839A5E61F86184D001A4F19 /* dependent.png in Resources */ = {isa = PBXBuildFile; fileRef = A839A5E31F86184D001A4F19 /* dependent.png */; };
+		A839A5E71F86184D001A4F19 /* guardian.png in Resources */ = {isa = PBXBuildFile; fileRef = A839A5E41F86184D001A4F19 /* guardian.png */; };
+		A839A5E81F86184D001A4F19 /* main3-iloveimg-cropped.gif in Resources */ = {isa = PBXBuildFile; fileRef = A839A5E51F86184D001A4F19 /* main3-iloveimg-cropped.gif */; };
 		A86F27E81F734C2700681BAD /* icons8-Contacts-35.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A86F27E51F734C2700681BAD /* icons8-Contacts-35.imageset */; };
 		A86F27E91F734C2700681BAD /* icons8-Home-35.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A86F27E61F734C2700681BAD /* icons8-Home-35.imageset */; };
 		A86F27EA1F734C2700681BAD /* icons8-Notification-35.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A86F27E71F734C2700681BAD /* icons8-Notification-35.imageset */; };
@@ -87,6 +90,9 @@
 		A832232D1F77DED800C283D0 /* GuardianSignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuardianSignInViewController.swift; sourceTree = "<group>"; };
 		A832232F1F77EBEA00C283D0 /* DependentHomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependentHomePageViewController.swift; sourceTree = "<group>"; };
 		A83223331F77ED1F00C283D0 /* GuardianHomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuardianHomePageViewController.swift; sourceTree = "<group>"; };
+		A839A5E31F86184D001A4F19 /* dependent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dependent.png; sourceTree = "<group>"; };
+		A839A5E41F86184D001A4F19 /* guardian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guardian.png; sourceTree = "<group>"; };
+		A839A5E51F86184D001A4F19 /* main3-iloveimg-cropped.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "main3-iloveimg-cropped.gif"; sourceTree = "<group>"; };
 		A86F27E51F734C2700681BAD /* icons8-Contacts-35.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "icons8-Contacts-35.imageset"; path = "Images.xcassets/AppIcon.appiconset/icons8-Contacts-35.imageset"; sourceTree = "<group>"; };
 		A86F27E61F734C2700681BAD /* icons8-Home-35.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "icons8-Home-35.imageset"; path = "Images.xcassets/AppIcon.appiconset/icons8-Home-35.imageset"; sourceTree = "<group>"; };
 		A86F27E71F734C2700681BAD /* icons8-Notification-35.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "icons8-Notification-35.imageset"; path = "Images.xcassets/AppIcon.appiconset/icons8-Notification-35.imageset"; sourceTree = "<group>"; };
@@ -184,6 +190,9 @@
 		A2D9CBC01943C2540017F096 /* Life_Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				A839A5E31F86184D001A4F19 /* dependent.png */,
+				A839A5E41F86184D001A4F19 /* guardian.png */,
+				A839A5E51F86184D001A4F19 /* main3-iloveimg-cropped.gif */,
 				4DF37E2D1F83BAA000F6E3D3 /* ManageDependentsTableViewController.swift */,
 				E72B88C41F793B5100A79838 /* Life_Tracker.entitlements */,
 				A2BD20951AC8A731007F7181 /* QSTodoDataModel.xcdatamodeld */,
@@ -341,6 +350,7 @@
 				A8FFB7381F83B2A100ABC148 /* 152.png in Resources */,
 				A8FFB7371F83B2A100ABC148 /* 76.png in Resources */,
 				A8FFB7361F83B2A100ABC148 /* 60.png in Resources */,
+				A839A5E61F86184D001A4F19 /* dependent.png in Resources */,
 				A8FFB7241F83AA7B00ABC148 /* 1242.png in Resources */,
 				A86F27E91F734C2700681BAD /* icons8-Home-35.imageset in Resources */,
 				A8FFB7341F83B2A100ABC148 /* 29.png in Resources */,
@@ -353,6 +363,7 @@
 				A8804E671F85D24D00467048 /* TextFieldEffects in Resources */,
 				A88696C61F820F08002C424A /* owl-login-arm-right.imageset in Resources */,
 				A2D9CBCC1943C2540017F096 /* Main.storyboard in Resources */,
+				A839A5E71F86184D001A4F19 /* guardian.png in Resources */,
 				A8FFB7211F83AA7B00ABC148 /* 87.png in Resources */,
 				A88696BD1F820EEE002C424A /* icon_hand.imageset in Resources */,
 				A88696C71F820F08002C424A /* owl-login.imageset in Resources */,
@@ -363,6 +374,7 @@
 				A88696BF1F820EEE002C424A /* iconfont-user.imageset in Resources */,
 				A8FFB7221F83AA7B00ABC148 /* 120.png in Resources */,
 				A8FFB72D1F83B17100ABC148 /* load3.png in Resources */,
+				A839A5E81F86184D001A4F19 /* main3-iloveimg-cropped.gif in Resources */,
 				A88696BE1F820EEE002C424A /* iconfont-password.imageset in Resources */,
 				A86F27EA1F734C2700681BAD /* icons8-Notification-35.imageset in Resources */,
 			);
