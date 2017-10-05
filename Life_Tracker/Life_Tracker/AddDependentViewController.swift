@@ -69,13 +69,9 @@ class AddDependentViewController: UIViewController,UIGestureRecognizerDelegate {
                 for item in items {
                     if (item["phoneNumber"] as? String == dependentPhoneNumber && item["complete"] as! Bool == false){
                         if (item["secretPassword"] as? String == secretPassword){
-                            
-                            UserDefaults.standard.set(dependentPhoneNumber,forKey:"GuardianDependent")
-                            UserDefaults.standard.synchronize()
-                            
                             let dependentusername = item["username"] as? String
                             let id = dependentPhoneNumber!+username!
-                            UserDefaults.standard.synchronize()
+                            
                             let itemToInsert = ["id":id,"guardian":username!,"dependent":dependentPhoneNumber!,"dependentUsername":dependentusername!,"complete": false, "__createdAt": Date()] as [String : Any]
                             UIApplication.shared.isNetworkActivityIndicatorVisible = true
                             tableRelationship.insert(itemToInsert) {

@@ -89,8 +89,8 @@ class ManageDependentsTableViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "viewDependent" {
-            let dependentData = segue.destination as! GuardianHomePageViewController
-            dependentData.dependentPhone = self.dependentPhone
+            let dependentData = segue.destination as! DependentHomePageViewController
+            dependentData.showing = self.dependentPhone
         }
     }
     

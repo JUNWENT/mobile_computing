@@ -14,7 +14,7 @@ class DependentContactViewController: UIViewController, UINavigationControllerDe
     
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var phoneNumber: UILabel!
-    
+    var listOfDependes = [(String?,String?)]()
     
     
     @IBAction func changePhoto(_ sender: Any) {
@@ -50,6 +50,36 @@ class DependentContactViewController: UIViewController, UINavigationControllerDe
             phoneNumber.text = phone
         }
     }
+    
+    func getDenpendents() {
+        let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
+        let table = client.table(withName: "UserRelationship")
+        
+        table.read { (result, error) in
+            if let err = error {
+                //                    self.displayAlertMessage(useMessage: "Please check you network and try again.")
+                return
+                    print("ERROR ", err)
+            } else if let items = result?.items {
+                for item in items {
+                    if item["guardian"] as? String == self.phoneNumber.text {
+                        let name = item["dependentUsername"] as? String
+                        let number = item["dependent"] as? String
+                        self.listOfDependes.append( (name, number))
+                    }
+                }
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showDependents" {
+            let dependentsView = segue.destination as! ManageDependentsTableViewController
+            dependentsView.dependents = self.listOfDependes
+            dependentsView.guardianPhone = self.phoneNumber.text!
+        }
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

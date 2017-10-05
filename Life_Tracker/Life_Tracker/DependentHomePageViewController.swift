@@ -33,6 +33,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
     @IBOutlet weak var downstairs: UILabel!
     
     var username:String?
+    var showing:String?
     
     var selfLatitude:String?
     var selfLongtitude:String?
@@ -51,8 +52,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
     let pedometer = CMPedometer()
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let show = UserDefaults.standard.object(forKey: "GuardianDependent") as? String
-        print(show ?? "no one to show")
+        print(showing ?? "no one to show")
         print("show")
         username = UserDefaults.standard.object(forKey: "Username") as? String
         // get local gps data
@@ -81,7 +81,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
             }
         }
         
-        if show == username {
+        if showing == username {
             let location = locations[0]
             let span = MKCoordinateSpanMake(0.01, 0.01)
             let myLocation = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
@@ -92,7 +92,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
             longtitude.text = String(location.coordinate.longitude)
             speed.text = String(location.speed)
             altitude.text = String(location.altitude)
-        } else if (show != username){
+        } else if (showing != username){
             table.read { (result, error) in
                 if let err = error {
                     self.displayAlertMessage(useMessage: "Please check you network and try again.")
@@ -100,7 +100,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
                         print("ERROR ", err)
                 } else if let items = result?.items {
                     for item in items {
-                        if item["id"] as? String == show {
+                        if item["id"] as? String == showing {
                             self.latitude.text = item["latitude"] as? String
                             self.longtitude.text = item["longtitude"] as? String
                             self.speed.text = item["speed"] as? String

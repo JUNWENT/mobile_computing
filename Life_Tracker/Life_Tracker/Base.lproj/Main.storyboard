@@ -301,7 +301,7 @@
                                 <connections>
                                     <outlet property="name" destination="EzA-ql-60l" id="Y4G-y2-msb"/>
                                     <outlet property="phone" destination="JDm-d0-Igi" id="IR6-JN-kYr"/>
-                                    <segue destination="Mvj-4o-TKf" kind="show" identifier="viewDependent" id="9QU-d6-5RB"/>
+                                    <segue destination="GLX-TS-eZ3" kind="show" identifier="viewDependent" id="2Rh-Tb-fzG"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -316,7 +316,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hhZ-Ww-Bii" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-410.14492753623193" y="3200.54347826087"/>
+            <point key="canvasLocation" x="3399" y="3114"/>
         </scene>
         <!--Add Dependent View Controller-->
         <scene sceneID="0TB-B1-CvL">
@@ -479,9 +479,6 @@
                                 <state key="normal" title="Manage dependents">
                                     <color key="titleColor" red="0.38352003690000003" green="0.27574151749999998" blue="0.20009408889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
-                                <connections>
-                                    <segue destination="oQp-My-1IP" kind="show" identifier="showDependents" id="H80-pn-v65"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1358,6 +1355,17 @@
                                     <segue destination="Yac-1F-Zi1" kind="show" id="JV5-XQ-2a7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Itu-g1-6Fe">
+                                <rect key="frame" x="92" y="619" width="230" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Manage dependents">
+                                    <color key="titleColor" red="0.38352003690000003" green="0.27574151749999998" blue="0.20009408889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="oQp-My-1IP" kind="show" identifier="showDependents" id="tZY-fj-va2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1681,8 +1689,8 @@
         <image name="register" width="313" height="115"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9QU-d6-5RB"/>
         <segue reference="yCJ-PU-d39"/>
-        <segue reference="r1M-5B-nSR"/>
+        <segue reference="UyJ-aa-bHj"/>
+        <segue reference="2Rh-Tb-fzG"/>
     </inferredMetricsTieBreakers>
 </document>
