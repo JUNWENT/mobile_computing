@@ -32,8 +32,9 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
     
     @IBOutlet weak var downstairs: UILabel!
     
+    @IBOutlet weak var showingPerson: UILabel!
     var username:String?
-    var showing:String?
+    var showing = UserDefaults.standard.object(forKey: "GuardianDependent") as? String
     
     var selfLatitude:String?
     var selfLongtitude:String?
@@ -82,6 +83,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
         }
         
         if showing == username {
+            showingPerson.text = "Yourself"
             let location = locations[0]
             let span = MKCoordinateSpanMake(0.01, 0.01)
             let myLocation = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
@@ -93,6 +95,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
             speed.text = String(location.speed)
             altitude.text = String(location.altitude)
         } else if (showing != username){
+            showingPerson.text = showing
             table.read { (result, error) in
                 if let err = error {
                     self.displayAlertMessage(useMessage: "Please check you network and try again.")
@@ -100,7 +103,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
                         print("ERROR ", err)
                 } else if let items = result?.items {
                     for item in items {
-                        if item["id"] as? String == showing {
+                        if item["id"] as? String == self.showing {
                             self.latitude.text = item["latitude"] as? String
                             self.longtitude.text = item["longtitude"] as? String
                             self.speed.text = item["speed"] as? String
@@ -128,13 +131,13 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
             }
 
         }
-        
-        
-        
-        
-        
+ 
     }
     
+    
+    @IBAction func backToUser(_ sender: UIButton) {
+        showing = username
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         manager.delegate = self
