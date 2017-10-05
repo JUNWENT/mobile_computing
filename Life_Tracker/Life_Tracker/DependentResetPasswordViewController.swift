@@ -16,6 +16,7 @@ class DependentResetPasswordViewController: UIViewController,UIGestureRecognizer
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         let target = self.navigationController?.interactivePopGestureRecognizer!.delegate
         let pan = UIPanGestureRecognizer(target:target,
                                          action:Selector(("handleNavigationTransition:")))

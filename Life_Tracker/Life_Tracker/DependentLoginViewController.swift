@@ -41,6 +41,7 @@ class DependentLoginViewController: UIViewController , UITextFieldDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         self.loading.hidesWhenStopped = true
         //get the size of screen
         let mainSize = UIScreen.main.bounds.size

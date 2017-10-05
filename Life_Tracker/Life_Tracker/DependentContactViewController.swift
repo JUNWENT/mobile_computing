@@ -43,6 +43,7 @@ class DependentContactViewController: UIViewController, UINavigationControllerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         if let data = UserDefaults.standard.object(forKey: "profile") {
             myPhoto.image = UIImage(data: data as! Data)
         }

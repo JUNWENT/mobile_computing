@@ -23,6 +23,7 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
     override func viewDidLoad() {
         let mainSize = UIScreen.main.bounds.size
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         self.loading.hidesWhenStopped = true
         let textField = KaedeTextField(frame:CGRect(x: 30, y: 30, width: mainSize.width - 60, height: 44))
         textField.placeholderColor = .darkGray

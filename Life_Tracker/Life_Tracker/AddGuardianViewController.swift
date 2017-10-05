@@ -21,6 +21,7 @@ class AddGuardianViewController: UIViewController,UIGestureRecognizerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         self.loading.hidesWhenStopped = true
         let target = self.navigationController?.interactivePopGestureRecognizer!.delegate
         let pan = UIPanGestureRecognizer(target:target,
