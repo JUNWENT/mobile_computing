@@ -199,7 +199,7 @@ class GuardianSignInViewController: UIViewController, UITextFieldDelegate{
                 print("ERROR ", err)
             } else if let items = result?.items {
                 for item in items {
-                    if(item["type"] as? String == userType){
+//                    if(item["type"] as? String == userType){
                         if (item["phoneNumber"] as? String == userIdentify && item["complete"] as! Bool == false){
                             if (item["password"] as? String == userPassword){
                                 UserDefaults.standard.set(userIdentify, forKey: "GuardianUsername")
@@ -214,7 +214,7 @@ class GuardianSignInViewController: UIViewController, UITextFieldDelegate{
                                 self.present(alert, animated: true, completion: nil)
                             }
                         }
-                    }
+//                    }
                 }
                 self.displayAlertMessage(useMessage: "Your login failed. Please check your username and password, and try again.")
                 self.loading.stopAnimating()

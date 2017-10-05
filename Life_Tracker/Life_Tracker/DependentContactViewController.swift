@@ -49,6 +49,7 @@ class DependentContactViewController: UIViewController, UINavigationControllerDe
         if let phone = UserDefaults.standard.object(forKey: "Username") as? String {
             phoneNumber.text = phone
         }
+        self.getDenpendents()
     }
     
     func getDenpendents() {

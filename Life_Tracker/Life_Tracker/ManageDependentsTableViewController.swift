@@ -15,7 +15,6 @@ class ManageDependentsTableViewController: UITableViewController {
     
     @IBOutlet var dependentsTable: UITableView!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -90,6 +89,10 @@ class ManageDependentsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "viewDependent" {
             let dependentData = segue.destination as! DependentHomePageViewController
+            let indexPath = self.dependentsTable.indexPath(for: sender as! UITableViewCell)! as NSIndexPath
+            dependentPhone = dependents[indexPath.row].1!
+            print(self.dependentPhone)
+            print("---------------------")
             dependentData.showing = self.dependentPhone
         }
     }
