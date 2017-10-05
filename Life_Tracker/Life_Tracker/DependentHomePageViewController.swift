@@ -33,7 +33,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
     @IBOutlet weak var downstairs: UILabel!
     
     @IBOutlet weak var showingPerson: UILabel!
-    var username = UserDefaults.standard.object(forKey: "Username") as? String
+    var username: String?
     //username = UserDefaults.standard.object(forKey: "Username") as? String
     var showing = UserDefaults.standard.object(forKey: "GuardianDependent") as? String
     
@@ -56,7 +56,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print(showing ?? "no one to show")
         print("show")
-        //username = UserDefaults.standard.object(forKey: "Username") as? String
+        username = UserDefaults.standard.object(forKey: "Username") as? String
         // get local gps data
         let selflocation = locations[0]
         let span = MKCoordinateSpanMake(0.01, 0.01)
@@ -175,7 +175,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
         }
         //get time
         //let show = UserDefaults.standard.object(forKey: "GuardianDependent") as? String
-        //username = UserDefaults.standard.object(forKey: "Username") as? String
+        username = UserDefaults.standard.object(forKey: "Username") as? String
         let cal = Calendar.current
         var comps = cal.dateComponents([.year,.month,.day], from: Date())
         comps.hour = 0

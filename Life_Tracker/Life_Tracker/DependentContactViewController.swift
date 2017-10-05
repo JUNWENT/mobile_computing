@@ -52,6 +52,10 @@ class DependentContactViewController: UIViewController, UINavigationControllerDe
         self.getDenpendents()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        self.getDenpendents()
+    }
+    
     func getDenpendents() {
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
         let table = client.table(withName: "UserRelationship")
@@ -66,6 +70,15 @@ class DependentContactViewController: UIViewController, UINavigationControllerDe
                     if item["guardian"] as? String == self.phoneNumber.text {
                         let name = item["dependentUsername"] as? String
                         let number = item["dependent"] as? String
+                        print(number ?? -9)
+                        print("----------")
+                        for person in self.listOfDependes {
+                            if number! == person.1! {
+                                print(person.1 ?? -8)
+                                print(".............")
+                                break
+                            }
+                        }
                         self.listOfDependes.append( (name, number))
                     }
                 }
