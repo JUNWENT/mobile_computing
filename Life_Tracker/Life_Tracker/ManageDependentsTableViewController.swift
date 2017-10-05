@@ -64,23 +64,31 @@ class ManageDependentsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
-            let table = client.table(withName: "UserRelationship")
-            dependentPhone = dependents[indexPath.row].1!
-            let id = dependentPhone + guardianPhone
-            
-            table.delete(withId: id) { (itemId, error) in
-                if let err = error {
-                    print("ERROR ", err)
-                } else {
-                    print("Todo Item ID: ", itemId as Any)
+            let alert = UIAlertController(title:"ALERT",message:"Deletion is permanent. Are you sure to proceed?",preferredStyle:UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title:"OK",style:UIAlertActionStyle.default){
+                action in
+                let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
+                let table = client.table(withName: "UserRelationship")
+                self.dependentPhone = self.dependents[indexPath.row].1!
+                let id = self.dependentPhone + self.guardianPhone
+                
+                table.delete(withId: id) { (itemId, error) in
+                    if let err = error {
+                        print("ERROR ", err)
+                    } else {
+                        print("Todo Item ID: ", itemId as Any)
+                    }
                 }
+                self.dependentsTable.beginUpdates()
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                self.dependents.remove(at: indexPath.row)
+                self.dependentsTable.endUpdates()
+
             }
-            
-            dependentsTable.beginUpdates()
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            dependents.remove(at: indexPath.row)
-            dependentsTable.endUpdates()
+            let cancelAction = UIAlertAction(title:"CANCEL",style:UIAlertActionStyle.default,handler:nil)
+            alert.addAction(okAction)
+            alert.addAction(cancelAction)
+            self.present(alert, animated: true, completion: nil)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
@@ -97,6 +105,7 @@ class ManageDependentsTableViewController: UITableViewController {
         }
     }
     
+
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
