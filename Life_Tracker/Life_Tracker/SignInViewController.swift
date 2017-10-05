@@ -25,11 +25,17 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         self.loading.hidesWhenStopped = true
-        let UserNametextField = YoshikoTextField(frame:CGRect(x: 30, y: 30, width: mainSize.width - 60, height: 44))
-        let UserPhoneNumbertextField = YoshikoTextField(frame:CGRect(x: 30, y: 30, width: mainSize.width - 60, height: 44))
-//        let UserNametextField = YoshikoTextField(frame:CGRect(x: 30, y: 30, width: mainSize.width - 60, height: 44))
-//        let UserNametextField = YoshikoTextField(frame:CGRect(x: 30, y: 30, width: mainSize.width - 60, height: 44))
-        //self.view.addSubview(textField)
+        UserUsernameTextField = YoshikoTextField(frame:CGRect(x: 60, y: 187, width: mainSize.width - 60, height: 44))
+        UserPhoneNumberTextField = YoshikoTextField(frame:CGRect(x: 30, y: 60, width: mainSize.width - 60, height: 44))
+        UserPasswordTextField = YoshikoTextField(frame:CGRect(x: 30, y: 30, width: mainSize.width - 60, height: 44))
+        UserComfirmPasswordTextField = YoshikoTextField(frame:CGRect(x: 30, y: 30, width: mainSize.width - 60, height: 44))
+        UserUsernameTextField.placeholder = "Enter your username"
+        UserPhoneNumberTextField.placeholder = "Enter your phone"
+        
+        
+        
+        self.view.addSubview(UserUsernameTextField)
+        self.view.addSubview(UserPhoneNumberTextField)
         // Do any additional setup after loading the view.
     }
     
@@ -52,14 +58,6 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
         let table = client.table(withName: "UserData")
        
-        
-        
-        // check if username valid
-        if !(usernameIsValid(userName!)){
-            displayAlertMessage(useMessage: "The username is not valid. Username can only contain character, number and _ .")
-            self.loading.stopAnimating()
-            return
-        }
         
         // check needed fields empty
         if ((userName?.isEmpty)! || (userPassword?.isEmpty)! || (userPhoneNumber?.isEmpty)! || (userComfirmPassword?.isEmpty)!){
@@ -155,12 +153,6 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
         let PHONE_REGEX = "^\\d{3}\\d{3}\\d{4}$"
         let phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
         return phoneTest.evaluate(with: phoneNumber)
-    }
-    
-    func usernameIsValid(_ username: String) -> Bool {
-        let usernameRegEx = "^[0-9a-zA-Z\\_]{3,18}$"
-        let usernameTest = NSPredicate(format: "SELF MATCHES %@", usernameRegEx)
-        return usernameTest.evaluate(with: username)
     }
     
     
