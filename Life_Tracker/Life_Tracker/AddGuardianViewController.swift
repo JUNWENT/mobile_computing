@@ -7,20 +7,40 @@
 //
 
 import UIKit
+import TextFieldEffects
 
 class AddGuardianViewController: UIViewController,UIGestureRecognizerDelegate {
     
    
     @IBOutlet weak var loading: UIActivityIndicatorView!
   
-    @IBOutlet weak var DependentSecretPasswordTextfield: UITextField!
+    var DependentSecretPasswordTextfield: MadokaTextField!
     
-    @IBOutlet weak var DependentConfirmSecretPasswordTextField: UITextField!
+    var DependentConfirmSecretPasswordTextField: MadokaTextField!
     
     var username:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let mainSize = UIScreen.main.bounds.size
+        DependentSecretPasswordTextfield = MadokaTextField(frame:CGRect(x: 60, y: 120, width: mainSize.width - 120, height: 60))
+        DependentConfirmSecretPasswordTextField = MadokaTextField(frame:CGRect(x: 60, y: 200, width: mainSize.width - 120, height: 60))
+        
+        DependentSecretPasswordTextfield.placeholder = "secret password"
+        DependentConfirmSecretPasswordTextField.placeholder = "confirm your secret password"
+        let color = UserDefaults.standard.object(forKey: "color") as? UIColor
+        DependentSecretPasswordTextfield.borderColor = color!
+        DependentConfirmSecretPasswordTextField.borderColor = color!
+        
+        
+        DependentSecretPasswordTextfield.placeholderColor =  color!
+        DependentConfirmSecretPasswordTextField.placeholderColor = color!
+    
+        
+        DependentConfirmSecretPasswordTextField.placeholderFontScale =  1
+        DependentSecretPasswordTextfield.placeholderFontScale = 1
+       
+        
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         self.loading.hidesWhenStopped = true
         let target = self.navigationController?.interactivePopGestureRecognizer!.delegate

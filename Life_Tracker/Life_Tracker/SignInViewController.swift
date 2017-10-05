@@ -16,7 +16,7 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
     var UserPasswordTextField: MadokaTextField!
     var UserComfirmPasswordTextField: MadokaTextField!
     
-    @IBOutlet weak var GiveColor2: UIActivityIndicatorView!
+    @IBOutlet weak var buttonRegister: UIButton!
     @IBOutlet weak var GiveColor: UITextView!
     @IBOutlet weak var loading: UIActivityIndicatorView!
     
@@ -34,8 +34,8 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
         UserUsernameTextField.placeholder = "username"
         UserPhoneNumberTextField.placeholder = "phone number"
         UserPasswordTextField.placeholder = "password"
-        UserComfirmPasswordTextField.placeholder = "comfirm your password"
-        
+        UserComfirmPasswordTextField.placeholder = "confirm your password"
+        UserDefaults.standard.set(GiveColor.textColor, forKey: "color")
         UserUsernameTextField.borderColor = GiveColor.textColor!
         UserPasswordTextField.borderColor = GiveColor.textColor!
         UserPhoneNumberTextField.borderColor = GiveColor.textColor!
@@ -55,6 +55,8 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
         self.view.addSubview(UserPhoneNumberTextField)
         self.view.addSubview(UserPasswordTextField)
         self.view.addSubview(UserComfirmPasswordTextField)
+        
+        
         // Do any additional setup after loading the view.
     }
     
