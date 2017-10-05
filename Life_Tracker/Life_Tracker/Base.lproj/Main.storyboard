@@ -806,7 +806,6 @@
                         <outlet property="latitude" destination="ymF-FO-dBi" id="xB9-kU-28G"/>
                         <outlet property="longtitude" destination="jg9-DA-JK7" id="TbR-PL-JI2"/>
                         <outlet property="map" destination="Gc1-N7-InF" id="mjR-Gb-25q"/>
-                        <outlet property="shoingPerson" destination="QLl-6e-qdp" id="EuT-tK-cb2"/>
                         <outlet property="showingPerson" destination="QLl-6e-qdp" id="Nov-Dm-pBi"/>
                         <outlet property="speed" destination="y2P-gg-HR9" id="chs-Pg-wJs"/>
                         <outlet property="steps" destination="FYP-fU-zXE" id="ysw-Cq-aDN"/>
@@ -1231,8 +1230,8 @@
         <image name="register" width="313" height="115"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5oH-Mr-5d7"/>
+        <segue reference="yCJ-PU-d39"/>
+        <segue reference="xIG-DM-NcY"/>
         <segue reference="2Rh-Tb-fzG"/>
-        <segue reference="r1M-5B-nSR"/>
     </inferredMetricsTieBreakers>
 </document>

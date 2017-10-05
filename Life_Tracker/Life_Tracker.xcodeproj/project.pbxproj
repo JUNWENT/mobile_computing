@@ -31,8 +31,6 @@
 		A86F27EA1F734C2700681BAD /* icons8-Notification-35.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A86F27E71F734C2700681BAD /* icons8-Notification-35.imageset */; };
 		A8804E651F85B58B00467048 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8804E641F85B58B00467048 /* MainViewController.swift */; };
 		A8804E671F85D24D00467048 /* TextFieldEffects in Resources */ = {isa = PBXBuildFile; fileRef = A8804E661F85D24D00467048 /* TextFieldEffects */; };
-		A8804E691F85D27A00467048 /* TextFieldEffects in Resources */ = {isa = PBXBuildFile; fileRef = A8804E681F85D27A00467048 /* TextFieldEffects */; };
-		A8804E6B1F85D6E000467048 /* TextFieldEffects in Resources */ = {isa = PBXBuildFile; fileRef = A8804E6A1F85D6E000467048 /* TextFieldEffects */; };
 		A88696BD1F820EEE002C424A /* icon_hand.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A88696BA1F820EEE002C424A /* icon_hand.imageset */; };
 		A88696BE1F820EEE002C424A /* iconfont-password.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A88696BB1F820EEE002C424A /* iconfont-password.imageset */; };
 		A88696BF1F820EEE002C424A /* iconfont-user.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A88696BC1F820EEE002C424A /* iconfont-user.imageset */; };
@@ -94,8 +92,6 @@
 		A86F27E71F734C2700681BAD /* icons8-Notification-35.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "icons8-Notification-35.imageset"; path = "Images.xcassets/AppIcon.appiconset/icons8-Notification-35.imageset"; sourceTree = "<group>"; };
 		A8804E641F85B58B00467048 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A8804E661F85D24D00467048 /* TextFieldEffects */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TextFieldEffects; sourceTree = "<group>"; };
-		A8804E681F85D27A00467048 /* TextFieldEffects */ = {isa = PBXFileReference; lastKnownFileType = folder; path = TextFieldEffects; sourceTree = "<group>"; };
-		A8804E6A1F85D6E000467048 /* TextFieldEffects */ = {isa = PBXFileReference; lastKnownFileType = folder; name = TextFieldEffects; path = Life_Tracker/TextFieldEffects; sourceTree = "<group>"; };
 		A88696BA1F820EEE002C424A /* icon_hand.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icon_hand.imageset; path = Images.xcassets/icon_hand.imageset; sourceTree = "<group>"; };
 		A88696BB1F820EEE002C424A /* iconfont-password.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "iconfont-password.imageset"; path = "Images.xcassets/iconfont-password.imageset"; sourceTree = "<group>"; };
 		A88696BC1F820EEE002C424A /* iconfont-user.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "iconfont-user.imageset"; path = "Images.xcassets/iconfont-user.imageset"; sourceTree = "<group>"; };
@@ -170,7 +166,6 @@
 		A2D9CBB51943C2540017F096 = {
 			isa = PBXGroup;
 			children = (
-				A8804E6A1F85D6E000467048 /* TextFieldEffects */,
 				A2D9CBC01943C2540017F096 /* Life_Tracker */,
 				A2D9CBBF1943C2540017F096 /* Products */,
 				9CA121741DAC7FFD000C2FCA /* Frameworks */,
@@ -200,7 +195,6 @@
 				A2D9CBE51943CB520017F096 /* frameworks */,
 				A2D9CBE81943D1340017F096 /* Life_Tracker-Bridging-Header.h */,
 				A3BBD77C1C05181600DD0DB0 /* MicrosoftAzureMobile.framework */,
-				A8804E681F85D27A00467048 /* TextFieldEffects */,
 				A817486B1F8394AB0037BE0F /* loadingViewController.swift */,
 				E7C5F61D1F834E1D004CE129 /* GuardianResetPasswordViewController.swift */,
 				A81748691F838FD20037BE0F /* GuardianContactViewController.swift */,
@@ -346,7 +340,6 @@
 			files = (
 				A8FFB7381F83B2A100ABC148 /* 152.png in Resources */,
 				A8FFB7371F83B2A100ABC148 /* 76.png in Resources */,
-				A8804E6B1F85D6E000467048 /* TextFieldEffects in Resources */,
 				A8FFB7361F83B2A100ABC148 /* 60.png in Resources */,
 				A8FFB7241F83AA7B00ABC148 /* 1242.png in Resources */,
 				A86F27E91F734C2700681BAD /* icons8-Home-35.imageset in Resources */,
@@ -358,7 +351,6 @@
 				A88696C51F820F08002C424A /* owl-login-arm-left.imageset in Resources */,
 				A8FFB7391F83B2A100ABC148 /* 167.png in Resources */,
 				A8804E671F85D24D00467048 /* TextFieldEffects in Resources */,
-				A8804E691F85D27A00467048 /* TextFieldEffects in Resources */,
 				A88696C61F820F08002C424A /* owl-login-arm-right.imageset in Resources */,
 				A2D9CBCC1943C2540017F096 /* Main.storyboard in Resources */,
 				A8FFB7211F83AA7B00ABC148 /* 87.png in Resources */,
