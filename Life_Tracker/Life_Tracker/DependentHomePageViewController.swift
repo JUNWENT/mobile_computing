@@ -54,8 +54,8 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
     let pedometer = CMPedometer()
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        print(showing ?? "no one to show")
-        print("show")
+//        print(showing ?? "no one to show")
+//        print("show")
         username = UserDefaults.standard.object(forKey: "Username") as? String
         // get local gps data
         let selflocation = locations[0]
@@ -77,7 +77,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
                     if let err = error {
                         print("ERROR ", err)
                     } else  {
-                        print("updating the gps and health information")
+//                        print("updating the gps and health information")
                     }
                 }
             }

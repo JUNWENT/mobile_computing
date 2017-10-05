@@ -14,7 +14,7 @@ class DependentContactViewController: UIViewController, UINavigationControllerDe
     
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var phoneNumber: UILabel!
-    var listOfDependes = [(String?,String?)]()
+    var listOfDependents = [(String?,String?)]()
     
     
     @IBAction func changePhoto(_ sender: Any) {
@@ -49,14 +49,19 @@ class DependentContactViewController: UIViewController, UINavigationControllerDe
         if let phone = UserDefaults.standard.object(forKey: "Username") as? String {
             phoneNumber.text = phone
         }
-        self.getDenpendents()
+//        self.getDenpendents()
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         self.getDenpendents()
     }
     
     func getDenpendents() {
+        var n = 0
+        n = n+1
+        print(n)
+        print(">>>>>>")
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
         let table = client.table(withName: "UserRelationship")
         
@@ -67,19 +72,25 @@ class DependentContactViewController: UIViewController, UINavigationControllerDe
                     print("ERROR ", err)
             } else if let items = result?.items {
                 for item in items {
+                    var flag = false
                     if item["guardian"] as? String == self.phoneNumber.text {
                         let name = item["dependentUsername"] as? String
                         let number = item["dependent"] as? String
                         print(number ?? -9)
                         print("----------")
-                        for person in self.listOfDependes {
+                        for person in self.listOfDependents {
                             if number! == person.1! {
                                 print(person.1 ?? -8)
                                 print(".............")
-                                break
+                                flag = true
                             }
                         }
-                        self.listOfDependes.append( (name, number))
+                        if flag {
+                            continue
+                        } else {
+                            self.listOfDependents.append( (name, number))
+                        }
+                        
                     }
                 }
             }
@@ -89,7 +100,7 @@ class DependentContactViewController: UIViewController, UINavigationControllerDe
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showDependents" {
             let dependentsView = segue.destination as! ManageDependentsTableViewController
-            dependentsView.dependents = self.listOfDependes
+            dependentsView.dependents = self.listOfDependents
             dependentsView.guardianPhone = self.phoneNumber.text!
         }
     }
