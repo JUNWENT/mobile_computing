@@ -8,7 +8,8 @@
 
 import UIKit
 
-class SignInViewController: UIViewController {
+
+class SignInViewController: UIViewController,TextFieldEffect {
     
     @IBOutlet weak var UserUsernameTextField: UITextField!
     @IBOutlet weak var UserPhoneNumberTextField: UITextField!
@@ -22,6 +23,11 @@ class SignInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.loading.hidesWhenStopped = true
+        let textField = KaedeTextField(frame: textFieldFrame)
+        textField.placeholderColor = .darkGrayColor()
+        textField.foregroundColor = .lightGrayColor()
+        
+        view.addSubView(textField)
         // Do any additional setup after loading the view.
     }
     

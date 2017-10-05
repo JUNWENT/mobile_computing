@@ -140,25 +140,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="load3" translatesAutoresizingMaskIntoConstraints="NO" id="b84-ae-cgq">
-                                <rect key="frame" x="0.0" y="28" width="414" height="356"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="LOADING" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0u-X2-NKi">
-                                <rect key="frame" x="0.0" y="446" width="414" height="78"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="57"/>
-                                <color key="textColor" red="0.38352003690000003" green="0.27574151749999998" blue="0.20009408889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="hbq-fY-UPD">
                                 <rect key="frame" x="197" y="532" width="20" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </activityIndicatorView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="load3" translatesAutoresizingMaskIntoConstraints="NO" id="b84-ae-cgq">
+                                <rect key="frame" x="0.0" y="82" width="414" height="356"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.96472358703613281" green="0.96468734741210938" blue="0.96471190452575684" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <connections>
+                        <outlet property="loading" destination="hbq-fY-UPD" id="z3x-Yc-Al9"/>
                         <segue destination="rPa-3r-NZL" kind="modal" identifier="Home" id="5oH-Mr-5d7"/>
                         <segue destination="bva-dY-il8" kind="presentation" identifier="Login" id="c1D-RJ-C3R"/>
                     </connections>
@@ -1236,8 +1230,8 @@
         <image name="register" width="313" height="115"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yCJ-PU-d39"/>
-        <segue reference="xIG-DM-NcY"/>
+        <segue reference="5oH-Mr-5d7"/>
         <segue reference="2Rh-Tb-fzG"/>
+        <segue reference="r1M-5B-nSR"/>
     </inferredMetricsTieBreakers>
 </document>
