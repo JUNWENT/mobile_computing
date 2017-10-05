@@ -12,9 +12,9 @@ class loading2ViewController: UIViewController {
 
     var username:String?
 
-    @IBOutlet weak var loading: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
-        loading.startAnimating()
+        //loading.startAnimating()
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

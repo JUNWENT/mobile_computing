@@ -410,7 +410,7 @@
                                 <color key="backgroundColor" red="0.38352003690000003" green="0.27574151749999998" blue="0.20009408889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Register">
-                                    <color key="titleColor" red="0.92159152030000002" green="0.92155694960000001" blue="0.92158031460000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="titleColor" red="0.94833948485244302" green="0.94375813468407377" blue="0.95292083502081226" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
                                     <action selector="pressedOnRegisterBotton:" destination="L2l-Xg-ONJ" eventType="touchUpInside" id="849-u9-GIt"/>
@@ -505,6 +505,8 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="GiveColor" destination="7ph-rn-xCh" id="EPO-CW-tkN"/>
+                        <outlet property="GiveColor2" destination="RL5-Hl-kmH" id="BwY-HU-QF6"/>
                         <outlet property="loading" destination="RL5-Hl-kmH" id="6dZ-dj-aaC"/>
                     </connections>
                 </viewController>
@@ -1132,7 +1134,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="5oH-Mr-5d7"/>
-        <segue reference="c1D-RJ-C3R"/>
         <segue reference="GLl-Eo-3Fs"/>
+        <segue reference="r1M-5B-nSR"/>
     </inferredMetricsTieBreakers>
 </document>

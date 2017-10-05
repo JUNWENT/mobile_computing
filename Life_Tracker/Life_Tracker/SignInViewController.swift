@@ -11,11 +11,13 @@ import TextFieldEffects
 
 class SignInViewController: UIViewController,UITextFieldDelegate {
     
-    var UserUsernameTextField: UITextField!
-    var UserPhoneNumberTextField: UITextField!
-    var UserPasswordTextField: UITextField!
-    var UserComfirmPasswordTextField: UITextField!
+    var UserUsernameTextField: MadokaTextField!
+    var UserPhoneNumberTextField: MadokaTextField!
+    var UserPasswordTextField: MadokaTextField!
+    var UserComfirmPasswordTextField: MadokaTextField!
     
+    @IBOutlet weak var GiveColor2: UIActivityIndicatorView!
+    @IBOutlet weak var GiveColor: UITextView!
     @IBOutlet weak var loading: UIActivityIndicatorView!
     
     
@@ -25,17 +27,34 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         self.loading.hidesWhenStopped = true
-        UserUsernameTextField = YoshikoTextField(frame:CGRect(x: 60, y: 187, width: mainSize.width - 60, height: 44))
-        UserPhoneNumberTextField = YoshikoTextField(frame:CGRect(x: 30, y: 60, width: mainSize.width - 60, height: 44))
-        UserPasswordTextField = YoshikoTextField(frame:CGRect(x: 30, y: 30, width: mainSize.width - 60, height: 44))
-        UserComfirmPasswordTextField = YoshikoTextField(frame:CGRect(x: 30, y: 30, width: mainSize.width - 60, height: 44))
-        UserUsernameTextField.placeholder = "Enter your username"
-        UserPhoneNumberTextField.placeholder = "Enter your phone"
+        UserUsernameTextField = MadokaTextField(frame:CGRect(x: 60, y: 187, width: mainSize.width - 120, height: 60))
+        UserPhoneNumberTextField = MadokaTextField(frame:CGRect(x: 60, y: 267, width: mainSize.width - 120, height: 60))
+        UserPasswordTextField = MadokaTextField(frame:CGRect(x: 60, y: 347, width: mainSize.width - 120, height: 60))
+        UserComfirmPasswordTextField = MadokaTextField(frame:CGRect(x: 60, y: 427, width: mainSize.width - 120, height: 60))
+        UserUsernameTextField.placeholder = "username"
+        UserPhoneNumberTextField.placeholder = "phone number"
+        UserPasswordTextField.placeholder = "password"
+        UserComfirmPasswordTextField.placeholder = "comfirm your password"
         
+        UserUsernameTextField.borderColor = GiveColor.textColor!
+        UserPasswordTextField.borderColor = GiveColor.textColor!
+        UserPhoneNumberTextField.borderColor = GiveColor.textColor!
+        UserComfirmPasswordTextField.borderColor = GiveColor.textColor!
         
+        UserUsernameTextField.placeholderColor =  GiveColor.textColor!
+        UserPasswordTextField.placeholderColor = GiveColor.textColor!
+        UserPhoneNumberTextField.placeholderColor = GiveColor.textColor!
+        UserComfirmPasswordTextField.placeholderColor = GiveColor.textColor!
+        
+        UserUsernameTextField.placeholderFontScale =  1
+        UserPasswordTextField.placeholderFontScale = 1
+        UserPhoneNumberTextField.placeholderFontScale = 1
+        UserComfirmPasswordTextField.placeholderFontScale = 1
         
         self.view.addSubview(UserUsernameTextField)
         self.view.addSubview(UserPhoneNumberTextField)
+        self.view.addSubview(UserPasswordTextField)
+        self.view.addSubview(UserComfirmPasswordTextField)
         // Do any additional setup after loading the view.
     }
     
