@@ -9,7 +9,7 @@
 import UIKit
 
 class AddDependentViewController: UIViewController,UIGestureRecognizerDelegate {
-
+    
     @IBOutlet weak var loading: UIActivityIndicatorView!
     @IBOutlet weak var DependentPhoneNumberTextField: UITextField!
     @IBOutlet weak var DependentSecretPasswordTextField: UITextField!
@@ -25,10 +25,10 @@ class AddDependentViewController: UIViewController,UIGestureRecognizerDelegate {
         self.view.addGestureRecognizer(pan)
         
         self.navigationController?.interactivePopGestureRecognizer!.isEnabled = false
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -56,41 +56,10 @@ class AddDependentViewController: UIViewController,UIGestureRecognizerDelegate {
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
         let table = client.table(withName: "UserData")
         let tableRelationship = client.table(withName: "UserRelationship")
-        let id = dependentPhoneNumber!+username!
         
         if ((dependentPhoneNumber?.isEmpty)! || (secretPassword?.isEmpty)!){
             self.displayAlertMessage(useMessage: "Your must enter a dependent phone number and his secret password.")
             self.loading.stopAnimating()
-        }
-        
-        tableRelationship.read{ (result, error) in
-            if let err = error {
-                print("ERROR ", err)
-            } else if let items = result?.items {
-                for item in items {
-                    if (item["id"] as? String == id && item["deleted"] as! Bool == true){
-                        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-                        tableRelationship.update(["id":id!,"deleted":false]) {
-                            (item, error) in
-                            UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                            if error != nil {
-                                self.displayAlertMessage(useMessage: "Please check you network and try again.")
-                                self.loading.stopAnimating()
-                                print("Error: " + (error! as NSError).description)
-                            }
-                        }
-                        print("complete checking the user identify and password")
-                        self.displayNotificationMessage(useMessage: "You have successfully add a dependent.")
-                        
-                    }
-                    
-                }
-                self.displayAlertMessage(useMessage: "You fail to add your dependent. Please check secret password and network and then try again.")
-                self.loading.stopAnimating()
-                return
-                
-            }
-            
         }
         
         table.read { (result, error) in
@@ -101,6 +70,8 @@ class AddDependentViewController: UIViewController,UIGestureRecognizerDelegate {
                     if (item["phoneNumber"] as? String == dependentPhoneNumber && item["complete"] as! Bool == false){
                         if (item["secretPassword"] as? String == secretPassword){
                             let dependentusername = item["username"] as? String
+                            let id = dependentPhoneNumber!+username!
+                            
                             let itemToInsert = ["id":id,"guardian":username!,"dependent":dependentPhoneNumber!,"dependentUsername":dependentusername!,"complete": false, "__createdAt": Date()] as [String : Any]
                             UIApplication.shared.isNetworkActivityIndicatorVisible = true
                             tableRelationship.insert(itemToInsert) {
@@ -124,9 +95,9 @@ class AddDependentViewController: UIViewController,UIGestureRecognizerDelegate {
                 
             }
         }
-
         
-
+        
+        
         
     }
     
@@ -145,16 +116,16 @@ class AddDependentViewController: UIViewController,UIGestureRecognizerDelegate {
         alert.addAction(okAction)
         self.present(alert, animated: true, completion: nil)
     }
-
-
+    
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
