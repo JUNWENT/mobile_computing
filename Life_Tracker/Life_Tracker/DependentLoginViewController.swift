@@ -258,3 +258,10 @@ class DependentLoginViewController: UIViewController , UITextFieldDelegate{
      */
     
 }
+
+enum LoginShowType {
+    case none
+    case user
+    case pass
+    
+}

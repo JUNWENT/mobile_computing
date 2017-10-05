@@ -20,12 +20,8 @@
 		A31A89F71BF3FDFA00C7B656 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A31A89F61BF3FDFA00C7B656 /* Launch Screen.storyboard */; };
 		A3BBD77D1C05181600DD0DB0 /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3BBD77C1C05181600DD0DB0 /* MicrosoftAzureMobile.framework */; };
 		A8140C4A1F7D2BC000140067 /* AddDependentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8140C491F7D2BC000140067 /* AddDependentViewController.swift */; };
-		A817486A1F838FD20037BE0F /* GuardianContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A81748691F838FD20037BE0F /* GuardianContactViewController.swift */; };
-		A817486C1F8394AB0037BE0F /* loadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A817486B1F8394AB0037BE0F /* loadingViewController.swift */; };
 		A817487C1F83A2C20037BE0F /* loading2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A817487B1F83A2C20037BE0F /* loading2ViewController.swift */; };
-		A832232E1F77DED800C283D0 /* GuardianSignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A832232D1F77DED800C283D0 /* GuardianSignInViewController.swift */; };
 		A83223301F77EBEA00C283D0 /* DependentHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A832232F1F77EBEA00C283D0 /* DependentHomePageViewController.swift */; };
-		A83223341F77ED1F00C283D0 /* GuardianHomePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A83223331F77ED1F00C283D0 /* GuardianHomePageViewController.swift */; };
 		A839A5E61F86184D001A4F19 /* dependent.png in Resources */ = {isa = PBXBuildFile; fileRef = A839A5E31F86184D001A4F19 /* dependent.png */; };
 		A839A5E71F86184D001A4F19 /* guardian.png in Resources */ = {isa = PBXBuildFile; fileRef = A839A5E41F86184D001A4F19 /* guardian.png */; };
 		A839A5E81F86184D001A4F19 /* main3-iloveimg-cropped.gif in Resources */ = {isa = PBXBuildFile; fileRef = A839A5E51F86184D001A4F19 /* main3-iloveimg-cropped.gif */; };
@@ -60,7 +56,6 @@
 		A8FFB7391F83B2A100ABC148 /* 167.png in Resources */ = {isa = PBXBuildFile; fileRef = A8FFB7331F83B2A100ABC148 /* 167.png */; };
 		DA3CE4B8B70DD9AB4950160A /* Pods_Life_Tracker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11256387789A0E2D808FE646 /* Pods_Life_Tracker.framework */; };
 		E72B88C61F793B5100A79838 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E72B88C51F793B5100A79838 /* HealthKit.framework */; };
-		E7C5F61C1F82F896004CE129 /* DependentResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C5F61B1F82F896004CE129 /* DependentResetPasswordViewController.swift */; };
 		E7C5F61E1F834E1D004CE129 /* GuardianResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7C5F61D1F834E1D004CE129 /* GuardianResetPasswordViewController.swift */; };
 		E7FDED8F1F8633D300EA2856 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = E7FDED8E1F8633D300EA2856 /* background.png */; };
 /* End PBXBuildFile section */
@@ -85,12 +80,8 @@
 		A31A89F61BF3FDFA00C7B656 /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		A3BBD77C1C05181600DD0DB0 /* MicrosoftAzureMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicrosoftAzureMobile.framework; path = ../MicrosoftAzureMobile.framework; sourceTree = "<group>"; };
 		A8140C491F7D2BC000140067 /* AddDependentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddDependentViewController.swift; sourceTree = "<group>"; };
-		A81748691F838FD20037BE0F /* GuardianContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuardianContactViewController.swift; sourceTree = "<group>"; };
-		A817486B1F8394AB0037BE0F /* loadingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loadingViewController.swift; sourceTree = "<group>"; };
 		A817487B1F83A2C20037BE0F /* loading2ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = loading2ViewController.swift; sourceTree = "<group>"; };
-		A832232D1F77DED800C283D0 /* GuardianSignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuardianSignInViewController.swift; sourceTree = "<group>"; };
 		A832232F1F77EBEA00C283D0 /* DependentHomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependentHomePageViewController.swift; sourceTree = "<group>"; };
-		A83223331F77ED1F00C283D0 /* GuardianHomePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuardianHomePageViewController.swift; sourceTree = "<group>"; };
 		A839A5E31F86184D001A4F19 /* dependent.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dependent.png; sourceTree = "<group>"; };
 		A839A5E41F86184D001A4F19 /* guardian.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guardian.png; sourceTree = "<group>"; };
 		A839A5E51F86184D001A4F19 /* main3-iloveimg-cropped.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "main3-iloveimg-cropped.gif"; sourceTree = "<group>"; };
@@ -126,7 +117,6 @@
 		E72B88C41F793B5100A79838 /* Life_Tracker.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Life_Tracker.entitlements; sourceTree = "<group>"; };
 		E72B88C51F793B5100A79838 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		E7A881E21F85DD780089068C /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
-		E7C5F61B1F82F896004CE129 /* DependentResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependentResetPasswordViewController.swift; sourceTree = "<group>"; };
 		E7C5F61D1F834E1D004CE129 /* GuardianResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GuardianResetPasswordViewController.swift; sourceTree = "<group>"; };
 		E7FDED8E1F8633D300EA2856 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = ../../../background.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,17 +197,12 @@
 				A2D9CBE51943CB520017F096 /* frameworks */,
 				A2D9CBE81943D1340017F096 /* Life_Tracker-Bridging-Header.h */,
 				A3BBD77C1C05181600DD0DB0 /* MicrosoftAzureMobile.framework */,
-				A817486B1F8394AB0037BE0F /* loadingViewController.swift */,
 				E7C5F61D1F834E1D004CE129 /* GuardianResetPasswordViewController.swift */,
-				A81748691F838FD20037BE0F /* GuardianContactViewController.swift */,
 				A8804E641F85B58B00467048 /* MainViewController.swift */,
 				A817487B1F83A2C20037BE0F /* loading2ViewController.swift */,
 				A8BAE1E21F761BE800C714AD /* SignInViewController.swift */,
-				E7C5F61B1F82F896004CE129 /* DependentResetPasswordViewController.swift */,
 				A8C3866D1F7CE3B90072D603 /* AddGuardianViewController.swift */,
-				A83223331F77ED1F00C283D0 /* GuardianHomePageViewController.swift */,
 				A832232F1F77EBEA00C283D0 /* DependentHomePageViewController.swift */,
-				A832232D1F77DED800C283D0 /* GuardianSignInViewController.swift */,
 				A89F571E1F779C8800C58D87 /* DependentLoginViewController.swift */,
 				A31A89F61BF3FDFA00C7B656 /* Launch Screen.storyboard */,
 				A8C3866F1F7D19100072D603 /* DependentContactViewController.swift */,
@@ -445,17 +430,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7C5F61C1F82F896004CE129 /* DependentResetPasswordViewController.swift in Sources */,
 				A817487C1F83A2C20037BE0F /* loading2ViewController.swift in Sources */,
-				A83223341F77ED1F00C283D0 /* GuardianHomePageViewController.swift in Sources */,
-				A817486A1F838FD20037BE0F /* GuardianContactViewController.swift in Sources */,
 				4D1550EF1F83F0AA007CEA40 /* DependentTableViewCell.swift in Sources */,
 				A8C386701F7D19100072D603 /* DependentContactViewController.swift in Sources */,
 				A8BAE1E31F761BE800C714AD /* SignInViewController.swift in Sources */,
 				A83223301F77EBEA00C283D0 /* DependentHomePageViewController.swift in Sources */,
 				A8140C4A1F7D2BC000140067 /* AddDependentViewController.swift in Sources */,
-				A817486C1F8394AB0037BE0F /* loadingViewController.swift in Sources */,
-				A832232E1F77DED800C283D0 /* GuardianSignInViewController.swift in Sources */,
 				A89F571F1F779C8800C58D87 /* DependentLoginViewController.swift in Sources */,
 				E7C5F61E1F834E1D004CE129 /* GuardianResetPasswordViewController.swift in Sources */,
 				A8C3866E1F7CE3B90072D603 /* AddGuardianViewController.swift in Sources */,
