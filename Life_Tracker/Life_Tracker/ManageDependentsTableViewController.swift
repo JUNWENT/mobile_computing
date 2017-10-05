@@ -101,6 +101,7 @@ class ManageDependentsTableViewController: UITableViewController {
             let indexPath = self.dependentsTable.indexPath(for: sender as! UITableViewCell)! as NSIndexPath
             dependentPhone = dependents[indexPath.row].1!
             dependentName = dependents[indexPath.row].0!
+            dependentData.dependentName = self.dependentName
             dependentData.showing = self.dependentPhone
         }
     }

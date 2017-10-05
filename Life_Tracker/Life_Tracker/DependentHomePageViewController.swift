@@ -33,6 +33,9 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
     @IBOutlet weak var downstairs: UILabel!
     
     @IBOutlet weak var showingPerson: UILabel!
+    
+    var dependentName = ""
+    
     var username: String?
     //username = UserDefaults.standard.object(forKey: "Username") as? String
     var showing = UserDefaults.standard.object(forKey: "GuardianDependent") as? String
