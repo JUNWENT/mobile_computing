@@ -182,7 +182,6 @@ class DependentLoginViewController: UIViewController , UITextFieldDelegate{
         self.loading.startAnimating()
         let userIdentify = txtUser.text
         let userPassword = txtPwd.text
-        let userType = "Dependent"
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
         let table = client.table(withName: "UserData")
         let tableUser = client.table(withName: "UserTable")
@@ -201,33 +200,33 @@ class DependentLoginViewController: UIViewController , UITextFieldDelegate{
                 print("ERROR ", err)
             } else if let items = result?.items {
                 for item in items {
-                    if(item["type"] as? String == userType){
-                        if (item["phoneNumber"] as? String == userIdentify && item["complete"] as! Bool == false){
-                            if (item["password"] as? String == userPassword){
-                                UserDefaults.standard.set(userIdentify,forKey:"DependentUsername")
-                                UserDefaults.standard.synchronize()
-                                let itemToInsert = ["id":userIdentify,"complete": false, "__createdAt": Date()] as [String : Any]
-                                UIApplication.shared.isNetworkActivityIndicatorVisible = true
-                                tableUser.insert(itemToInsert) {
-                                    (item, error) in
-                                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                                    if error != nil {
-                                        self.displayAlertMessage(useMessage: "Please check you network and try again.")
-                                        self.loading.stopAnimating()
-                                        print("Error: " + (error! as NSError).description)
-                                    }
+                    if (item["phoneNumber"] as? String == userIdentify && item["complete"] as! Bool == false){
+                        if (item["password"] as? String == userPassword){
+                            UserDefaults.standard.set(userIdentify, forKey: "Username")
+                            UserDefaults.standard.set(userIdentify, forKey: "GuardianDependent")
+                            UserDefaults.standard.synchronize()
+                            let itemToInsert = ["id":userIdentify,"complete": false, "__createdAt": Date()] as [String : Any]
+                            UIApplication.shared.isNetworkActivityIndicatorVisible = true
+                            tableUser.insert(itemToInsert) {
+                                (item, error) in
+                                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                                if error != nil {
+                                    self.displayAlertMessage(useMessage: "Please check you network and try again.")
+                                    self.loading.stopAnimating()
+                                    print("Error: " + (error! as NSError).description)
                                 }
-                                print("complete checking the user identify and password")
-                                let alert = UIAlertController(title:"COMFIRMATION",message:"You have sucessfully sign in.",preferredStyle:UIAlertControllerStyle.alert)
-                                let okAction = UIAlertAction(title:"OK",style:UIAlertActionStyle.default){
-                                    action in
-                                    self.dismiss(animated: true, completion: nil)
-                                }
-                                alert.addAction(okAction)
-                                self.present(alert, animated: true, completion: nil)
                             }
+                            print("complete checking the user identify and password")
+                            let alert = UIAlertController(title:"COMFIRMATION",message:"You have sucessfully sign in.",preferredStyle:UIAlertControllerStyle.alert)
+                            let okAction = UIAlertAction(title:"OK",style:UIAlertActionStyle.default){
+                                action in
+                                self.dismiss(animated: true, completion: nil)
+                            }
+                            alert.addAction(okAction)
+                            self.present(alert, animated: true, completion: nil)
                         }
                     }
+                    
                 }
                 self.displayAlertMessage(useMessage: "Your login failed. Please check your username and password, and try again.")
                 self.loading.stopAnimating()

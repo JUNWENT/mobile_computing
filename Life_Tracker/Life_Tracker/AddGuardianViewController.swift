@@ -53,7 +53,7 @@ class AddGuardianViewController: UIViewController,UIGestureRecognizerDelegate {
         self.loading.startAnimating()
         let guardianSecretPassword = DependentSecretPasswordTextfield.text
         let ConfirmsecretPassword = DependentConfirmSecretPasswordTextField.text
-        username = UserDefaults.standard.object(forKey: "DependentUsername") as? String
+        username = UserDefaults.standard.object(forKey: "Username") as? String
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
         let table = client.table(withName: "UserData")
         

@@ -34,6 +34,15 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
     
     var username:String?
     
+    var selfLatitude:String?
+    var selfLongtitude:String?
+    var selfSpeed:String?
+    var selfAltitude:String?
+    var selfsteps:String?
+    var selfDistance:String?
+    var selfUpstairs:String?
+    var selfDownstairs:String?
+    
     
     @IBAction func askForHelp(_ sender: Any) {
     }
@@ -42,31 +51,84 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
     let pedometer = CMPedometer()
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations[0]
+        let show = UserDefaults.standard.object(forKey: "GuardianDependent") as? String
+        print(show ?? "no one to show")
+        print("show")
+        username = UserDefaults.standard.object(forKey: "Username") as? String
+        // get local gps data
+        let selflocation = locations[0]
         let span = MKCoordinateSpanMake(0.01, 0.01)
-        let myLocation = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+        let myLocation = CLLocationCoordinate2DMake(selflocation.coordinate.latitude, selflocation.coordinate.longitude)
         let region = MKCoordinateRegionMake(myLocation, span)
-        map.setRegion(region, animated: true)
-        self.map.showsUserLocation = true
-        
-        latitude.text = String(location.coordinate.latitude)
-        longtitude.text = String(location.coordinate.longitude)
-        speed.text = String(location.speed)
-        altitude.text = String(location.altitude)
-        //username = "1234567890"
-        
+        //map.setRegion(region, animated: true)
+        //self.map.showsUserLocation = true
+        // store local data
+        selfLatitude = String(selflocation.coordinate.latitude)
+        selfLongtitude = String(selflocation.coordinate.longitude)
+        selfSpeed = String(selflocation.speed)
+        selfAltitude = String(selflocation.altitude)
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
         let table = client.table(withName: "UserTable")
-        username = UserDefaults.standard.object(forKey: "DependentUsername") as? String
-        if !((latitude.text?.isEmpty)!||(longtitude.text?.isEmpty)!||(speed.text?.isEmpty)!||(altitude.text?.isEmpty)!){
-            table.update(["id": username, "latitude": latitude.text, "steps": steps.text, "distance":distance.text,"upstairs":upstairs.text,"downstairs":downstairs.text,"longtitude":longtitude.text,"speed":speed.text,"altitude":altitude.text ?? "no altitude", "complete": false]) { (result, error) in
-                if let err = error {
-                    print("ERROR ", err)
-                } else  {
-                    print("updating the gps and health information")
+        if(username != nil){
+            if !((latitude.text?.isEmpty)!||(longtitude.text?.isEmpty)!||(speed.text?.isEmpty)!||(altitude.text?.isEmpty)!){
+                table.update(["id": username!, "latitude": selfLatitude ?? "0", "steps": selfsteps ?? "0", "distance":selfDistance ?? "0","upstairs":selfUpstairs ?? "0","downstairs":selfDownstairs ?? "0","longtitude":selfLongtitude ?? "0","speed":selfSpeed ?? "0","altitude":selfAltitude ?? "0", "complete": false]) { (result, error) in
+                    if let err = error {
+                        print("ERROR ", err)
+                    } else  {
+                        print("updating the gps and health information")
+                    }
                 }
             }
         }
+        
+        if show == username {
+            let location = locations[0]
+            let span = MKCoordinateSpanMake(0.01, 0.01)
+            let myLocation = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+            let region = MKCoordinateRegionMake(myLocation, span)
+            map.setRegion(region, animated: true)
+            self.map.showsUserLocation = true
+            latitude.text = String(location.coordinate.latitude)
+            longtitude.text = String(location.coordinate.longitude)
+            speed.text = String(location.speed)
+            altitude.text = String(location.altitude)
+        } else if (show != username){
+            table.read { (result, error) in
+                if let err = error {
+                    self.displayAlertMessage(useMessage: "Please check you network and try again.")
+                    return
+                        print("ERROR ", err)
+                } else if let items = result?.items {
+                    for item in items {
+                        if item["id"] as? String == show {
+                            self.latitude.text = item["latitude"] as? String
+                            self.longtitude.text = item["longtitude"] as? String
+                            self.speed.text = item["speed"] as? String
+                            self.altitude.text = item["altitude"] as? String
+                            self.steps.text = item["steps"] as? String
+                            self.distance.text = item["distance"] as? String
+                            self.upstairs.text = item["upstairs"] as? String
+                            self.downstairs.text = item["downstairs"] as? String
+                        }
+                    }
+                    let lat = Double(self.latitude.text!)
+                    let long = Double(self.longtitude.text!)
+                    print (lat!)
+                    print (long!)
+                    let span:MKCoordinateSpan = MKCoordinateSpanMake(0.1, 0.1)
+                    let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(lat!, long!)
+                    let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+                    self.map.setRegion(region, animated: true)
+                    self.map.isZoomEnabled = true
+                    let annotation = MKPointAnnotation()
+                    annotation.coordinate = location
+                    annotation.title = "xxx is here"
+                    self.map.addAnnotation(annotation)
+                }
+            }
+
+        }
+        
         
         
         
@@ -108,6 +170,8 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
             return
         }
         //get time
+        let show = UserDefaults.standard.object(forKey: "GuardianDependent") as? String
+        username = UserDefaults.standard.object(forKey: "Username") as? String
         let cal = Calendar.current
         var comps = cal.dateComponents([.year,.month,.day], from: Date())
         comps.hour = 0
@@ -123,23 +187,42 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
                 return
             }
             if let numberOfSteps = pedometerData?.numberOfSteps as? Int {
-                self.steps.text = String(numberOfSteps)
+                self.selfsteps = String(numberOfSteps)
+                
             }
             if let distance = pedometerData?.distance as? Double {
-                self.distance.text = String(format: "%.2f", distance)
+                self.selfDistance = String(format: "%.2f", distance)
+                
             }
             if let floorsAscended = pedometerData?.floorsAscended as? Int {
-                self.upstairs.text = String(floorsAscended)
+                self.selfUpstairs = String(floorsAscended)
+                
             }
             if let floorsDescended = pedometerData?.floorsDescended as? Int {
-                self.downstairs.text = String(floorsDescended)
+                self.selfDownstairs = String(floorsDescended)
+                
+            }
+            if(show == self.username){
+                self.steps.text = self.selfsteps
+                self.distance.text = self.selfDistance
+                self.upstairs.text = self.selfUpstairs
+                self.downstairs.text = self.selfDownstairs
             }
             DispatchQueue.main.async {
                 //                    self.textView.text = text
             }
-            
-            
         })
+        
+       
+        
     }
+    
+    func displayAlertMessage(useMessage:String){
+        let alert = UIAlertController(title:"ALERT",message:useMessage,preferredStyle:UIAlertControllerStyle.alert)
+        let okAction = UIAlertAction(title:"OK",style:UIAlertActionStyle.default,handler:nil)
+        alert.addAction(okAction)
+        self.present(alert, animated: true, completion: nil)
+    }
+
 }
 

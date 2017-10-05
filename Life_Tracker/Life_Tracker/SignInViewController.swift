@@ -16,7 +16,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var UserComfirmPasswordTextField: UITextField!
     
     @IBOutlet weak var loading: UIActivityIndicatorView!
-    @IBOutlet weak var UserTypeController: UISegmentedControl!
+    
     
     
     override func viewDidLoad() {
@@ -36,40 +36,14 @@ class SignInViewController: UIViewController {
     
     @IBAction func pressedOnRegisterBotton(_ sender: UIButton) {
         self.loading.startAnimating()
-        // need to log out then register
-        let username = UserDefaults.standard.object(forKey: "DependentUsername") as? String
-        let username2 = UserDefaults.standard.object(forKey: "GuardianUsername") as? String
         
         let userName = UserUsernameTextField.text
         let userPhoneNumber = UserPhoneNumberTextField.text
         let userPassword = UserPasswordTextField.text
         let userComfirmPassword = UserComfirmPasswordTextField.text
-        let UserTypechoice = UserTypeController
-        var UserType:String!
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
         let table = client.table(withName: "UserData")
-        // get user type
-        switch UserTypechoice!.selectedSegmentIndex
-        {
-        case 0:
-            UserType = "Dependent"
-            if username != nil {
-                self.displayAlertMessage(useMessage: "You must first log out!")
-                self.loading.stopAnimating()
-                return
-            }
-            print ("USER IS DEPENDENT")
-        case 1:
-            UserType = "Guardian"
-            if username2 != nil {
-                self.displayAlertMessage(useMessage: "You must first log out!")
-                self.loading.stopAnimating()
-                return
-            }
-            print("USER IS GUARDIAN")
-        default:
-            break
-        }
+       
         
         
         // check if username valid
@@ -124,8 +98,10 @@ class SignInViewController: UIViewController {
                     }
                 }
                 // store data to server
-                let itemToInsert = ["type": UserType!, "username": userName!,"phoneNumber":userPhoneNumber!,"password":userPassword!,"id":userPhoneNumber!, "complete": false, "__createdAt": Date()] as [String : Any]
-                
+                let itemToInsert = ["username": userName!,"phoneNumber":userPhoneNumber!,"password":userPassword!,"id":userPhoneNumber!, "complete": false, "__createdAt": Date()] as [String : Any]
+                UserDefaults.standard.set(userPhoneNumber, forKey: "Username")
+                UserDefaults.standard.set(userPhoneNumber, forKey: "GuardianDependent")
+                UserDefaults.standard.synchronize()
                 UIApplication.shared.isNetworkActivityIndicatorVisible = true
                 table.insert(itemToInsert) {
                     (item, error) in

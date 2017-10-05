@@ -12,7 +12,6 @@ import MapKit
 class GuardianHomePageViewController: UIViewController {
     
     var username:String?
-    
     var dependentPhone = ""
     
     @IBOutlet weak var map: MKMapView!

@@ -53,11 +53,10 @@ class GuardianResetPasswordViewController: UIViewController,UIGestureRecognizerD
         let userConfirmNewPassword = ConfirmNewPasswordTextField.text
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
         let table = client.table(withName: "UserData")
-        let userType = "Guardian"
         
         
         var username : String?
-        username = UserDefaults.standard.object(forKey: "GuardianUsername")as?String
+        username = UserDefaults.standard.object(forKey: "Username")as?String
         
         
         // check needed fields empty
@@ -86,23 +85,23 @@ class GuardianResetPasswordViewController: UIViewController,UIGestureRecognizerD
                 print("ERROR ", err)
             } else if let items = result?.items {
                 for item in items {
-                    if(item["type"] as? String == userType){
-                        if (item["phoneNumber"] as? String == username! && item["password"] as? String == userExistingPassword! && item["complete"] as! Bool == false){
-                            table.update(["id":username!,"password":userNewPassword!]) {
-                                (result, error) in
-                                if let err = error {
-                                    print("ERROR ", err)
-                                } else  {
-                                    print("update user password")
-                                }
-                                self.displayAlertMessage(useMessage: "You have succesfully changed your password!")
+                    if (item["phoneNumber"] as? String == username! && item["password"] as? String == userExistingPassword! && item["complete"] as! Bool == false){
+                        table.update(["id":username!,"password":userNewPassword!]) {
+                            (result, error) in
+                            if let err = error {
+                                print("ERROR ", err)
+                            } else  {
+                                print("update user password")
                             }
-                        } else if (item["phoneNumber"] as? String == username! && item["password"] as? String != userExistingPassword! && item["complete"] as! Bool == false){
-                            self.displayAlertMessage(useMessage: "Please enter your correct existing password.")
+                            self.displayAlertMessage(useMessage: "You have succesfully changed your password!")
                             self.loading.stopAnimating()
                         }
+                    } else if (item["phoneNumber"] as? String == username! && item["password"] as? String != userExistingPassword! && item["complete"] as! Bool == false){
+                        self.displayAlertMessage(useMessage: "Please enter your correct existing password.")
+                        self.loading.stopAnimating()
                     }
                 }
+                
             }
         }
         

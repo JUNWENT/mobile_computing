@@ -38,7 +38,7 @@ class DependentContactViewController: UIViewController, UINavigationControllerDe
     }
     
     @IBAction func userPressedOnLogOut(_ sender: UIButton) {
-        UserDefaults.standard.set(nil,forKey:"DependentUsername")
+        UserDefaults.standard.set(nil,forKey:"Username")
     }
     
     override func viewDidLoad() {
@@ -46,7 +46,7 @@ class DependentContactViewController: UIViewController, UINavigationControllerDe
         if let data = UserDefaults.standard.object(forKey: "profile") {
             myPhoto.image = UIImage(data: data as! Data)
         }
-        if let phone = UserDefaults.standard.object(forKey: "DependentUsername") as? String {
+        if let phone = UserDefaults.standard.object(forKey: "Username") as? String {
             phoneNumber.text = phone
         }
     }

@@ -52,11 +52,10 @@ class AddDependentViewController: UIViewController,UIGestureRecognizerDelegate {
         let dependentPhoneNumber = DependentPhoneNumberTextField.text
         let secretPassword = DependentSecretPasswordTextField.text
         var username:String?
-        username = UserDefaults.standard.object(forKey: "GuardianUsername") as? String
+        username = UserDefaults.standard.object(forKey: "Username") as? String
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
         let table = client.table(withName: "UserData")
         let tableRelationship = client.table(withName: "UserRelationship")
-        let userType = "Dependent"
         
         if ((dependentPhoneNumber?.isEmpty)! || (secretPassword?.isEmpty)!){
             self.displayAlertMessage(useMessage: "Your must enter a dependent phone number and his secret password.")
@@ -68,33 +67,31 @@ class AddDependentViewController: UIViewController,UIGestureRecognizerDelegate {
                 print("ERROR ", err)
             } else if let items = result?.items {
                 for item in items {
-                    if(item["type"] as? String == userType){
-                        if (item["phoneNumber"] as? String == dependentPhoneNumber && item["complete"] as! Bool == false){
-                            if (item["secretPassword"] as? String == secretPassword){
-                                let hasAdd = UserDefaults.standard.object(forKey: "DependentGuardian")
-                                if (hasAdd == nil){
-                                    UserDefaults.standard.set(dependentPhoneNumber,forKey:"DependentGuardian")
-                                    UserDefaults.standard.synchronize()
+                    if (item["phoneNumber"] as? String == dependentPhoneNumber && item["complete"] as! Bool == false){
+                        if (item["secretPassword"] as? String == secretPassword){
+                            
+                            UserDefaults.standard.set(dependentPhoneNumber,forKey:"GuardianDependent")
+                            UserDefaults.standard.synchronize()
+                            
+                            let dependentusername = item["username"] as? String
+                            let id = dependentPhoneNumber!+username!
+                            UserDefaults.standard.synchronize()
+                            let itemToInsert = ["id":id,"guardian":username!,"dependent":dependentPhoneNumber!,"dependentUsername":dependentusername!,"complete": false, "__createdAt": Date()] as [String : Any]
+                            UIApplication.shared.isNetworkActivityIndicatorVisible = true
+                            tableRelationship.insert(itemToInsert) {
+                                (item, error) in
+                                UIApplication.shared.isNetworkActivityIndicatorVisible = false
+                                if error != nil {
+                                    self.displayAlertMessage(useMessage: "Please check you network and try again.")
+                                    self.loading.stopAnimating()
+                                    print("Error: " + (error! as NSError).description)
                                 }
-                                let dependentusername = item["username"] as? String
-                                let id = dependentPhoneNumber!+username!
-                                UserDefaults.standard.synchronize()
-                                let itemToInsert = ["id":id,"guardian":username!,"dependent":dependentPhoneNumber!,"dependentUsername":dependentusername!,"complete": false, "__createdAt": Date()] as [String : Any]
-                                UIApplication.shared.isNetworkActivityIndicatorVisible = true
-                                tableRelationship.insert(itemToInsert) {
-                                    (item, error) in
-                                    UIApplication.shared.isNetworkActivityIndicatorVisible = false
-                                    if error != nil {
-                                        self.displayAlertMessage(useMessage: "Please check you network and try again.")
-                                        self.loading.stopAnimating()
-                                        print("Error: " + (error! as NSError).description)
-                                    }
-                                }
-                                print("complete checking the user identify and password")
-                               self.displayNotificationMessage(useMessage: "You have successfully add a dependent.")
                             }
+                            print("complete checking the user identify and password")
+                            self.displayNotificationMessage(useMessage: "You have successfully add a dependent.")
                         }
                     }
+                    
                 }
                 self.displayAlertMessage(useMessage: "You fail to add your dependent. Please check secret password and network and then try again.")
                 self.loading.stopAnimating()

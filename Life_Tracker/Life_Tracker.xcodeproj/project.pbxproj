@@ -29,6 +29,7 @@
 		A86F27E81F734C2700681BAD /* icons8-Contacts-35.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A86F27E51F734C2700681BAD /* icons8-Contacts-35.imageset */; };
 		A86F27E91F734C2700681BAD /* icons8-Home-35.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A86F27E61F734C2700681BAD /* icons8-Home-35.imageset */; };
 		A86F27EA1F734C2700681BAD /* icons8-Notification-35.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A86F27E71F734C2700681BAD /* icons8-Notification-35.imageset */; };
+		A8804E651F85B58B00467048 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8804E641F85B58B00467048 /* MainViewController.swift */; };
 		A88696BD1F820EEE002C424A /* icon_hand.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A88696BA1F820EEE002C424A /* icon_hand.imageset */; };
 		A88696BE1F820EEE002C424A /* iconfont-password.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A88696BB1F820EEE002C424A /* iconfont-password.imageset */; };
 		A88696BF1F820EEE002C424A /* iconfont-user.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A88696BC1F820EEE002C424A /* iconfont-user.imageset */; };
@@ -84,6 +85,7 @@
 		A86F27E51F734C2700681BAD /* icons8-Contacts-35.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "icons8-Contacts-35.imageset"; path = "Images.xcassets/AppIcon.appiconset/icons8-Contacts-35.imageset"; sourceTree = "<group>"; };
 		A86F27E61F734C2700681BAD /* icons8-Home-35.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "icons8-Home-35.imageset"; path = "Images.xcassets/AppIcon.appiconset/icons8-Home-35.imageset"; sourceTree = "<group>"; };
 		A86F27E71F734C2700681BAD /* icons8-Notification-35.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "icons8-Notification-35.imageset"; path = "Images.xcassets/AppIcon.appiconset/icons8-Notification-35.imageset"; sourceTree = "<group>"; };
+		A8804E641F85B58B00467048 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A88696BA1F820EEE002C424A /* icon_hand.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = icon_hand.imageset; path = Images.xcassets/icon_hand.imageset; sourceTree = "<group>"; };
 		A88696BB1F820EEE002C424A /* iconfont-password.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "iconfont-password.imageset"; path = "Images.xcassets/iconfont-password.imageset"; sourceTree = "<group>"; };
 		A88696BC1F820EEE002C424A /* iconfont-user.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "iconfont-user.imageset"; path = "Images.xcassets/iconfont-user.imageset"; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				A817486B1F8394AB0037BE0F /* loadingViewController.swift */,
 				E7C5F61D1F834E1D004CE129 /* GuardianResetPasswordViewController.swift */,
 				A81748691F838FD20037BE0F /* GuardianContactViewController.swift */,
+				A8804E641F85B58B00467048 /* MainViewController.swift */,
 				A817487B1F83A2C20037BE0F /* loading2ViewController.swift */,
 				A8BAE1E21F761BE800C714AD /* SignInViewController.swift */,
 				E7C5F61B1F82F896004CE129 /* DependentResetPasswordViewController.swift */,
@@ -362,6 +365,7 @@
 				E7C5F61E1F834E1D004CE129 /* GuardianResetPasswordViewController.swift in Sources */,
 				A8C3866E1F7CE3B90072D603 /* AddGuardianViewController.swift in Sources */,
 				A2BD20971AC8A731007F7181 /* QSTodoDataModel.xcdatamodeld in Sources */,
+				A8804E651F85B58B00467048 /* MainViewController.swift in Sources */,
 				4DF37E2E1F83BAA000F6E3D3 /* ManageDependentsTableViewController.swift in Sources */,
 				A2D9CBC41943C2540017F096 /* AppDelegate.swift in Sources */,
 			);

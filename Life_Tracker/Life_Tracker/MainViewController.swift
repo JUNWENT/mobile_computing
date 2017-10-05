@@ -1,16 +1,22 @@
 //
-//  loading2ViewController.swift
+//  MainViewController.swift
 //  Life_Tracker
 //
-//  Created by junwenz on 2017/10/3.
+//  Created by junwenz on 2017/10/5.
 //  Copyright © 2017年 Microsoft. All rights reserved.
 //
 
 import UIKit
 
-class loading2ViewController: UIViewController {
-
+class MainViewController: UIViewController {
     var username:String?
+    
+    override func viewDidAppear(_ animated: Bool) {
+        username = UserDefaults.standard.object(forKey: "Username") as? String
+        if( username != nil){
+            self.performSegue(withIdentifier: "In", sender: self)
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,16 +27,6 @@ class loading2ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        username = UserDefaults.standard.object(forKey: "Username") as? String
-        
-        if (username == nil) {
-            self.performSegue(withIdentifier: "Login", sender: self)
-        } else {
-            self.performSegue(withIdentifier: "Home", sender: self)
-        }
     }
     
 
