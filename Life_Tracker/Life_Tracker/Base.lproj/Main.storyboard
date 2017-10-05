@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="T7J-53-ydk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="T7J-53-ydk">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -807,6 +807,7 @@
                         <outlet property="longtitude" destination="jg9-DA-JK7" id="TbR-PL-JI2"/>
                         <outlet property="map" destination="Gc1-N7-InF" id="mjR-Gb-25q"/>
                         <outlet property="shoingPerson" destination="QLl-6e-qdp" id="EuT-tK-cb2"/>
+                        <outlet property="showingPerson" destination="QLl-6e-qdp" id="Nov-Dm-pBi"/>
                         <outlet property="speed" destination="y2P-gg-HR9" id="chs-Pg-wJs"/>
                         <outlet property="steps" destination="FYP-fU-zXE" id="ysw-Cq-aDN"/>
                         <outlet property="upstairs" destination="AGH-vh-nA2" id="goq-uP-Rb2"/>
