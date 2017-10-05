@@ -10,6 +10,7 @@ import UIKit
 
 class ManageDependentsTableViewController: UITableViewController {
     var dependents = Array<(String?, String?)>()
+    var dependentName = ""
     var guardianPhone = ""
     var dependentPhone = ""
     
@@ -91,8 +92,7 @@ class ManageDependentsTableViewController: UITableViewController {
             let dependentData = segue.destination as! DependentHomePageViewController
             let indexPath = self.dependentsTable.indexPath(for: sender as! UITableViewCell)! as NSIndexPath
             dependentPhone = dependents[indexPath.row].1!
-            print(self.dependentPhone)
-            print("---------------------")
+            dependentName = dependents[indexPath.row].0!
             dependentData.showing = self.dependentPhone
         }
     }
