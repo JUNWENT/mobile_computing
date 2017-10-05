@@ -99,7 +99,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
             speed.text = String(location.speed)
             altitude.text = String(location.altitude)
         } else if (showing != username){
-            showingPerson.text = showing
+            showingPerson.text = self.dependentName
             table.read { (result, error) in
                 if let err = error {
                     self.displayAlertMessage(useMessage: "Please check you network and try again.")
@@ -129,7 +129,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
                     self.map.isZoomEnabled = true
                     let annotation = MKPointAnnotation()
                     annotation.coordinate = location
-                    annotation.title = "xxx is here"
+                    annotation.title = self.dependentName+" is here!"
                     self.map.addAnnotation(annotation)
                 }
             }

@@ -11,10 +11,10 @@ import TextFieldEffects
 
 class SignInViewController: UIViewController,UITextFieldDelegate {
     
-    @IBOutlet weak var UserUsernameTextField: UITextField!
-    @IBOutlet weak var UserPhoneNumberTextField: UITextField!
-    @IBOutlet weak var UserPasswordTextField: UITextField!
-    @IBOutlet weak var UserComfirmPasswordTextField: UITextField!
+    var UserUsernameTextField: UITextField!
+    var UserPhoneNumberTextField: UITextField!
+    var UserPasswordTextField: UITextField!
+    var UserComfirmPasswordTextField: UITextField!
     
     @IBOutlet weak var loading: UIActivityIndicatorView!
     
@@ -25,11 +25,11 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         self.loading.hidesWhenStopped = true
-        let textField = KaedeTextField(frame:CGRect(x: 30, y: 30, width: mainSize.width - 60, height: 44))
-        textField.placeholderColor = .darkGray
-        textField.foregroundColor = .lightGray
-        
-        self.view.addSubview(textField)
+        let UserNametextField = YoshikoTextField(frame:CGRect(x: 30, y: 30, width: mainSize.width - 60, height: 44))
+        let UserPhoneNumbertextField = YoshikoTextField(frame:CGRect(x: 30, y: 30, width: mainSize.width - 60, height: 44))
+//        let UserNametextField = YoshikoTextField(frame:CGRect(x: 30, y: 30, width: mainSize.width - 60, height: 44))
+//        let UserNametextField = YoshikoTextField(frame:CGRect(x: 30, y: 30, width: mainSize.width - 60, height: 44))
+        //self.view.addSubview(textField)
         // Do any additional setup after loading the view.
     }
     
