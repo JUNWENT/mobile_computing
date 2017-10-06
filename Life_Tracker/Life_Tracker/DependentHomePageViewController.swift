@@ -140,6 +140,18 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
             }
 
         }
+        if (steps.text == "0"){
+            steps.text = "loading"
+        }
+        if (distance.text == "0"){
+            distance.text = "loading"
+        }
+        if (upstairs.text == "0"){
+            upstairs.text = "loading"
+        }
+        if (downstairs.text == "0"){
+            downstairs.text = "loading"
+        }
  
     }
     

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Life_Tracker/DependentHomePageViewController.swift"
+            timestampString = "528973710.864978"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "locationManager(_:didUpdateLocations:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Life_Tracker.DependentHomePageViewController.locationManager (__ObjC.CLLocationManager, didUpdateLocations : Swift.Array&lt;__ObjC.CLLocation&gt;) -&gt; ()"
+                  moduleName = "Life_Tracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junwenz/Desktop/mobile_computing/Life_Tracker/Life_Tracker/DependentHomePageViewController.swift"
+                  timestampString = "528974047.341873"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "8424">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Life_Tracker.DependentHomePageViewController.(locationManager (__ObjC.CLLocationManager, didUpdateLocations : Swift.Array&lt;__ObjC.CLLocation&gt;) -&gt; ()).(implicit closure #4)"
+                  moduleName = "Life_Tracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junwenz/Desktop/mobile_computing/Life_Tracker/Life_Tracker/DependentHomePageViewController.swift"
+                  timestampString = "528974047.349324"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Life_Tracker.DependentHomePageViewController.(locationManager (__ObjC.CLLocationManager, didUpdateLocations : Swift.Array&lt;__ObjC.CLLocation&gt;) -&gt; ()).(implicit closure #5)"
+                  moduleName = "Life_Tracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junwenz/Desktop/mobile_computing/Life_Tracker/Life_Tracker/DependentHomePageViewController.swift"
+                  timestampString = "528974047.352336"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Life_Tracker.DependentHomePageViewController.(locationManager (__ObjC.CLLocationManager, didUpdateLocations : Swift.Array&lt;__ObjC.CLLocation&gt;) -&gt; ()).(implicit closure #6)"
+                  moduleName = "Life_Tracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junwenz/Desktop/mobile_computing/Life_Tracker/Life_Tracker/DependentHomePageViewController.swift"
+                  timestampString = "528974047.355532"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Life_Tracker.DependentHomePageViewController.(locationManager (__ObjC.CLLocationManager, didUpdateLocations : Swift.Array&lt;__ObjC.CLLocation&gt;) -&gt; ()).(implicit closure #7)"
+                  moduleName = "Life_Tracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junwenz/Desktop/mobile_computing/Life_Tracker/Life_Tracker/DependentHomePageViewController.swift"
+                  timestampString = "528974047.361869"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Life_Tracker.DependentHomePageViewController.(locationManager (__ObjC.CLLocationManager, didUpdateLocations : Swift.Array&lt;__ObjC.CLLocation&gt;) -&gt; ()).(implicit closure #8)"
+                  moduleName = "Life_Tracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junwenz/Desktop/mobile_computing/Life_Tracker/Life_Tracker/DependentHomePageViewController.swift"
+                  timestampString = "528974047.364176"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Life_Tracker.DependentHomePageViewController.(locationManager (__ObjC.CLLocationManager, didUpdateLocations : Swift.Array&lt;__ObjC.CLLocation&gt;) -&gt; ()).(implicit closure #9)"
+                  moduleName = "Life_Tracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junwenz/Desktop/mobile_computing/Life_Tracker/Life_Tracker/DependentHomePageViewController.swift"
+                  timestampString = "528974047.36705"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Life_Tracker.DependentHomePageViewController.(locationManager (__ObjC.CLLocationManager, didUpdateLocations : Swift.Array&lt;__ObjC.CLLocation&gt;) -&gt; ()).(implicit closure #10)"
+                  moduleName = "Life_Tracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junwenz/Desktop/mobile_computing/Life_Tracker/Life_Tracker/DependentHomePageViewController.swift"
+                  timestampString = "528974047.369462"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Life_Tracker.DependentHomePageViewController.(locationManager (__ObjC.CLLocationManager, didUpdateLocations : Swift.Array&lt;__ObjC.CLLocation&gt;) -&gt; ()).(implicit closure #11)"
+                  moduleName = "Life_Tracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junwenz/Desktop/mobile_computing/Life_Tracker/Life_Tracker/DependentHomePageViewController.swift"
+                  timestampString = "528974047.372032"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Life_Tracker.DependentHomePageViewController.(locationManager (__ObjC.CLLocationManager, didUpdateLocations : Swift.Array&lt;__ObjC.CLLocation&gt;) -&gt; ()).(closure #1)"
+                  moduleName = "Life_Tracker"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/junwenz/Desktop/mobile_computing/Life_Tracker/Life_Tracker/DependentHomePageViewController.swift"
+                  timestampString = "528974047.378193"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "77"
+                  endingLineNumber = "77"
+                  offsetFromSymbolStart = "30">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
