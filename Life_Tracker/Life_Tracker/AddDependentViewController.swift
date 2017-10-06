@@ -7,16 +7,42 @@
 //
 
 import UIKit
+import TextFieldEffects
 
 class AddDependentViewController: UIViewController,UIGestureRecognizerDelegate {
     
     @IBOutlet weak var loading: UIActivityIndicatorView!
-    @IBOutlet weak var DependentPhoneNumberTextField: UITextField!
-    @IBOutlet weak var DependentSecretPasswordTextField: UITextField!
+    var DependentPhoneNumberTextField: MadokaTextField!
+    var DependentSecretPasswordTextField: MadokaTextField!
     
+    @IBOutlet weak var GiveColor: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let mainSize = UIScreen.main.bounds.size
+        DependentPhoneNumberTextField = MadokaTextField(frame:CGRect(x: 60, y: 127, width: mainSize.width - 120, height: 60))
+        DependentSecretPasswordTextField = MadokaTextField(frame:CGRect(x: 60, y: 207, width: mainSize.width - 120, height: 50))
+        
+        
+        DependentSecretPasswordTextField.placeholder = "verification password"
+        DependentPhoneNumberTextField.placeholder = "dependent`s phone number"
+        
+        DependentPhoneNumberTextField.borderColor = GiveColor.backgroundColor!
+        DependentSecretPasswordTextField.borderColor = GiveColor.backgroundColor!
+      
+        
+        
+        DependentPhoneNumberTextField.placeholderColor = GiveColor.backgroundColor!
+        DependentSecretPasswordTextField.placeholderColor = GiveColor.backgroundColor!
+ 
+        DependentPhoneNumberTextField.placeholderFontScale =  1
+        DependentSecretPasswordTextField.placeholderFontScale = 1
+
+        
+        self.view.addSubview(DependentSecretPasswordTextField)
+        self.view.addSubview(DependentPhoneNumberTextField)
+    
+
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         self.loading.hidesWhenStopped = true
         let target = self.navigationController?.interactivePopGestureRecognizer!.delegate

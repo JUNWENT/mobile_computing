@@ -7,16 +7,48 @@
 //
 
 import UIKit
+import TextFieldEffects
 
 class GuardianResetPasswordViewController: UIViewController,UIGestureRecognizerDelegate {
     
     @IBOutlet weak var loading: UIActivityIndicatorView!
-    @IBOutlet weak var ExistingPasswordTextField: UITextField!
-    @IBOutlet weak var NewPasswordTextField: UITextField!
-    @IBOutlet weak var ConfirmNewPasswordTextField: UITextField!
+    var ExistingPasswordTextField: MadokaTextField!
+    var NewPasswordTextField: MadokaTextField!
+    var ConfirmNewPasswordTextField: MadokaTextField!
     
+    @IBOutlet weak var GiveColor: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let mainSize = UIScreen.main.bounds.size
+        ExistingPasswordTextField = MadokaTextField(frame:CGRect(x: 60, y: 107, width: mainSize.width - 120, height: 50))
+        NewPasswordTextField = MadokaTextField(frame:CGRect(x: 60, y: 167, width: mainSize.width - 120, height: 50))
+        ConfirmNewPasswordTextField = MadokaTextField(frame:CGRect(x: 60, y: 227, width: mainSize.width - 120, height: 50))
+        
+        ExistingPasswordTextField.placeholder = "original password"
+        NewPasswordTextField.placeholder = "new password"
+        ConfirmNewPasswordTextField.placeholder = "confirm your new password"
+        
+        ExistingPasswordTextField.borderColor = GiveColor.backgroundColor!
+        NewPasswordTextField.borderColor = GiveColor.backgroundColor!
+        ConfirmNewPasswordTextField.borderColor = GiveColor.backgroundColor!
+        
+        
+        ExistingPasswordTextField.placeholderColor = GiveColor.backgroundColor!
+        NewPasswordTextField.placeholderColor = GiveColor.backgroundColor!
+        ConfirmNewPasswordTextField.placeholderColor = GiveColor.backgroundColor!
+        
+        
+        
+        ExistingPasswordTextField.placeholderFontScale =  1
+        NewPasswordTextField.placeholderFontScale = 1
+        ConfirmNewPasswordTextField.placeholderFontScale = 1
+        
+        
+        self.view.addSubview(ExistingPasswordTextField)
+        self.view.addSubview(NewPasswordTextField)
+        self.view.addSubview(ConfirmNewPasswordTextField)
+
+        
         self.loading.hidesWhenStopped = true
         let target = self.navigationController?.interactivePopGestureRecognizer!.delegate
         let pan = UIPanGestureRecognizer(target:target,

@@ -27,10 +27,10 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         self.loading.hidesWhenStopped = true
-        UserUsernameTextField = MadokaTextField(frame:CGRect(x: 60, y: 187, width: mainSize.width - 120, height: 60))
-        UserPhoneNumberTextField = MadokaTextField(frame:CGRect(x: 60, y: 247, width: mainSize.width - 120, height: 60))
-        UserPasswordTextField = MadokaTextField(frame:CGRect(x: 60, y: 307, width: mainSize.width - 120, height: 60))
-        UserComfirmPasswordTextField = MadokaTextField(frame:CGRect(x: 60, y: 367, width: mainSize.width - 120, height: 60))
+        UserUsernameTextField = MadokaTextField(frame:CGRect(x: 60, y: 147, width: mainSize.width - 120, height: 50))
+        UserPhoneNumberTextField = MadokaTextField(frame:CGRect(x: 60, y: 207, width: mainSize.width - 120, height: 50))
+        UserPasswordTextField = MadokaTextField(frame:CGRect(x: 60, y: 267, width: mainSize.width - 120, height: 50))
+        UserComfirmPasswordTextField = MadokaTextField(frame:CGRect(x: 60, y: 327, width: mainSize.width - 120, height: 50))
         UserUsernameTextField.placeholder = "username"
         UserPhoneNumberTextField.placeholder = "phone number"
         UserPasswordTextField.placeholder = "password"
@@ -46,10 +46,10 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
         UserPhoneNumberTextField.placeholderColor = GiveColor.textColor!
         UserComfirmPasswordTextField.placeholderColor = GiveColor.textColor!
         
-        UserUsernameTextField.placeholderFontScale =  1
-        UserPasswordTextField.placeholderFontScale = 1
-        UserPhoneNumberTextField.placeholderFontScale = 1
-        UserComfirmPasswordTextField.placeholderFontScale = 1
+        UserUsernameTextField.placeholderFontScale =  0.7
+        UserPasswordTextField.placeholderFontScale = 0.7
+        UserPhoneNumberTextField.placeholderFontScale = 0.7
+        UserComfirmPasswordTextField.placeholderFontScale = 0.7
         
         self.view.addSubview(UserUsernameTextField)
         self.view.addSubview(UserPhoneNumberTextField)

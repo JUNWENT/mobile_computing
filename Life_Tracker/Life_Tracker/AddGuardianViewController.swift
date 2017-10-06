@@ -23,8 +23,8 @@ class AddGuardianViewController: UIViewController,UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         let mainSize = UIScreen.main.bounds.size
-        DependentSecretPasswordTextfield = MadokaTextField(frame:CGRect(x: 60, y: 120, width: mainSize.width - 120, height: 60))
-        DependentConfirmSecretPasswordTextField = MadokaTextField(frame:CGRect(x: 60, y: 200, width: mainSize.width - 120, height: 60))
+        DependentSecretPasswordTextfield = MadokaTextField(frame:CGRect(x: 60, y: 127, width: mainSize.width - 120, height: 60))
+        DependentConfirmSecretPasswordTextField = MadokaTextField(frame:CGRect(x: 60, y: 207, width: mainSize.width - 120, height: 60))
         
         DependentSecretPasswordTextfield.placeholder = "secret password"
         DependentConfirmSecretPasswordTextField.placeholder = "confirm your secret password"
@@ -39,7 +39,11 @@ class AddGuardianViewController: UIViewController,UIGestureRecognizerDelegate {
         
         DependentConfirmSecretPasswordTextField.placeholderFontScale =  1
         DependentSecretPasswordTextfield.placeholderFontScale = 1
-       
+        
+        self.view.addSubview(DependentSecretPasswordTextfield)
+        self.view.addSubview(DependentConfirmSecretPasswordTextField)
+     
+
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         self.loading.hidesWhenStopped = true

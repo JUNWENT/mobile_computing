@@ -38,6 +38,7 @@
 		A88696C71F820F08002C424A /* owl-login.imageset in Resources */ = {isa = PBXBuildFile; fileRef = A88696C31F820F08002C424A /* owl-login.imageset */; };
 		A89F571F1F779C8800C58D87 /* DependentLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A89F571E1F779C8800C58D87 /* DependentLoginViewController.swift */; };
 		A8BAE1E31F761BE800C714AD /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BAE1E21F761BE800C714AD /* SignInViewController.swift */; };
+		A8BCB3791F871DBA00CDCCD7 /* register.png in Resources */ = {isa = PBXBuildFile; fileRef = A8BCB3781F871DBA00CDCCD7 /* register.png */; };
 		A8C3866E1F7CE3B90072D603 /* AddGuardianViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C3866D1F7CE3B90072D603 /* AddGuardianViewController.swift */; };
 		A8C386701F7D19100072D603 /* DependentContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C3866F1F7D19100072D603 /* DependentContactViewController.swift */; };
 		A8FFB71F1F83AA7B00ABC148 /* 58*58.png in Resources */ = {isa = PBXBuildFile; fileRef = A8FFB7181F83AA7B00ABC148 /* 58*58.png */; };
@@ -98,6 +99,7 @@
 		A88696C31F820F08002C424A /* owl-login.imageset */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "owl-login.imageset"; path = "Images.xcassets/owl-login.imageset"; sourceTree = "<group>"; };
 		A89F571E1F779C8800C58D87 /* DependentLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependentLoginViewController.swift; sourceTree = "<group>"; };
 		A8BAE1E21F761BE800C714AD /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		A8BCB3781F871DBA00CDCCD7 /* register.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = register.png; sourceTree = "<group>"; };
 		A8C3866D1F7CE3B90072D603 /* AddGuardianViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddGuardianViewController.swift; sourceTree = "<group>"; };
 		A8C3866F1F7D19100072D603 /* DependentContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DependentContactViewController.swift; sourceTree = "<group>"; };
 		A8FFB7181F83AA7B00ABC148 /* 58*58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "58*58.png"; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 		A2D9CBC01943C2540017F096 /* Life_Tracker */ = {
 			isa = PBXGroup;
 			children = (
+				A8BCB3781F871DBA00CDCCD7 /* register.png */,
 				E7FDED901F863A1700EA2856 /* background.png */,
 				A839A5E31F86184D001A4F19 /* dependent.png */,
 				A839A5E41F86184D001A4F19 /* guardian.png */,
@@ -339,6 +342,7 @@
 				A8FFB7371F83B2A100ABC148 /* 76.png in Resources */,
 				A8FFB7361F83B2A100ABC148 /* 60.png in Resources */,
 				A839A5E61F86184D001A4F19 /* dependent.png in Resources */,
+				A8BCB3791F871DBA00CDCCD7 /* register.png in Resources */,
 				A8FFB7241F83AA7B00ABC148 /* 1242.png in Resources */,
 				A86F27E91F734C2700681BAD /* icons8-Home-35.imageset in Resources */,
 				A8FFB7341F83B2A100ABC148 /* 29.png in Resources */,
