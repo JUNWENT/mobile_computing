@@ -38,7 +38,9 @@ class GuardianResetPasswordViewController: UIViewController,UIGestureRecognizerD
         NewPasswordTextField.placeholderColor = GiveColor.backgroundColor!
         ConfirmNewPasswordTextField.placeholderColor = GiveColor.backgroundColor!
         
-        
+        ExistingPasswordTextField.isSecureTextEntry = true
+        NewPasswordTextField.isSecureTextEntry = true
+        ConfirmNewPasswordTextField.isSecureTextEntry = true
         
         ExistingPasswordTextField.placeholderFontScale =  1
         NewPasswordTextField.placeholderFontScale = 1

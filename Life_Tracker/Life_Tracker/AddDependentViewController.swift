@@ -34,6 +34,8 @@ class AddDependentViewController: UIViewController,UIGestureRecognizerDelegate {
         
         DependentPhoneNumberTextField.placeholderColor = GiveColor.backgroundColor!
         DependentSecretPasswordTextField.placeholderColor = GiveColor.backgroundColor!
+        
+        DependentSecretPasswordTextField.isSecureTextEntry = true
  
         DependentPhoneNumberTextField.placeholderFontScale =  1
         DependentSecretPasswordTextField.placeholderFontScale = 1

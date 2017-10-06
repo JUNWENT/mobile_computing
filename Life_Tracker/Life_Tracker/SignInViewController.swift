@@ -36,6 +36,9 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
         UserPasswordTextField.placeholder = "password"
         UserComfirmPasswordTextField.placeholder = "confirm your password"
         
+        UserPasswordTextField.isSecureTextEntry = true
+        UserComfirmPasswordTextField.isSecureTextEntry = true
+        
         UserUsernameTextField.borderColor = GiveColor.textColor!
         UserPasswordTextField.borderColor = GiveColor.textColor!
         UserPhoneNumberTextField.borderColor = GiveColor.textColor!
@@ -126,9 +129,6 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
                 }
                 // store data to server
                 let itemToInsert = ["username": userName!,"phoneNumber":userPhoneNumber!,"password":userPassword!,"id":userPhoneNumber!, "complete": false, "__createdAt": Date()] as [String : Any]
-                UserDefaults.standard.set(userPhoneNumber, forKey: "Username")
-                UserDefaults.standard.set(userPhoneNumber, forKey: "GuardianDependent")
-                UserDefaults.standard.synchronize()
                 UIApplication.shared.isNetworkActivityIndicatorVisible = true
                 table.insert(itemToInsert) {
                     (item, error) in

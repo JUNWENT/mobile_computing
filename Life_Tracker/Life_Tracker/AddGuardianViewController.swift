@@ -33,6 +33,8 @@ class AddGuardianViewController: UIViewController,UIGestureRecognizerDelegate {
         DependentSecretPasswordTextfield.borderColor = GiveColor.backgroundColor!
         DependentConfirmSecretPasswordTextField.borderColor = GiveColor.backgroundColor!
         
+        DependentConfirmSecretPasswordTextField.isSecureTextEntry = true
+        DependentSecretPasswordTextfield.isSecureTextEntry = true
         
         DependentSecretPasswordTextfield.placeholderColor = GiveColor.backgroundColor!
         DependentConfirmSecretPasswordTextField.placeholderColor = GiveColor.backgroundColor!
