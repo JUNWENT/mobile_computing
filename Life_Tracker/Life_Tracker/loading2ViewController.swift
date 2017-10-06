@@ -16,11 +16,13 @@ class loading2ViewController: UIViewController {
     
     override func viewDidLoad() {
         //loading.startAnimating()
+        
         super.viewDidLoad()
+        let mainSize = UIScreen.main.bounds.size
         let imageData = try! Data(contentsOf: Bundle.main.url(forResource: "main3-iloveimg-cropped", withExtension: "gif")!)
         let advTimeGif = UIImage.gif(data: imageData)
         let loadingImage = UIImageView(image:advTimeGif)
-        loadingImage.frame = CGRect (x: 10.0, y: 222.0, width: 290.0, height: 202.0)
+        loadingImage.frame = CGRect (x: 10.0, y: 100.0, width: mainSize.width, height: mainSize.height/1.5)
         
         //CGRect()
         

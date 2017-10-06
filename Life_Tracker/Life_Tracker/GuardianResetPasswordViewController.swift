@@ -19,6 +19,7 @@ class GuardianResetPasswordViewController: UIViewController,UIGestureRecognizerD
     @IBOutlet weak var GiveColor: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         let mainSize = UIScreen.main.bounds.size
         ExistingPasswordTextField = MadokaTextField(frame:CGRect(x: 60, y: 107, width: mainSize.width - 120, height: 50))
         NewPasswordTextField = MadokaTextField(frame:CGRect(x: 60, y: 167, width: mainSize.width - 120, height: 50))
