@@ -98,7 +98,9 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
         } else if (showing != username){
             var lat :Double?
             var long: Double?
-            showingPerson.text = self.dependentName!
+            if (dependentName != nil){
+                showingPerson.text = self.dependentName!
+            }
             table.read { (result, error) in
                 if let err = error {
                     print (err)

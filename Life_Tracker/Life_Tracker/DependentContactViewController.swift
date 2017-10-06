@@ -40,6 +40,9 @@ class DependentContactViewController: UIViewController, UINavigationControllerDe
     
     @IBAction func userPressedOnLogOut(_ sender: UIButton) {
         UserDefaults.standard.set(nil,forKey:"Username")
+        UserDefaults.standard.set(nil,forKey:"GuardianDependent")
+        UserDefaults.standard.set(nil,forKey:"dependentName")
+        //UserDefaults.standard.set(nil,forKey:"profile")
     }
     
     override func viewDidLoad() {
@@ -60,10 +63,6 @@ class DependentContactViewController: UIViewController, UINavigationControllerDe
     }
     
     func getDenpendents() {
-        var n = 0
-        n = n+1
-        print(n)
-        print(">>>>>>")
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
         let table = client.table(withName: "UserRelationship")
         
