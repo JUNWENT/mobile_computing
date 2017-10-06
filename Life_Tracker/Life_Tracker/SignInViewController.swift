@@ -27,10 +27,10 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         self.loading.hidesWhenStopped = true
-        UserUsernameTextField = MadokaTextField(frame:CGRect(x: 60, y: 147, width: mainSize.width - 120, height: 50))
-        UserPhoneNumberTextField = MadokaTextField(frame:CGRect(x: 60, y: 207, width: mainSize.width - 120, height: 50))
-        UserPasswordTextField = MadokaTextField(frame:CGRect(x: 60, y: 267, width: mainSize.width - 120, height: 50))
-        UserComfirmPasswordTextField = MadokaTextField(frame:CGRect(x: 60, y: 327, width: mainSize.width - 120, height: 50))
+        UserUsernameTextField = MadokaTextField(frame:CGRect(x: 60, y: 167, width: mainSize.width - 120, height: 50))
+        UserPhoneNumberTextField = MadokaTextField(frame:CGRect(x: 60, y: 227, width: mainSize.width - 120, height: 50))
+        UserPasswordTextField = MadokaTextField(frame:CGRect(x: 60, y: 287, width: mainSize.width - 120, height: 50))
+        UserComfirmPasswordTextField = MadokaTextField(frame:CGRect(x: 60, y: 347, width: mainSize.width - 120, height: 50))
         UserUsernameTextField.placeholder = "username"
         UserPhoneNumberTextField.placeholder = "phone number"
         UserPasswordTextField.placeholder = "password"
