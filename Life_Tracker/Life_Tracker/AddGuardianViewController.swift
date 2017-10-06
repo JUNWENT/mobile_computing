@@ -20,6 +20,7 @@ class AddGuardianViewController: UIViewController,UIGestureRecognizerDelegate {
     
     var username:String?
     
+    @IBOutlet weak var GiveColor: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         let mainSize = UIScreen.main.bounds.size
@@ -29,12 +30,12 @@ class AddGuardianViewController: UIViewController,UIGestureRecognizerDelegate {
         DependentSecretPasswordTextfield.placeholder = "secret password"
         DependentConfirmSecretPasswordTextField.placeholder = "confirm your secret password"
        
-        DependentSecretPasswordTextfield.borderColor = UIColor.brown
-        DependentConfirmSecretPasswordTextField.borderColor = UIColor.brown
+        DependentSecretPasswordTextfield.borderColor = GiveColor.backgroundColor!
+        DependentConfirmSecretPasswordTextField.borderColor = GiveColor.backgroundColor!
         
         
-        DependentSecretPasswordTextfield.placeholderColor = UIColor.brown
-        DependentConfirmSecretPasswordTextField.placeholderColor = UIColor.brown
+        DependentSecretPasswordTextfield.placeholderColor = GiveColor.backgroundColor!
+        DependentConfirmSecretPasswordTextField.placeholderColor = GiveColor.backgroundColor!
     
         
         DependentConfirmSecretPasswordTextField.placeholderFontScale =  1
