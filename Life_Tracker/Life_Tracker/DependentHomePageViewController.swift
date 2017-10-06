@@ -50,9 +50,6 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
     var selfDownstairs:String?
     
     
-    @IBAction func askForHelp(_ sender: Any) {
-    }
-    
     let manager = CLLocationManager()
     let pedometer = CMPedometer()
     
@@ -67,8 +64,6 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
         let span = MKCoordinateSpanMake(0.01, 0.01)
         let myLocation = CLLocationCoordinate2DMake(selflocation.coordinate.latitude, selflocation.coordinate.longitude)
         let region = MKCoordinateRegionMake(myLocation, span)
-        //map.setRegion(region, animated: true)
-        //self.map.showsUserLocation = true
         // store local data
         selfLatitude = String(selflocation.coordinate.latitude)
         selfLongtitude = String(selflocation.coordinate.longitude)
@@ -82,7 +77,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
                     if let err = error {
                         print("ERROR ", err)
                     } else  {
-//                        print("updating the gps and health information")
+                        print("updating the gps and health information")
                     }
                 }
             }
@@ -96,34 +91,40 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
             let region = MKCoordinateRegionMake(myLocation, span)
             map.setRegion(region, animated: true)
             self.map.showsUserLocation = true
-            latitude.text = String(location.coordinate.latitude)
-            longtitude.text = String(location.coordinate.longitude)
-            speed.text = String(location.speed)
-            altitude.text = String(location.altitude)
+            self.latitude.text = String(format: "%.2f", Double(self.selfLatitude!)!)
+            self.longtitude.text = String(format: "%.2f", Double(self.selfLongtitude!)!)
+            self.speed.text = String(format: "%.2f", Double(self.selfSpeed!)!)
+            self.altitude.text = String(format: "%.2f", Double(self.selfAltitude!)!)
         } else if (showing != username){
+            var lat :Double?
+            var long: Double?
             showingPerson.text = self.dependentName!
             table.read { (result, error) in
                 if let err = error {
-                    self.displayAlertMessage(useMessage: "Please check you network and try again.")
-                    return
-                        print("ERROR ", err)
+                    print (err)
                 } else if let items = result?.items {
                     for item in items {
                         if item["id"] as? String == self.showing {
-                            self.latitude.text = item["latitude"] as? String
-                            self.longtitude.text = item["longtitude"] as? String
-                            self.speed.text = item["speed"] as? String
-                            self.altitude.text = item["altitude"] as? String
-                            self.steps.text = item["steps"] as? String
-                            self.distance.text = item["distance"] as? String
-                            self.upstairs.text = item["upstairs"] as? String
-                            self.downstairs.text = item["downstairs"] as? String
+                            let depLatitude = item["latitude"] as? String
+                            self.latitude.text = String(format: "%.2f", Double(depLatitude!)!)
+                            let depLongtitude = item["latitude"] as? String
+                            self.longtitude.text = String(format: "%.2f", Double(depLongtitude!)!)
+                            let depSpeed = item["speed"] as? String
+                            self.speed.text = String(format: "%.2f", Double(depSpeed!)!)
+                            let depAltitude = item["altitude"] as? String
+                            self.altitude.text = String(format: "%.2f", Double(depAltitude!)!)
+                            let depSteps = item["steps"] as? String
+                            self.steps.text = String(format: "%.2f", Double(depSteps!)!)
+                            let depDistance = item["distance"] as? String
+                            self.distance.text = String(format: "%.2f", Double(depDistance!)!)
+                            let depUpstairs = item["upstairs"] as? String
+                            self.upstairs.text = String(format: "%.2f", Double(depUpstairs!)!)
+                            let depDownstairs = item["downstairs"] as? String
+                            self.downstairs.text = String(format: "%.2f", Double(depDownstairs!)!)
+                            lat = Double(depLatitude!)
+                            long = Double(depLongtitude!)
                         }
                     }
-                    let lat = Double(self.latitude.text!)
-                    let long = Double(self.longtitude.text!)
-                    print (lat!)
-                    print (long!)
                     let span:MKCoordinateSpan = MKCoordinateSpanMake(0.1, 0.1)
                     let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(lat!, long!)
                     let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
