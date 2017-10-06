@@ -82,63 +82,66 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
                 }
             }
         }
-        
-        if showing == username {
-            showingPerson.text = "Yourself"
-            let location = locations[0]
-            let span = MKCoordinateSpanMake(0.01, 0.01)
-            let myLocation = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
-            let region = MKCoordinateRegionMake(myLocation, span)
-            map.setRegion(region, animated: true)
-            self.map.showsUserLocation = true
-            self.latitude.text = String(format: "%.2f", Double(self.selfLatitude!)!)
-            self.longtitude.text = String(format: "%.2f", Double(self.selfLongtitude!)!)
-            self.speed.text = String(format: "%.2f", Double(self.selfSpeed!)!)
-            self.altitude.text = String(format: "%.2f", Double(self.selfAltitude!)!)
-        } else if (showing != username){
-            var lat :Double?
-            var long: Double?
-            if (dependentName != nil){
-                showingPerson.text = self.dependentName!
-            }
-            table.read { (result, error) in
-                if let err = error {
-                    print (err)
-                } else if let items = result?.items {
-                    for item in items {
-                        if item["id"] as? String == self.showing {
-                            let depLatitude = item["latitude"] as? String
-                            self.latitude.text = String(format: "%.2f", Double(depLatitude!)!)
-                            let depLongtitude = item["longtitude"] as? String
-                            self.longtitude.text = String(format: "%.2f", Double(depLongtitude!)!)
-                            let depSpeed = item["speed"] as? String
-                            self.speed.text = String(format: "%.2f", Double(depSpeed!)!)
-                            let depAltitude = item["altitude"] as? String
-                            self.altitude.text = String(format: "%.2f", Double(depAltitude!)!)
-                            let depSteps = item["steps"] as? String
-                            self.steps.text = String(format: "%.2f", Double(depSteps!)!)
-                            let depDistance = item["distance"] as? String
-                            self.distance.text = String(format: "%.2f", Double(depDistance!)!)
-                            let depUpstairs = item["upstairs"] as? String
-                            self.upstairs.text = String(format: "%.2f", Double(depUpstairs!)!)
-                            let depDownstairs = item["downstairs"] as? String
-                            self.downstairs.text = String(format: "%.2f", Double(depDownstairs!)!)
-                            lat = Double(depLatitude!)
-                            long = Double(depLongtitude!)
+        if(username != nil ){
+            if showing == username {
+                showingPerson.text = "Yourself"
+                let location = locations[0]
+                let span = MKCoordinateSpanMake(0.01, 0.01)
+                let myLocation = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude)
+                let region = MKCoordinateRegionMake(myLocation, span)
+                map.setRegion(region, animated: true)
+                self.map.showsUserLocation = true
+                self.latitude.text = String(format: "%.2f", Double(self.selfLatitude!)!)
+                self.longtitude.text = String(format: "%.2f", Double(self.selfLongtitude!)!)
+                self.speed.text = String(format: "%.2f", Double(self.selfSpeed!)!)
+                self.altitude.text = String(format: "%.2f", Double(self.selfAltitude!)!)
+            } else if (showing != username){
+                var lat :Double?
+                var long: Double?
+                if (dependentName != nil){
+                    showingPerson.text = self.dependentName!
+                }
+                table.read { (result, error) in
+                    if let err = error {
+                        print (err)
+                    } else if let items = result?.items {
+                        for item in items {
+                            if item["id"] as? String == self.showing {
+                                let depLatitude = item["latitude"] as? String
+                                self.latitude.text = String(format: "%.2f", Double(depLatitude!)!)
+                                let depLongtitude = item["longtitude"] as? String
+                                self.longtitude.text = String(format: "%.2f", Double(depLongtitude!)!)
+                                let depSpeed = item["speed"] as? String
+                                self.speed.text = String(format: "%.2f", Double(depSpeed!)!)
+                                let depAltitude = item["altitude"] as? String
+                                self.altitude.text = String(format: "%.2f", Double(depAltitude!)!)
+                                let depSteps = item["steps"] as? String
+                                self.steps.text = String(format: "%.2f", Double(depSteps!)!)
+                                let depDistance = item["distance"] as? String
+                                self.distance.text = String(format: "%.2f", Double(depDistance!)!)
+                                let depUpstairs = item["upstairs"] as? String
+                                self.upstairs.text = String(format: "%.2f", Double(depUpstairs!)!)
+                                let depDownstairs = item["downstairs"] as? String
+                                self.downstairs.text = String(format: "%.2f", Double(depDownstairs!)!)
+                                lat = Double(depLatitude!)
+                                long = Double(depLongtitude!)
+                            }
+                        }
+                        let span:MKCoordinateSpan = MKCoordinateSpanMake(0.01, 0.01)
+                        if(lat != nil && long != nil ) {
+                            let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(lat!, long!)
+                            let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
+                            self.map.setRegion(region, animated: true)
+                            self.map.isZoomEnabled = true
+                            let annotation = MKPointAnnotation()
+                            annotation.coordinate = location
+                            annotation.title = self.dependentName! + " is here!"
+                            self.map.addAnnotation(annotation)
                         }
                     }
-                    let span:MKCoordinateSpan = MKCoordinateSpanMake(0.1, 0.1)
-                    let location:CLLocationCoordinate2D = CLLocationCoordinate2DMake(lat!, long!)
-                    let region:MKCoordinateRegion = MKCoordinateRegionMake(location, span)
-                    self.map.setRegion(region, animated: true)
-                    self.map.isZoomEnabled = true
-                    let annotation = MKPointAnnotation()
-                    annotation.coordinate = location
-                    annotation.title = self.dependentName! + " is here!"
-                    self.map.addAnnotation(annotation)
                 }
+                
             }
-
         }
         if (steps.text == "0"){
             steps.text = "loading"
@@ -152,7 +155,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
         if (downstairs.text == "0"){
             downstairs.text = "loading"
         }
- 
+        
     }
     
     
