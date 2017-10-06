@@ -22,13 +22,6 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         
-        let mainSize = UIScreen.main.bounds.size
-        let imageData = try! Data(contentsOf: Bundle.main.url(forResource: "main3-iloveimg-cropped", withExtension: "gif")!)
-        let advTimeGif = UIImage.gif(data: imageData)
-        let loadingImage = UIImageView(image:advTimeGif)
-        loadingImage.frame = CGRect (x: mainSize.width/4, y: 200.0, width: mainSize.width/2, height: mainSize.height/4)
-        
-        view.addSubview(loadingImage)
         
         // Do any additional setup after loading the view.
     }
