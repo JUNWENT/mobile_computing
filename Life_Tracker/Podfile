@@ -7,4 +7,5 @@ target 'Life_Tracker' do
   
   # Pods for Life_Tracker
   pod "TextFieldEffects"
+  pod 'SwiftGifOrigin', '~> 1.6.1'
 end

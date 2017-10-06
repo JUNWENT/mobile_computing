@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SwiftGifOrigin.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>TextFieldEffects.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>5597F40036224932100BF76D69E048F9</key>
+		<key>6B2B48153D21226DDEB1EE71FD22EA4E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FC3C59D7BF5FF96E1B136A3EED29E415</key>
+		<key>93EF9095F3E64DDABC0866D79B28DF64</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E09469DD3B92EA31F1D7FFAF40FFC2A9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

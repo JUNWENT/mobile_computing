@@ -185,12 +185,12 @@
 				E7FDED901F863A1700EA2856 /* background.png */,
 				A839A5E31F86184D001A4F19 /* dependent.png */,
 				A839A5E41F86184D001A4F19 /* guardian.png */,
-				A839A5E51F86184D001A4F19 /* main3-iloveimg-cropped.gif */,
 				E72B88C41F793B5100A79838 /* Life_Tracker.entitlements */,
 				A2BD20951AC8A731007F7181 /* QSTodoDataModel.xcdatamodeld */,
 				E7A881E21F85DD780089068C /* Header.h */,
 				A2D9CBCA1943C2540017F096 /* Main.storyboard */,
 				A2D9CBCD1943C2540017F096 /* Images.xcassets */,
+				A839A5E51F86184D001A4F19 /* main3-iloveimg-cropped.gif */,
 				A86F27EB1F734C5700681BAD /* icon */,
 				A2D9CBC11943C2540017F096 /* Supporting Files */,
 				A2D9CBE51943CB520017F096 /* frameworks */,
@@ -379,10 +379,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Life_Tracker/Pods-Life_Tracker-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftGifOrigin/SwiftGifOrigin.framework",
 				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftGifOrigin.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
