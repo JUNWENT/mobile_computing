@@ -34,7 +34,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
     
     @IBOutlet weak var showingPerson: UILabel!
     
-    var dependentName = ""
+    var dependentName :String?
     
     var username: String?
     //username = UserDefaults.standard.object(forKey: "Username") as? String
@@ -60,6 +60,8 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
 //        print(showing ?? "no one to show")
 //        print("show")
         username = UserDefaults.standard.object(forKey: "Username") as? String
+        showing = UserDefaults.standard.object(forKey: "GuardianDependent") as? String
+        dependentName = UserDefaults.standard.object(forKey: "dependentName") as? String
         // get local gps data
         let selflocation = locations[0]
         let span = MKCoordinateSpanMake(0.01, 0.01)
@@ -99,7 +101,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
             speed.text = String(location.speed)
             altitude.text = String(location.altitude)
         } else if (showing != username){
-            showingPerson.text = self.dependentName
+            showingPerson.text = self.dependentName!
             table.read { (result, error) in
                 if let err = error {
                     self.displayAlertMessage(useMessage: "Please check you network and try again.")
@@ -129,7 +131,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
                     self.map.isZoomEnabled = true
                     let annotation = MKPointAnnotation()
                     annotation.coordinate = location
-                    annotation.title = self.dependentName+" is here!"
+                    annotation.title = self.dependentName! + " is here!"
                     self.map.addAnnotation(annotation)
                 }
             }
@@ -140,8 +142,9 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
     
     
     @IBAction func backToUser(_ sender: UIButton) {
-        showing = username
+        UserDefaults.standard.set(username, forKey: "GuardianDependent")
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         manager.delegate = self

@@ -97,12 +97,14 @@ class ManageDependentsTableViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "viewDependent" {
-            let dependentData = segue.destination as! DependentHomePageViewController
+            //let dependentData = DependentHomePageViewController()
             let indexPath = self.dependentsTable.indexPath(for: sender as! UITableViewCell)! as NSIndexPath
             dependentPhone = dependents[indexPath.row].1!
             dependentName = dependents[indexPath.row].0!
-            dependentData.dependentName = self.dependentName
-            dependentData.showing = self.dependentPhone
+//            dependentData.dependentName = self.dependentName
+//            dependentData.showing = self.dependentPhone
+            UserDefaults.standard.set(dependentName, forKey: "dependentName")
+            UserDefaults.standard.set(dependentPhone, forKey: "GuardianDependent")
         }
     }
     
