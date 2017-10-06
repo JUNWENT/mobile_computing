@@ -22,7 +22,7 @@ class loading2ViewController: UIViewController {
         let imageData = try! Data(contentsOf: Bundle.main.url(forResource: "main3-iloveimg-cropped", withExtension: "gif")!)
         let advTimeGif = UIImage.gif(data: imageData)
         let loadingImage = UIImageView(image:advTimeGif)
-        loadingImage.frame = CGRect (x: 10.0, y: 100.0, width: mainSize.width, height: mainSize.height/1.5)
+        loadingImage.frame = CGRect (x: 0.0, y: 100.0, width: mainSize.width, height: mainSize.height/1.5)
         
         //CGRect()
         

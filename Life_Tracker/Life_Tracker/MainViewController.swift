@@ -28,8 +28,6 @@ class MainViewController: UIViewController {
         let loadingImage = UIImageView(image:advTimeGif)
         loadingImage.frame = CGRect (x: mainSize.width/4, y: 200.0, width: mainSize.width/2, height: mainSize.height/4)
         
-        //CGRect()
-        
         view.addSubview(loadingImage)
         
         // Do any additional setup after loading the view.
