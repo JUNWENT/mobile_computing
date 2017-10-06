@@ -109,7 +109,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
                         if item["id"] as? String == self.showing {
                             let depLatitude = item["latitude"] as? String
                             self.latitude.text = String(format: "%.2f", Double(depLatitude!)!)
-                            let depLongtitude = item["latitude"] as? String
+                            let depLongtitude = item["longtitude"] as? String
                             self.longtitude.text = String(format: "%.2f", Double(depLongtitude!)!)
                             let depSpeed = item["speed"] as? String
                             self.speed.text = String(format: "%.2f", Double(depSpeed!)!)
