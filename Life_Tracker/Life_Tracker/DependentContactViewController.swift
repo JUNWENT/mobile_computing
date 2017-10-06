@@ -22,6 +22,7 @@ class DependentContactViewController: UIViewController, UINavigationControllerDe
         image.delegate = self
         image.sourceType = UIImagePickerControllerSourceType.photoLibrary
         image.allowsEditing = false
+
         self.present(image, animated: true){
             
         }

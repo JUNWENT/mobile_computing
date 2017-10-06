@@ -20,8 +20,8 @@ class AddDependentViewController: UIViewController,UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         let mainSize = UIScreen.main.bounds.size
-        DependentPhoneNumberTextField = MadokaTextField(frame:CGRect(x: 60, y: 127, width: mainSize.width - 120, height: 60))
-        DependentSecretPasswordTextField = MadokaTextField(frame:CGRect(x: 60, y: 207, width: mainSize.width - 120, height: 50))
+        DependentPhoneNumberTextField = MadokaTextField(frame:CGRect(x: 30, y: 127, width: mainSize.width - 60, height: 60))
+        DependentSecretPasswordTextField = MadokaTextField(frame:CGRect(x: 30, y: 207, width: mainSize.width - 60, height: 50))
         
         
         DependentSecretPasswordTextField.placeholder = "verification password"
