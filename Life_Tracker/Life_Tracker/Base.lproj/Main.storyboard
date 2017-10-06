@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="T7J-53-ydk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="T7J-53-ydk">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -18,11 +18,11 @@
                         <viewControllerLayoutGuide type="bottom" id="S88-6i-OtJ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="a2K-Hq-CkX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pty-vS-PQK">
-                                <rect key="frame" x="43" y="447" width="289" height="42"/>
+                                <rect key="frame" x="47" y="447" width="319.66666666666669" height="42"/>
                                 <color key="backgroundColor" red="0.38352003690000003" green="0.27574151749999998" blue="0.20009408889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Log In">
@@ -33,7 +33,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q6I-n6-P3N">
-                                <rect key="frame" x="43" y="521" width="289" height="42"/>
+                                <rect key="frame" x="47" y="521" width="319.66666666666669" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Cancel">
                                     <color key="titleColor" red="0.38352003690000003" green="0.27574151749999998" blue="0.20009408889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -51,7 +51,7 @@
                                 </connections>
                             </button>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="aKV-MZ-wj6">
-                                <rect key="frame" x="177.66666666666666" y="371" width="20" height="20"/>
+                                <rect key="frame" x="197" y="371" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -83,11 +83,11 @@
                         <viewControllerLayoutGuide type="bottom" id="wCR-pI-iaH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="lq8-iq-BsU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Life-Tracker" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Sg-FX-bfh">
-                                <rect key="frame" x="0.0" y="118" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="118" width="414" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="tIU-Yi-uet"/>
                                 </constraints>
@@ -96,14 +96,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="guardian" translatesAutoresizingMaskIntoConstraints="NO" id="fMg-8o-Skp">
-                                <rect key="frame" x="53" y="432" width="128" height="128"/>
+                                <rect key="frame" x="57" y="501" width="128" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="L0v-2g-fyW"/>
                                     <constraint firstAttribute="width" constant="128" id="Xea-4x-tAn"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xiw-OW-vEy">
-                                <rect key="frame" x="53" y="568" width="128" height="30"/>
+                                <rect key="frame" x="57" y="637" width="128" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                 <state key="normal" title="Sign In">
                                     <color key="titleColor" red="0.38352003690000003" green="0.27574151749999998" blue="0.20009408889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -113,7 +113,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUD-TB-1el">
-                                <rect key="frame" x="231" y="568" width="97" height="30"/>
+                                <rect key="frame" x="235" y="637" width="128" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="19"/>
                                 <state key="normal" title="Register">
                                     <color key="titleColor" red="0.38352003690000003" green="0.27574151749999998" blue="0.20009408889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -123,7 +123,7 @@
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dependent" translatesAutoresizingMaskIntoConstraints="NO" id="egj-iO-TdQ">
-                                <rect key="frame" x="231" y="432" width="97" height="128"/>
+                                <rect key="frame" x="235" y="501" width="128" height="128"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -200,7 +200,7 @@
                                 <rect key="frame" x="0.0" y="28" width="414" height="77"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4Co-p0-dl8" id="eU8-UI-Crb">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="76.666666666666671"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="76.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="EzA-ql-60l">
@@ -305,14 +305,14 @@
                                 <rect key="frame" x="20" y="414" width="374" height="204"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ryZ-yh-z5L">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="86.666666666666686"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="104.66666666666663"/>
                                         <string key="text">* Entet the secret password set by the dependent you want to connect. You will be able to track the dependents after you add them.</string>
                                         <color key="textColor" red="0.6523473858833313" green="0.39794933795928955" blue="0.0012028475757688284" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCD-NW-arJ">
-                                        <rect key="frame" x="0.0" y="91.666666666666686" width="374" height="74.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="109.66666666666663" width="374" height="63"/>
                                         <color key="backgroundColor" red="0.38352003690000003" green="0.27574151749999998" blue="0.20009408889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="33"/>
                                         <state key="normal" title="Add">
@@ -324,7 +324,7 @@
                                         </connections>
                                     </button>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="wp7-aW-ggm">
-                                        <rect key="frame" x="0.0" y="171" width="374" height="33"/>
+                                        <rect key="frame" x="0.0" y="177.66666666666663" width="374" height="26.333333333333371"/>
                                     </activityIndicatorView>
                                 </subviews>
                             </stackView>
@@ -489,7 +489,7 @@
                         <viewControllerLayoutGuide type="bottom" id="FSK-lL-90p"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="aVL-GF-2Sx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXN-DS-BxH">
@@ -527,10 +527,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </scrollView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yFr-GA-ivg">
-                                <rect key="frame" x="43" y="470" width="288" height="93"/>
+                                <rect key="frame" x="47" y="470" width="319" height="162"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dXJ-WY-Cwl">
-                                        <rect key="frame" x="0.0" y="0.0" width="288" height="37"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="64.333333333333371"/>
                                         <color key="backgroundColor" red="0.38352003690000003" green="0.27574151749999998" blue="0.20009408889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Register">
@@ -549,10 +549,10 @@
                                         </connections>
                                     </button>
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="RL5-Hl-kmH">
-                                        <rect key="frame" x="0.0" y="42" width="288" height="17.333333333333371"/>
+                                        <rect key="frame" x="0.0" y="69.333333333333371" width="319" height="30.333333333333258"/>
                                     </activityIndicatorView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xuk-SL-vgm">
-                                        <rect key="frame" x="0.0" y="64.333333333333371" width="288" height="28.666666666666629"/>
+                                        <rect key="frame" x="0.0" y="104.66666666666663" width="319" height="57.333333333333371"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="I have an account. Let me login!">
                                             <color key="titleColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -564,10 +564,10 @@
                                 </subviews>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="register" translatesAutoresizingMaskIntoConstraints="NO" id="rdE-lG-7Ho">
-                                <rect key="frame" x="70" y="53" width="235" height="115"/>
+                                <rect key="frame" x="74" y="53" width="266" height="115"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="By register, I certify that I have read,understood and agree to the Terms &amp; Conditions." textAlignment="natural" adjustsFontForContentSizeCategory="YES" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ph-rn-xCh">
-                                <rect key="frame" x="43" y="369" width="288" height="84"/>
+                                <rect key="frame" x="47" y="369" width="319" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84" id="VGI-wp-icn"/>
                                 </constraints>
@@ -1109,7 +1109,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDz-00-BKS">
-                                                <rect key="frame" x="96.666666666666686" y="380" width="64" height="42"/>
+                                                <rect key="frame" x="97" y="380" width="64" height="42"/>
                                                 <color key="backgroundColor" red="0.38352003690000003" green="0.27574151749999998" blue="0.20009408889999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <state key="normal" title="Reset">
@@ -1206,8 +1206,8 @@
         <image name="register" width="313" height="115"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="GLl-Eo-3Fs"/>
-        <segue reference="yCJ-PU-d39"/>
         <segue reference="r1M-5B-nSR"/>
+        <segue reference="5oH-Mr-5d7"/>
+        <segue reference="VXi-uM-Ovl"/>
     </inferredMetricsTieBreakers>
 </document>
