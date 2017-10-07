@@ -5,6 +5,9 @@
 //  Created by junwenz on 2017/9/23.
 //  Copyright © 2017年 Microsoft. All rights reserved.
 //
+// This controller is for the loginPage. In this page, user will have to 
+// enter his valid phone number and password to move to HomePage.
+
 import Foundation
 import UIKit
 import CoreData
@@ -179,6 +182,9 @@ class DependentLoginViewController: UIViewController , UITextFieldDelegate{
         }
     }
     
+    // This function happens when user click on Sign In. It will check user`s information with 
+    // the information in the database. and create an item in the UserTable for store the location
+    // and motion information.
     @IBAction func UserPressedOnSignIn(_ sender: UIButton) {
         self.loading.startAnimating()
         let userIdentify = txtUser.text
@@ -195,7 +201,7 @@ class DependentLoginViewController: UIViewController , UITextFieldDelegate{
             self.loading.stopAnimating()
             return
         }
-        
+        // check with database
         table.read { (result, error) in
             if let err = error {
                 print("ERROR ", err)

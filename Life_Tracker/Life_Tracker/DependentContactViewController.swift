@@ -5,6 +5,7 @@
 //  Created by junwenz on 2017/9/28.
 //  Copyright © 2017年 Microsoft. All rights reserved.
 //
+//This controller is for the UserAccountPage. In this page, user can set his account.
 
 import UIKit
 
@@ -62,6 +63,7 @@ class DependentContactViewController: UIViewController, UINavigationControllerDe
         self.getDenpendents()
     }
     
+    // getting the dependent list from the database.
     func getDenpendents() {
         let client = MSClient(applicationURLString: "https://life-tracker.azurewebsites.net")
         let table = client.table(withName: "UserRelationship")

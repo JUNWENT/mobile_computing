@@ -5,6 +5,8 @@
 //  Created by Mingyan Wei on 3/10/17.
 //  Copyright © 2017 Microsoft. All rights reserved.
 //
+// This controller is for the page that shows the table of the dependents that user
+// has. The table get the dependents information from in the database.
 
 import UIKit
 
@@ -97,12 +99,10 @@ class ManageDependentsTableViewController: UITableViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "viewDependent" {
-            //let dependentData = DependentHomePageViewController()
+            
             let indexPath = self.dependentsTable.indexPath(for: sender as! UITableViewCell)! as NSIndexPath
             dependentPhone = dependents[indexPath.row].1!
             dependentName = dependents[indexPath.row].0!
-//            dependentData.dependentName = self.dependentName
-//            dependentData.showing = self.dependentPhone
             UserDefaults.standard.set(dependentName, forKey: "dependentName")
             UserDefaults.standard.set(dependentPhone, forKey: "GuardianDependent")
         }

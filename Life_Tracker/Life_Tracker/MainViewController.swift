@@ -5,6 +5,9 @@
 //  Created by junwenz on 2017/10/5.
 //  Copyright © 2017年 Microsoft. All rights reserved.
 //
+// This controller is for mainPage, on this page, user will be able to choose to
+// sign in or register. If the user has signed in before, this page will not show
+// again
 
 import UIKit
 

@@ -5,6 +5,8 @@
 //  Created by junwenz on 2017/9/28.
 //  Copyright © 2017年 Microsoft. All rights reserved.
 //
+// This controller is for the SetVerficationCode Page. In this page, user can 
+// set his verfication code so that other user can connect with him
 
 import UIKit
 import TextFieldEffects
@@ -23,6 +25,7 @@ class AddGuardianViewController: UIViewController,UIGestureRecognizerDelegate {
     @IBOutlet weak var GiveColor: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        // show the animated text field
         let mainSize = UIScreen.main.bounds.size
         DependentSecretPasswordTextfield = MadokaTextField(frame:CGRect(x: 30, y: 167, width: mainSize.width - 60, height: 60))
         DependentConfirmSecretPasswordTextField = MadokaTextField(frame:CGRect(x: 30, y: 247, width: mainSize.width - 60, height: 60))
@@ -77,6 +80,8 @@ class AddGuardianViewController: UIViewController,UIGestureRecognizerDelegate {
         self.view.endEditing(false)
     }
     
+    // This function happens when user click on set. It will store the verfication
+    // code information to the database.
     @IBAction func userPassedOnAdd(_ sender: UIButton) {
         self.loading.startAnimating()
         let guardianSecretPassword = DependentSecretPasswordTextfield.text
@@ -86,7 +91,7 @@ class AddGuardianViewController: UIViewController,UIGestureRecognizerDelegate {
         let table = client.table(withName: "UserData")
         
         if ((guardianSecretPassword?.isEmpty)! || (ConfirmsecretPassword?.isEmpty)!){
-            self.displayAlertMessage(useMessage: "Your must enter a password to reset.")
+            self.displayAlertMessage(useMessage: "Your must enter a password.")
             self.loading.stopAnimating()
         }
         
@@ -96,7 +101,7 @@ class AddGuardianViewController: UIViewController,UIGestureRecognizerDelegate {
                 if let err = error {
                     print("ERROR ", err)
                 } else  {
-                    self.displayAlertMessage(useMessage: "You have successfully set a secret password!")
+                    self.displayAlertMessage(useMessage: "You have successfully set a verfication code!")
                     self.loading.stopAnimating()
                     print("update user secret password")
                 }

@@ -5,6 +5,7 @@
 //  Created by Mingyan Wei on 4/10/17.
 //  Copyright © 2017 Microsoft. All rights reserved.
 //
+// This class is for the cell in the table view
 
 import UIKit
 

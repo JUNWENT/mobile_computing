@@ -5,6 +5,9 @@
 //  Created by Mingyan Wei on 21/9/17.
 //  Copyright © 2017 Microsoft. All rights reserved.
 //
+// This controller is for the HomePage controller. In this page, user can see his or
+// his dependents location information and motion information. This function only works
+// on the physical phone.
 
 import UIKit
 import MapKit
@@ -53,9 +56,8 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
     let manager = CLLocationManager()
     let pedometer = CMPedometer()
     
+    //This function store the user`s information to the database and showing the information of user`s choice
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-//        print(showing ?? "no one to show")
-//        print("show")
         username = UserDefaults.standard.object(forKey: "Username") as? String
         showing = UserDefaults.standard.object(forKey: "GuardianDependent") as? String
         dependentName = UserDefaults.standard.object(forKey: "dependentName") as? String
@@ -83,6 +85,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
             }
         }
         if(username != nil ){
+            // showing self information
             if showing == username {
                 showingPerson.text = "Yourself"
                 let location = locations[0]
@@ -95,6 +98,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
                 self.longtitude.text = String(format: "%.2f", Double(self.selfLongtitude!)!)
                 self.speed.text = String(format: "%.2f", Double(self.selfSpeed!)!)
                 self.altitude.text = String(format: "%.2f", Double(self.selfAltitude!)!)
+                // showing dependent information
             } else if (showing != username){
                 var lat :Double?
                 var long: Double?
@@ -163,6 +167,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
         UserDefaults.standard.set(username, forKey: "GuardianDependent")
     }
     
+    // This view will keep getting the information
     override func viewDidLoad() {
         super.viewDidLoad()
         manager.delegate = self
@@ -190,7 +195,7 @@ class DependentHomePageViewController: UIViewController, CLLocationManagerDelega
      }
      */
     
-    //begin to retrieve data
+    //begin to retrieve motion data
     func startPedometerUpdates(){
         //determine the situation of the app
         guard CMPedometer.isStepCountingAvailable() else {

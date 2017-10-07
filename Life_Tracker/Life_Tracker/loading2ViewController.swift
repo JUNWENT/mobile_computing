@@ -5,6 +5,8 @@
 //  Created by junwenz on 2017/10/3.
 //  Copyright © 2017年 Microsoft. All rights reserved.
 //
+// This controller is for the loading page. This page only shows when
+// there is a transaction between pages. This page contains a gif.
 
 import UIKit
 import SwiftGifOrigin
@@ -16,7 +18,7 @@ class loading2ViewController: UIViewController {
     
     override func viewDidLoad() {
         //loading.startAnimating()
-        
+        // show the gif on the screen
         super.viewDidLoad()
         let mainSize = UIScreen.main.bounds.size
         let imageData = try! Data(contentsOf: Bundle.main.url(forResource: "main3-iloveimg-cropped", withExtension: "gif")!)

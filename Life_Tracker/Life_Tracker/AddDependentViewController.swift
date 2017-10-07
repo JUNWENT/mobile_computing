@@ -5,6 +5,8 @@
 //  Created by junwenz on 2017/9/28.
 //  Copyright © 2017年 Microsoft. All rights reserved.
 //
+// This controller is for the AddDependentPage. In this page, user can add his dependent by 
+// enterring his dependent`s phone number and verfication code.
 
 import UIKit
 import TextFieldEffects
@@ -76,6 +78,8 @@ class AddDependentViewController: UIViewController,UIGestureRecognizerDelegate {
         self.view.endEditing(false)
     }
     
+    //This function happens when the user clicks on the add button. It will compare with the 
+    //information in the database. Only the information matches, user can add a dependent.
     @IBAction func UserPressedOnAdd(_ sender: UIButton) {
         self.loading.startAnimating()
         let dependentPhoneNumber = DependentPhoneNumberTextField.text

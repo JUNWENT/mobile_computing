@@ -5,6 +5,8 @@
 //  Created by junwenz on 2017/9/23.
 //  Copyright © 2017年 Microsoft. All rights reserved.
 //
+// This controller is for the Register page. In this page, user will have to
+// enter his valid password, unique phone number and a username.
 
 import UIKit
 import TextFieldEffects
@@ -23,6 +25,7 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
     
     
     override func viewDidLoad() {
+        // showing animated text field
         let mainSize = UIScreen.main.bounds.size
         super.viewDidLoad()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
@@ -72,6 +75,9 @@ class SignInViewController: UIViewController,UITextFieldDelegate {
         self.view.endEditing(false)
     }
     
+    // This function checks if the phone number is unique and valid, if the password
+    // is valid. And if all the information is valid, the user`s data will be stored
+    // into the database and back to mainPage.
     @IBAction func pressedOnRegisterBotton(_ sender: UIButton) {
         self.loading.startAnimating()
         

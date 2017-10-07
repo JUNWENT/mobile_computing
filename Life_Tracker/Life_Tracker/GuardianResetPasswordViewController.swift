@@ -6,6 +6,9 @@
 //  Copyright © 2017 Microsoft. All rights reserved.
 //
 
+// this controller set the function for user to reset their password. The password has to be valid
+// to be stored in the database. If the password is not valid. There will be an alert.
+
 import UIKit
 import TextFieldEffects
 
@@ -19,6 +22,7 @@ class GuardianResetPasswordViewController: UIViewController,UIGestureRecognizerD
     @IBOutlet weak var GiveColor: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        // set the background and show the textfield to the screen
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         let mainSize = UIScreen.main.bounds.size
         ExistingPasswordTextField = MadokaTextField(frame:CGRect(x: 30, y: 147, width: mainSize.width - 60, height: 50))
@@ -53,6 +57,7 @@ class GuardianResetPasswordViewController: UIViewController,UIGestureRecognizerD
 
         
         self.loading.hidesWhenStopped = true
+        // set the gesture setting
         let target = self.navigationController?.interactivePopGestureRecognizer!.delegate
         let pan = UIPanGestureRecognizer(target:target,
                                          action:Selector(("handleNavigationTransition:")))
@@ -62,6 +67,7 @@ class GuardianResetPasswordViewController: UIViewController,UIGestureRecognizerD
         // Do any additional setup after loading the view.
     }
     
+    // gesture function
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer,
                            shouldRecognizeSimultaneouslyWith otherGestureRecognizer:
         UIGestureRecognizer) -> Bool {
@@ -71,6 +77,7 @@ class GuardianResetPasswordViewController: UIViewController,UIGestureRecognizerD
         return true
     }
     
+    // hide the keyboard when touch on the screen
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(false)
     }
@@ -80,7 +87,8 @@ class GuardianResetPasswordViewController: UIViewController,UIGestureRecognizerD
         // Dispose of any resources that can be recreated.
     }
     
-    
+    // This function check the origin password and if the new password is valid will be stored in the database
+    // This function will start working when user click on the reset button
     @IBAction func UserPressOnResetButton(_ sender: UIButton) {
         self.loading.startAnimating()
         let userExistingPassword = ExistingPasswordTextField.text
