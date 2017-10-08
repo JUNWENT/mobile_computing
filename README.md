@@ -1,6 +1,14 @@
 # Life_Tracker
 
-This project is the second assignment for COMP90018 Mobile Computing Systems Programming 2017_SM2. It is an ios app named Life_Tracker. The main funciton of this app is that one user can trace the location and motion information of another user who has connection with this user. The location will be shown on the map and motion informaiton are listed in the home page. If an user does not have any connection with aother user, the home page will show this user`s own location and motion information.  
+This project is the second assignment for COMP90018 Mobile Computing Systems Programming 2017_SM2. It is an ios app named Life_Tracker. 
+In our socisity, there is a group of people who are encouraged to walk out, while it`s unsafe for them to walk out alone. they may be little children or people with disease such as high blood pressure. Especially, those suffer from AD. As reported ,More than 60 percent of those with Alzheimer’s or another form of dementia will wander, Due to confusion, they are often unable to ask for help,and if a person is not found within 24 hours, up to half of them will suffer serious injury or death. 
+To mitigate this issue, we designed and implemented a ios app to help guardians such as family members of that group of people to track their real-time locations and get their motion information. 
+
+If guardians can track dependents location in real time, they would be able to tell whether the dependent has been wandering or was caught in some emergency situation and know where to find them in case they can’t find their way home. So, it`s safer for dependents to walk out alone. 
+
+Besides, motion informaiton help users to monitor the level of exercise done by their dependents, and thus would promote them to maintain a heathier life style.
+
+The main funciton of this app is that one user can trace the location and motion information of another user who has connection with this user. The location will be shown on the map and motion informaiton are listed in the home page. If an user does not have any connection with aother user, the home page will show this user`s own location and motion information.  
 
 ## Getting Started
 
